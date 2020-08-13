@@ -1,0 +1,436 @@
+[
+  {
+    "name": "Sales",
+    "type": "Category",
+    "tracks": [
+      {
+        "type": "Track",
+        "name": "Primer",
+        "count": 0,
+        "subTracks": [
+          {
+            "type": "SubTrack",
+            "name": "Infosys Service Lines"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Infosys Products and Platforms"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Tech Overview"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Client/Industry"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Competitors"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Others"
+          }
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Sales Play",
+        "count": 0,
+        "subTracks": [
+          {
+            "type": "SubTrack",
+            "name": "Elevator Pitch"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Infosys Differentiators"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Others"
+          }
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Credentials",
+        "count": 0,
+        "subTracks": [
+          {
+            "type": "SubTrack",
+            "name": "Value Stories"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Case Studies"
+          }
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Point of View",
+        "count": 0,
+        "subTracks": [
+          {
+            "type": "SubTrack",
+            "name": "Technical"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Industry"
+          }
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Sales Competencies",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Technology",
+    "type": "Category",
+    "tracks": [
+      {
+        "type": "Track",
+        "name": "AI and Automation",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Big Data",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Data Science & Machine Learning",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Digital Commerce and Marketing",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Microsoft",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Java",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Mainframe",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "UI",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "IVS ",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "IMS ",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Generic",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Oracle Enterprise Applications",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "SAP",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "EAIS ",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "ECAS ",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "DNA - Data Science",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "DNA",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Agile",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Engineering ",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Databases",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Open Source",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Cloud",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Security",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "AS/400",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Business Analysis",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "ORC",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Domain",
+    "type": "Category",
+    "tracks": [
+      {
+        "type": "Track",
+        "name": "Financial Services",
+        "count": 0,
+        "subTracks": [
+          {
+            "type": "SubTrack",
+            "name": "Banking"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Risk and Compliance"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Capital Markets"
+          },
+          {
+            "type": "SubTrack",
+            "name": "Cards and Payments"
+          }
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Healthcare",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Insurance",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Retail",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Life Sciences",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Manufacturing",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Consumer Packaged Goods",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Transport and Logistics",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Process",
+    "type": "Category",
+    "tracks": [
+      {
+        "type": "Track",
+        "name": "Process",
+        "count": 0,
+        "subTracks": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Professional Skills",
+    "type": "Category",
+    "tracks": [
+      {
+        "type": "Track",
+        "name": "Dev Competencies",
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "PM competencies",
+        "subTracks": [
+
+        ]
+      },
+      {
+        "type": "Track",
+        "name": "Design Thinking",
+        "subTracks": [
+
+        ]
+      }
+    ]
+  }
+]

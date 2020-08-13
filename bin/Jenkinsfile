@@ -1,0 +1,215 @@
+/ sb - ext
+pipeline {
+  agent any
+  /*triggers{
+    gitlab(triggerOnPush: true, triggerOnMergeRequest: true, triggerOnNoteRequest: true, noteRegex: "Jenkins please retry a build", branchFilterType: "NameBasedFilter")
+   } //Enable these two lines for the web-hook trigger
+  */
+  options {
+    disableConcurrentBuilds()
+    gitLabConnection("${env.SB_EXT_ACTORS_REPO}")
+    buildDiscarder(logRotator(daysToKeepStr: '60'))
+  }
+  environment {
+    SB_EXT_ACTORS_REPO = "http://DB.QA.Bodhi.ad.infosys.com/bodhi/sb-ext-actors.git"
+    SUNBIRD_REPO = "http://DB.QA.Bodhi.ad.infosys.com/bodhi/sunbird-utils.git"
+    CASSANDRA_REPO = "http://DB.QA.Bodhi.ad.infosys.com/bodhi/cassandra-util.git"
+    ELASTIC_REPO = "http://DB.QA.Bodhi.ad.infosys.com/bodhi/elastic-util.git"
+    SB_EXT_BRANCH = "test"
+    SUNBIRD_BRANCH = "release-1.10"
+    CASSANDRA_BRANCH = "refactored"
+    ELASTIC_BRANCH = "1.4"
+    JENKINS_WORKSPACE = "/workspace/"   // Ensure / is present at the end of the line
+    CRED = "QualityAssurance"
+    SLACK_CHANNEL = "jenkins_servicesbuild"
+    SLACK_BASE_URL = "https://eta-bodhi.slack.com/services/hooks/jenkins-ci/"   // Ensure SLACK_TOKEN is set as an environment var within Jenkins 
+    BUILD_DETAILS = "Check console output at ${BUILD_URL}/job/${SB_EXT_BRANCH} to view the results."
+    SLACK_TOKEN = "GP7ErsvX6ojhpz2FsJwfccdq"    // TODO: credential() or linux env variable
+    ANSIBLE_TAG_NAME = "deploy-sb-ext-service"
+    ANSIBLE_GROUP_NAME = "app_north_virginia__dev"
+    DEPLOY_SCRIPT_PATH = "/workspace/JenkinJobs/deploy.sh"
+    DEPLOY_SCRIPT = "${env.DEPLOY_SCRIPT_PATH} ${env.ANSIBLE_TAG_NAME} ${env.ANSIBLE_GROUP_NAME}"
+  }
+  stages {
+    stage("Slack notification"){
+      steps{
+        slackSend(message: "```${BUILD_TAG}```", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+      }
+  }
+    stage('Build sunbird utils') {
+      steps {
+        timeout(time: 5) {
+          dir(path: "sunbird-utils")
+          {
+            git(url: "${env.SUNBIRD_REPO}", branch: "${SUNBIRD_BRANCH}", credentialsId: "${env.CRED}")
+            sh 'mvn install -DskipTests'
+          }
+        }
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: Build sunbird-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Git succeeded') 
+        }
+        failure{
+          slackSend(message: "*Failure*: Build sunbird-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Git failed')
+        }
+      }
+    }
+    stage("Fetch and build dependencies"){
+      parallel{
+        stage('Fetch sb-ext-actors') {
+          steps {
+            timeout(time: 5) {
+              git(url: "${env.SB_EXT_ACTORS_REPO}", branch: "${env.SB_EXT_BRANCH}", credentialsId: "${env.CRED}")
+              sh 'mvn clean'
+            }
+          }
+          post{
+            success{
+              slackSend(message: "*Success*: Fetch sb-ext-actors", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git succeeded') 
+            }
+            failure{
+              slackSend(message: "*Failure*: Fetch sb-ext-actors", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git failed')
+            }
+          }
+        }
+        stage('Build infy-cassandra utils') {
+          steps {
+            timeout(time: 5) {
+              dir(path: "cassandra-util")
+              {
+                git(url: "${env.CASSANDRA_REPO}", branch: "${env.CASSANDRA_BRANCH}", credentialsId: "${env.CRED}")
+                sh 'mvn install -DskipTests'
+              }
+            }
+          }
+          post{
+            success{
+              slackSend(message: "*Success*: Build cassandra-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git succeeded') 
+            }
+            failure{
+              slackSend(message: "*Failure*: Build cassandra-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git failed')
+            }
+          }
+        }
+        stage('Build infy-elastic utils') {
+          steps {
+            timeout(time: 5) {
+              dir(path: "elastic-util")
+              {
+                git(url: "${env.ELASTIC_REPO}", branch: "${env.ELASTIC_BRANCH}", credentialsId: "${env.CRED}")
+                sh 'mvn install -DskipTests'
+              }
+            }
+          }
+          post{
+            success{
+              slackSend(message: "*Success*: Build elastic-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git succeeded') 
+            }
+            failure{
+              slackSend(message: "*Failure*: Build elastic-utils", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+              echo(message: 'Git failed')
+            }
+          }
+        }
+      }
+    }
+    stage('Unit tests'){
+      steps {
+        sh 'mvn surefire-report:report'
+        publishHTML(target: [reportName: "Unit Test Execution Report", reportDir: "target/site/", reportFiles: "surefire-report.html", reportTitles: "Test Report: sb-ext", keepAll: false, alwaysLinkToLastBuild: true, allowMissing: true])
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: Unit tests ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Unit tests succeeded')
+        }
+        failure{
+          slackSend(message: "*Failure*: Unit tests ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Unit tests failed')
+        }
+      }
+    }
+    stage('Create sb-ext-actors JAR'){
+      steps {
+        sh 'mvn install -DskipTests'
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: sb-ext-actors JAR creation ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'JAR creation succeeded')
+        }
+        failure{
+          slackSend(message: "*Failure*: JAR creation ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'JAR creation failed')
+        }
+      }
+    }
+    stage('Move sb-ext JAR') {
+      steps {
+        sh "sudo cp -r target/bodhi-1.0-SNAPSHOT.jar ${env.JENKINS_WORKSPACE}/sb-ext/jarfile/target/"
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: Moved JAR ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Moved sb-ext JAR succeeded') 
+        }
+        failure{
+          slackSend(message: "*Failure*: Moved JAR ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Moved sb-ext JAR failed')
+        }
+      }
+    }
+    stage('Create Docker Image') {
+      steps {
+        sh "sudo ${env.JENKINS_WORKSPACE}/JenkinJobs/build-and-push-to-repo.sh sb-ext-service ${env.JENKINS_WORKSPACE}/sb-ext/ 1.1.1.${BUILD_NUMBER} bronze `git log -1 --format=%H`"
+        echo(message: 'JAR is dockerized')
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: Docker image creation ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Docker image creation succeeded') 
+        }
+        failure{
+          slackSend(message: "*Failure*: Docker image creation ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Docker image creationfailed')
+        }
+      }
+    }
+    stage('Update docker image in Dev') {
+      steps {
+        sh "${env.DEPLOY_SCRIPT}"
+        sh "ssh dockusr2@ 'sudo /home/dockusr2/workspace/deploy/core/deploy-sb-ext-service.sh'"
+        echo(message: 'Docker image updated')
+      }
+      post{
+        success{
+          slackSend(message: "*Success*: Docker deploy ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Docker deployment succeeded') 
+        }
+        failure{
+          slackSend(message: "*Failure*: Docker deploy ", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+          echo(message: 'Docker deployment failed')
+        }
+      }
+    }
+  }
+  post{
+      success{
+        slackSend(message: "*SUCCESS*: ${BUILD_DETAILS}", botUser: true, channel: "${env.SLACK_CHANNEL}", color: '2dff61', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+      }
+      failure{
+        slackSend(message: "*FAILED*: ${BUILD_DETAILS}", botUser: true, channel: "${env.SLACK_CHANNEL}", color: 'ff2d2d', failOnError: false, baseUrl: "${env.SLACK_BASE_URL}", token: "${env.SLACK_TOKEN}", teamDomain: 'bodhi')
+      }
+    cleanup{
+      echo(message: 'Cleanup is not required')
+    }
+  }
+}

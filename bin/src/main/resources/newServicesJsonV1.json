@@ -1,0 +1,7310 @@
+[
+  {
+    "identifier": "1525338740920",
+    "value": "Category",
+    "type": "",
+    "children": [
+      "1525338740921",
+      "1525338741148"
+    ],
+    "parent": []
+  },
+  {
+    "identifier": "1525338740921",
+    "value": "Catalog",
+    "type": "Catalog",
+    "children": [
+      "1525338740987",
+      "1525757739680",
+      "1533714235057",
+      "1526555187349",
+      "1533756360914",
+      "1526564900276",
+      "1525338740972",
+      "1533790792043",
+      "1525338740953",
+      "1525338740922"
+    ],
+    "parent": [
+      "1525338740920"
+    ]
+  },
+  {
+    "identifier": "1525338740987",
+    "value": "Behavioral and Business",
+    "type": "Category",
+    "children": [
+      "1534610899094",
+      "1525338740995",
+      "1525338740993",
+      "1525338740994",
+      "1525338740999",
+      "1525338740996",
+      "1534611056400",
+      "1525338740990",
+      "1525338740997",
+      "1525338740991",
+      "1525338740998",
+      "1525338740992"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1534610899094",
+    "value": "Analytical Ability",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740995",
+    "value": "Building Collaborative Partnership",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740993",
+    "value": "Building Strategic Perspective",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740994",
+    "value": "Building Teams",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740999",
+    "value": "Business Acumen",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740996",
+    "value": "Change Management",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1534611056400",
+    "value": "Customer Orientation",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740990",
+    "value": "Design Thinking",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740997",
+    "value": "Driving Organizational Results",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740991",
+    "value": "High Impact Communication",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740998",
+    "value": "Learning and Innovation",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525338740992",
+    "value": "Planning and Organizing",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740987"
+    ]
+  },
+  {
+    "identifier": "1525757739680",
+    "value": "Domain",
+    "type": "Category",
+    "children": [
+      "1533738241541",
+      "1525757739757",
+      "1525757739821",
+      "1533745759643",
+      "1525757739740",
+      "1533745956302",
+      "1525757739681",
+      "1525757739707",
+      "1533747333577",
+      "1533748016784",
+      "1525757739734",
+      "1525757739737",
+      "1525757739844",
+      "1525757739731",
+      "1533753226675",
+      "1533753411255",
+      "1525757739792",
+      "1525757739775",
+      "1533754149030"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1533738241541",
+    "value": "Accounting and Finance",
+    "type": "Track",
+    "children": [
+      "1533738241542",
+      "1534611801503"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533738241542",
+    "value": "Financial Accounting",
+    "type": "SubTrack",
+    "children": [
+      "1533738241543",
+      "1533738241544",
+      "1533738241545",
+      "1533738241546",
+      "1533738241547",
+      "1533738241548",
+      "1533738241549",
+      "1533738241550",
+      "1533738241551",
+      "1533738241552",
+      "1533738241553",
+      "1533738241554",
+      "1533738241555",
+      "1533738241556"
+    ],
+    "parent": [
+      "1533738241541"
+    ]
+  },
+  {
+    "identifier": "1533738241543",
+    "value": "Accounts Payable",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241544",
+    "value": "Accounts Receivable",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241545",
+    "value": "Asset Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241546",
+    "value": "Business Process",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241547",
+    "value": "Cash Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241548",
+    "value": "Financial Reporting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241549",
+    "value": "Financial Statements",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241550",
+    "value": "Fund Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241551",
+    "value": "Fundamentals of Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241552",
+    "value": "General Ledger",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241553",
+    "value": "Investment Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241554",
+    "value": "Profit Center Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241555",
+    "value": "Revenue Recognition",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1533738241556",
+    "value": "Treasury Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533738241542"
+    ]
+  },
+  {
+    "identifier": "1534611801503",
+    "value": "Management Accounting",
+    "type": "SubTrack",
+    "children": [
+      "1534611801504",
+      "1534611801505",
+      "1534611801506",
+      "1534611801507",
+      "1534611801508",
+      "1534611801509",
+      "1534611801510",
+      "1534611801511",
+      "1534611801512",
+      "1534611801513",
+      "1534611801514",
+      "1534611801515",
+      "1534611801516"
+    ],
+    "parent": [
+      "1533738241541"
+    ]
+  },
+  {
+    "identifier": "1534611801504",
+    "value": "Budgeting and Budgetary Control",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801505",
+    "value": "Capital Budgeting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801506",
+    "value": "Cost Center Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801507",
+    "value": "Cost Object Controlling",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801508",
+    "value": "Cost of Capital",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801509",
+    "value": "Financial Analysis and Planning",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801510",
+    "value": "Fundamentals of Cost Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801511",
+    "value": "Fundamentals of Financial Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801512",
+    "value": "Internal Order Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801513",
+    "value": "Product Cost Planning",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801514",
+    "value": "Profit Center Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801515",
+    "value": "Profitability Analysis",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1534611801516",
+    "value": "Working Capital Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534611801503"
+    ]
+  },
+  {
+    "identifier": "1525757739757",
+    "value": "Communications",
+    "type": "Track",
+    "children": [
+      "1525757739772",
+      "1525757739759",
+      "1525757739758",
+      "1525757739771",
+      "1525757739770",
+      "1525757739774",
+      "1534088265860"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739772",
+    "value": "Business Process and Solutions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739759",
+    "value": "CSP Functions",
+    "type": "SubTrack",
+    "children": [
+      "1525757739761",
+      "1525757739762",
+      "1525757739764",
+      "1525757739760",
+      "1525757739766",
+      "1525757739763",
+      "1525757739767",
+      "1525757739765"
+    ],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739761",
+    "value": "Assurance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739762",
+    "value": "Billing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739764",
+    "value": "Enterprise",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739760",
+    "value": "Fulfillment",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739766",
+    "value": "Infrastructure Lifecycle Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739763",
+    "value": "Product Lifecycle management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739767",
+    "value": "Shared Business Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739765",
+    "value": "Strategy",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739759"
+    ]
+  },
+  {
+    "identifier": "1525757739758",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739771",
+    "value": "Industry Tools Packages and Technologies",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739770",
+    "value": "Regulations and Frameworks",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739774",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1534088265860",
+    "value": "Telecom",
+    "type": "SubTrack",
+    "children": [
+      "1525757739768",
+      "1525757739769"
+    ],
+    "parent": [
+      "1525757739757"
+    ]
+  },
+  {
+    "identifier": "1525757739768",
+    "value": "OSS and BSS",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534088265860"
+    ]
+  },
+  {
+    "identifier": "1525757739769",
+    "value": "Technologies",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534088265860"
+    ]
+  },
+  {
+    "identifier": "1525757739821",
+    "value": "Consumer Packaged Goods",
+    "type": "Track",
+    "children": [
+      "1533743962351",
+      "1525757739825",
+      "1533743962352",
+      "1533743962353",
+      "1533743962354",
+      "1525757739827",
+      "1525757739828",
+      "1533743962355",
+      "1533743962356",
+      "1525757739829",
+      "1525757739830",
+      "1525757739831",
+      "1525757739832",
+      "1533743962357",
+      "1525757739833",
+      "1533743962358",
+      "1525757739835",
+      "1533743962359",
+      "1533743962360",
+      "1525757739837",
+      "1525757739838",
+      "1533743962361",
+      "1525757739840",
+      "1525757739841",
+      "1525757739842",
+      "1533743962362",
+      "1533743962363",
+      "1533743962364"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533743962351",
+    "value": "Brand Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739825",
+    "value": "Category Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962352",
+    "value": "Consumer Behavior Analysis",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962353",
+    "value": "Demand Forecasting",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962354",
+    "value": "Distribution Management System",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739827",
+    "value": "Electronic data Interchange",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739828",
+    "value": "Financial Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962355",
+    "value": "Fleet Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962356",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739829",
+    "value": "Inventory",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739830",
+    "value": "Key Account Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739831",
+    "value": "Manufacturing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739832",
+    "value": "Marketing Plan",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962357",
+    "value": "Master Data Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739833",
+    "value": "Material Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962358",
+    "value": "Online Channels",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739835",
+    "value": "Product Development",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962359",
+    "value": "Product Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962360",
+    "value": "Promotions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739837",
+    "value": "Reporting Services",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739838",
+    "value": "Research and Development",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962361",
+    "value": "Route Optimization",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739840",
+    "value": "Sales and Operations Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739841",
+    "value": "Shipping",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1525757739842",
+    "value": "Supply Network and Distribution",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962362",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962363",
+    "value": "Trade Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533743962364",
+    "value": "Warehouse Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739821"
+    ]
+  },
+  {
+    "identifier": "1533745759643",
+    "value": "Customer Relationship Management",
+    "type": "Track",
+    "children": [
+      "1533745759644",
+      "1533745759645",
+      "1533745759646",
+      "1533745759647",
+      "1533745759648",
+      "1533745759649",
+      "1533745759650",
+      "1533745759651",
+      "1533745759652",
+      "1533745759653",
+      "1533745759654",
+      "1533745759655",
+      "1533745759656",
+      "1533745759657",
+      "1533745759658",
+      "1533745759659",
+      "1533745759660",
+      "1533745759661",
+      "1533745759662"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533745759644",
+    "value": "Account Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759645",
+    "value": "Augmented Reality-Virtual Reality (AR-VR)",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759646",
+    "value": "Contract Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759647",
+    "value": "CRM Analytics",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759648",
+    "value": "Customer Service",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759649",
+    "value": "Dealer Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759650",
+    "value": "Financing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759651",
+    "value": "Interaction Center",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759652",
+    "value": "Marketing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759653",
+    "value": "Marketing Automation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759654",
+    "value": "Order Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759655",
+    "value": "Organization Model",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759656",
+    "value": "Partner Channel Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759657",
+    "value": "Product Master",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759658",
+    "value": "Quotation Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759659",
+    "value": "Receivables Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759660",
+    "value": "Revenue Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759661",
+    "value": "Sales",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1533745759662",
+    "value": "Web-Channel",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745759643"
+    ]
+  },
+  {
+    "identifier": "1525757739740",
+    "value": "Energy",
+    "type": "Track",
+    "children": [
+      "1525757739753",
+      "1525757739750",
+      "1525757739741",
+      "1525757739744"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739753",
+    "value": "Downstream",
+    "type": "SubTrack",
+    "children": [
+      "1525757739756",
+      "1525757739755",
+      "1525757739754"
+    ],
+    "parent": [
+      "1525757739740"
+    ]
+  },
+  {
+    "identifier": "1525757739756",
+    "value": "ETRM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739753"
+    ]
+  },
+  {
+    "identifier": "1525757739755",
+    "value": "Marketing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739753"
+    ]
+  },
+  {
+    "identifier": "1525757739754",
+    "value": "Refining",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739753"
+    ]
+  },
+  {
+    "identifier": "1525757739750",
+    "value": "Midstream",
+    "type": "SubTrack",
+    "children": [
+      "1525757739752",
+      "1525757739751"
+    ],
+    "parent": [
+      "1525757739740"
+    ]
+  },
+  {
+    "identifier": "1525757739752",
+    "value": "Storage",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739750"
+    ]
+  },
+  {
+    "identifier": "1525757739751",
+    "value": "Transportation",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739750"
+    ]
+  },
+  {
+    "identifier": "1525757739741",
+    "value": "Oil and Gas",
+    "type": "SubTrack",
+    "children": [
+      "1525757739742",
+      "1525757739743"
+    ],
+    "parent": [
+      "1525757739740"
+    ]
+  },
+  {
+    "identifier": "1525757739742",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739741"
+    ]
+  },
+  {
+    "identifier": "1525757739743",
+    "value": "Technology Adoption",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739741"
+    ]
+  },
+  {
+    "identifier": "1525757739744",
+    "value": "Upstream",
+    "type": "SubTrack",
+    "children": [
+      "1525757739746",
+      "1525757739745",
+      "1525757739748",
+      "1525757739747",
+      "1525757739749"
+    ],
+    "parent": [
+      "1525757739740"
+    ]
+  },
+  {
+    "identifier": "1525757739746",
+    "value": "Drilling and Completions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739744"
+    ]
+  },
+  {
+    "identifier": "1525757739745",
+    "value": "Geology and Exploration",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739744"
+    ]
+  },
+  {
+    "identifier": "1525757739748",
+    "value": "Hydrocarbon Accounting and Agreements",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739744"
+    ]
+  },
+  {
+    "identifier": "1525757739747",
+    "value": "Production Operation",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739744"
+    ]
+  },
+  {
+    "identifier": "1525757739749",
+    "value": "Production Optimization",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739744"
+    ]
+  },
+  {
+    "identifier": "1533745956302",
+    "value": "Environment Health and Safety",
+    "type": "Track",
+    "children": [
+      "1533745956303",
+      "1533745956304",
+      "1533745956305",
+      "1533745956306",
+      "1533745956307"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533745956303",
+    "value": "Community",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745956302"
+    ]
+  },
+  {
+    "identifier": "1533745956304",
+    "value": "Environment",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745956302"
+    ]
+  },
+  {
+    "identifier": "1533745956305",
+    "value": "Health",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745956302"
+    ]
+  },
+  {
+    "identifier": "1533745956306",
+    "value": "Safety",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745956302"
+    ]
+  },
+  {
+    "identifier": "1533745956307",
+    "value": "Sustainability",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533745956302"
+    ]
+  },
+  {
+    "identifier": "1525757739681",
+    "value": "Financial Services",
+    "type": "Track",
+    "children": [
+      "1525757739682",
+      "1525757739686",
+      "1525757739703",
+      "1525757739699"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739682",
+    "value": "Banking",
+    "type": "SubTrack",
+    "children": [
+      "1525757739685",
+      "1525757739684",
+      "1525757739683"
+    ],
+    "parent": [
+      "1525757739681"
+    ]
+  },
+  {
+    "identifier": "1525757739685",
+    "value": "Commercial Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739682"
+    ]
+  },
+  {
+    "identifier": "1525757739684",
+    "value": "Consumer Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739682"
+    ]
+  },
+  {
+    "identifier": "1525757739683",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739682"
+    ]
+  },
+  {
+    "identifier": "1525757739686",
+    "value": "Capital Markets",
+    "type": "SubTrack",
+    "children": [
+      "1525757739696",
+      "1525757739690",
+      "1525757739694",
+      "1525757739691",
+      "1525757739688",
+      "1525757739687",
+      "1525757739697",
+      "1525757739693",
+      "1525757739689",
+      "1525757739692",
+      "1525757739695"
+    ],
+    "parent": [
+      "1525757739681"
+    ]
+  },
+  {
+    "identifier": "1525757739696",
+    "value": "Asset Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739690",
+    "value": "Back Office",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739694",
+    "value": "Compliance & Controls",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739691",
+    "value": "Corporate Function",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739688",
+    "value": "Front Office",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739687",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739697",
+    "value": "Investment Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739693",
+    "value": "Master Data Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739689",
+    "value": "Middle Office",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739692",
+    "value": "Reporting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739695",
+    "value": "Wealth Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739686"
+    ]
+  },
+  {
+    "identifier": "1525757739703",
+    "value": "Cards and Payments",
+    "type": "SubTrack",
+    "children": [
+      "1525757739705",
+      "1525757739706",
+      "1525757739704"
+    ],
+    "parent": [
+      "1525757739681"
+    ]
+  },
+  {
+    "identifier": "1525757739705",
+    "value": "Card Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739703"
+    ]
+  },
+  {
+    "identifier": "1525757739706",
+    "value": "Core Payments",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739703"
+    ]
+  },
+  {
+    "identifier": "1525757739704",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739703"
+    ]
+  },
+  {
+    "identifier": "1525757739699",
+    "value": "Risk and Compliance",
+    "type": "SubTrack",
+    "children": [
+      "1525757739702",
+      "1525757739700",
+      "1525757739701"
+    ],
+    "parent": [
+      "1525757739681"
+    ]
+  },
+  {
+    "identifier": "1525757739702",
+    "value": "Compliance Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739699"
+    ]
+  },
+  {
+    "identifier": "1525757739700",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739699"
+    ]
+  },
+  {
+    "identifier": "1525757739701",
+    "value": "Risk Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739699"
+    ]
+  },
+  {
+    "identifier": "1525757739707",
+    "value": "Healthcare",
+    "type": "Track",
+    "children": [
+      "1533746760277",
+      "1525757739709",
+      "1525757739722",
+      "1533746775024",
+      "1525757739708",
+      "1525757739728",
+      "1525757739730"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533746760277",
+    "value": "Healthcare Packages",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739709",
+    "value": "Healthcare Payer",
+    "type": "SubTrack",
+    "children": [
+      "1525757739713",
+      "1525757739714",
+      "1525757739720",
+      "1525757739721",
+      "1525757739719",
+      "1525757739717",
+      "1525757739718",
+      "1525757739712",
+      "1525757739716",
+      "1525757739711",
+      "1525757739715",
+      "1525757739710"
+    ],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739713",
+    "value": "Billing Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739714",
+    "value": "Claims Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739720",
+    "value": "Healthcare Data Warehouse",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739721",
+    "value": "Healthcare Payer Regulations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739719",
+    "value": "Medicaid",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739717",
+    "value": "Medical Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739718",
+    "value": "Medicare",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739712",
+    "value": "Member Enrollment and Eligibility",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739716",
+    "value": "Pharmacy Benefit Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739711",
+    "value": "Policy and Benefit Administration",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739715",
+    "value": "Provider Network",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739710",
+    "value": "Sales Quoting and Rating",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739709"
+    ]
+  },
+  {
+    "identifier": "1525757739722",
+    "value": "Healthcare Provider",
+    "type": "SubTrack",
+    "children": [
+      "1525757739724",
+      "1525757739723",
+      "1525757739727",
+      "1525757739725",
+      "1525757739726"
+    ],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739724",
+    "value": "Ancillary Services",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739722"
+    ]
+  },
+  {
+    "identifier": "1525757739723",
+    "value": "Clinical Services",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739722"
+    ]
+  },
+  {
+    "identifier": "1525757739727",
+    "value": "Healthcare Provider Regulations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739722"
+    ]
+  },
+  {
+    "identifier": "1525757739725",
+    "value": "Patient Access Systems",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739722"
+    ]
+  },
+  {
+    "identifier": "1525757739726",
+    "value": "Revenue Cycle Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739722"
+    ]
+  },
+  {
+    "identifier": "1533746775024",
+    "value": "Healthcare Technologies",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739708",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739728",
+    "value": "Regulations and Frameworks",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1525757739730",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739707"
+    ]
+  },
+  {
+    "identifier": "1533747333577",
+    "value": "Human Capital Management",
+    "type": "Track",
+    "children": [
+      "1533747333578",
+      "1533747333579",
+      "1533747333580",
+      "1533747333581",
+      "1533747333582",
+      "1533747333583",
+      "1533747333584",
+      "1533747333585"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533747333578",
+    "value": "Compensation and Payroll",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333579",
+    "value": "Master Data Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333580",
+    "value": "Organization Plan",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333581",
+    "value": "Performance Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333582",
+    "value": "Recruiting and Onboarding",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333583",
+    "value": "Talent Analytics",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333584",
+    "value": "Talent Management and Development",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533747333585",
+    "value": "Time Recording",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533747333577"
+    ]
+  },
+  {
+    "identifier": "1533748016784",
+    "value": "Information Management",
+    "type": "Track",
+    "children": [
+      "1533748016785",
+      "1533748016786"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533748016785",
+    "value": "Customer Communication Management",
+    "type": "SubTrack",
+    "children": [
+      "1533748016787",
+      "1533748016788",
+      "1533748016789",
+      "1533748016790",
+      "1533748016791",
+      "1533748016792",
+      "1533748016793",
+      "1533748016794",
+      "1533748016795",
+      "1533748016796",
+      "1533748016797"
+    ],
+    "parent": [
+      "1533748016784"
+    ]
+  },
+  {
+    "identifier": "1533748016787",
+    "value": "CSF Designer",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016788",
+    "value": "DOC1",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016789",
+    "value": "DocuMerge",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016790",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016791",
+    "value": "Open Text Exstream",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016792",
+    "value": "Oracle Documaker",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016793",
+    "value": "Quadient Inspire",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016794",
+    "value": "Smart Communications",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016795",
+    "value": "Stream Weaver",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016796",
+    "value": "Tools, Solutions and Accelerators",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016797",
+    "value": "xPression",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533748016785"
+    ]
+  },
+  {
+    "identifier": "1533748016786",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533748016784"
+    ]
+  },
+  {
+    "identifier": "1525757739734",
+    "value": "Insurance",
+    "type": "Track",
+    "children": [
+      "1525757739735",
+      "1525757739736"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739735",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739734"
+    ]
+  },
+  {
+    "identifier": "1525757739736",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739734"
+    ]
+  },
+  {
+    "identifier": "1525757739737",
+    "value": "Life Sciences",
+    "type": "Track",
+    "children": [
+      "1525757739738",
+      "1525757739739"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739738",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739737"
+    ]
+  },
+  {
+    "identifier": "1525757739739",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739737"
+    ]
+  },
+  {
+    "identifier": "1525757739844",
+    "value": "Logistics and Transportation",
+    "type": "Track",
+    "children": [
+      "1525757739847",
+      "1525757739848",
+      "1525757739850",
+      "1525757739851",
+      "1525757739852",
+      "1525757739853",
+      "1525757739854",
+      "1525757739855",
+      "1525757739856",
+      "1525757739858",
+      "1525757739857",
+      "1525757739845",
+      "1525757739859",
+      "1525757739860",
+      "1525757739861",
+      "1525757739862",
+      "1525757739863",
+      "1525757739864",
+      "1525757739846",
+      "1525757739865",
+      "1525757739866",
+      "1525757739867",
+      "1525757739868"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739847",
+    "value": "Allocation management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739848",
+    "value": "Asset Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739850",
+    "value": "Bulk carriers",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739851",
+    "value": "Cargo Order Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739852",
+    "value": "Consolidation and Brokerage",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739853",
+    "value": "Demand Planning and Optimization",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739854",
+    "value": "Empty Repositioning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739855",
+    "value": "Equipment tracking and Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739856",
+    "value": "Fleet Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739858",
+    "value": "Food Services Distribution",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739857",
+    "value": "Freight & Logistics Services",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739845",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739859",
+    "value": "Land transportation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739860",
+    "value": "Last Mile",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739861",
+    "value": "Network Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739862",
+    "value": "Pricing and Finance",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739863",
+    "value": "Regulatory Compliance",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739864",
+    "value": "Route and Cost Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739846",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739865",
+    "value": "Terminals",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739866",
+    "value": "Transportation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739867",
+    "value": "Vendor Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739868",
+    "value": "Warehouse management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739844"
+    ]
+  },
+  {
+    "identifier": "1525757739731",
+    "value": "Manufacturing",
+    "type": "Track",
+    "children": [
+      "1533749272227",
+      "1533749452457",
+      "1533749624095",
+      "1533749766213",
+      "1533749879007",
+      "1533750093870",
+      "1533750184037",
+      "1533750289155",
+      "1533750395335",
+      "1525757739732",
+      "1533751551359",
+      "1533750488959",
+      "1533751664383",
+      "1533751772056",
+      "1533751915699",
+      "1533752088695",
+      "1534614363490",
+      "1533752104383",
+      "1533752266867",
+      "1533752435983",
+      "1533752495932",
+      "1525757739733",
+      "1533752568485",
+      "1533752745755"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533749272227",
+    "value": "Agriculture",
+    "type": "SubTrack",
+    "children": [
+      "1533749272228",
+      "1533749272229",
+      "1533749272230",
+      "1533749272231",
+      "1533749272232",
+      "1533749272233"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533749272228",
+    "value": "Commodity Trading",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749272229",
+    "value": "Crop Growth Stage Modelling",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749272230",
+    "value": "Fruits and vegetables",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749272231",
+    "value": "Precision Farming",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749272232",
+    "value": "Stores Establishment & Operations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749272233",
+    "value": "Sustainability Assessment",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749272227"
+    ]
+  },
+  {
+    "identifier": "1533749452457",
+    "value": "Asset Management",
+    "type": "SubTrack",
+    "children": [
+      "1533749452458",
+      "1533749452459",
+      "1533749452460",
+      "1533749452461",
+      "1533749452462",
+      "1533749452463"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533749452458",
+    "value": "Analytics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749452459",
+    "value": "Plant Maintenance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749452460",
+    "value": "Plant Operations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749452461",
+    "value": "Preventive Maintenance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749452462",
+    "value": "Service Processing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749452463",
+    "value": "Total Productive Maintenance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749452457"
+    ]
+  },
+  {
+    "identifier": "1533749624095",
+    "value": "Automotive",
+    "type": "SubTrack",
+    "children": [
+      "1533749624096",
+      "1533749624097",
+      "1533749624098",
+      "1533749624099",
+      "1533749624100",
+      "1533749624101",
+      "1533749624102",
+      "1533749624103",
+      "1533749624104",
+      "1533749624105"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533749624096",
+    "value": "Aftersales",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624097",
+    "value": "Auto Finance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624098",
+    "value": "Connected Services/Telematics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624099",
+    "value": "Dealer Management Systems",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624100",
+    "value": "E-Commerce",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624101",
+    "value": "Electric Vehicles",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624102",
+    "value": "Export and Import",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624103",
+    "value": "Product Engineering",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624104",
+    "value": "Research and Development",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749624105",
+    "value": "Retail",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749624095"
+    ]
+  },
+  {
+    "identifier": "1533749766213",
+    "value": "Capacity Evaluation and Leveling",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533749879007",
+    "value": "Chemical",
+    "type": "SubTrack",
+    "children": [
+      "1533749879008",
+      "1533749879009",
+      "1533749879010",
+      "1533749879011",
+      "1533749879012",
+      "1533749879013",
+      "1533749879014",
+      "1533749879015",
+      "1533749879016",
+      "1533749879017",
+      "1533749879018",
+      "1533749879019"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533749879008",
+    "value": "Capital Projects",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879009",
+    "value": "Exploration",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879010",
+    "value": "Health, Safety and Environment (HSE)",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879011",
+    "value": "Marketing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879012",
+    "value": "Plant Maintenance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879013",
+    "value": "Plant Operations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879014",
+    "value": "Procurement- Feedstock Sourcing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879015",
+    "value": "Research and Development",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879016",
+    "value": "Sales",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879017",
+    "value": "Service",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879018",
+    "value": "Supply Chain & Logistics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533749879019",
+    "value": "Sustainability",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533749879007"
+    ]
+  },
+  {
+    "identifier": "1533750093870",
+    "value": "Digital Factory",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533750184037",
+    "value": "Discrete",
+    "type": "SubTrack",
+    "children": [
+      "1533750184038",
+      "1533750184039",
+      "1533750184040",
+      "1533750184041",
+      "1533750184042",
+      "1533750184043"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533750184038",
+    "value": "Agri Equipment OEM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750184039",
+    "value": "Construction Equipment OEM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750184040",
+    "value": "Engines & Turbo Machinery",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750184041",
+    "value": "Medical Equipment OEM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750184042",
+    "value": "Transportation OEM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750184043",
+    "value": "Utility Equipment OEM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750184037"
+    ]
+  },
+  {
+    "identifier": "1533750289155",
+    "value": "EHS",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533750395335",
+    "value": "Hi-tech and MS",
+    "type": "SubTrack",
+    "children": [
+      "1533750395336",
+      "1533750395337",
+      "1533750395338",
+      "1533750395339",
+      "1533750395340",
+      "1533750395341",
+      "1533750395342"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533750395336",
+    "value": "Contract Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395337",
+    "value": "Dealer Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395338",
+    "value": "Financing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395339",
+    "value": "Human Resources",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395340",
+    "value": "Lending",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395341",
+    "value": "Revenue Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1533750395342",
+    "value": "Services, Sales and Marketing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533750395335"
+    ]
+  },
+  {
+    "identifier": "1525757739732",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751551359",
+    "value": "Logistics Execution",
+    "type": "SubTrack",
+    "children": [
+      "1533751551360",
+      "1533751551361",
+      "1533751551362",
+      "1533751551363",
+      "1533751551364",
+      "1533751551365"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751551360",
+    "value": "Delivery Processing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533751551361",
+    "value": "Goods Issue Process",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533751551362",
+    "value": "Goods Receipt Process",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533751551363",
+    "value": "Handling Unit Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533751551364",
+    "value": "Master Data Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533751551365",
+    "value": "Task and Resource Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751551359"
+    ]
+  },
+  {
+    "identifier": "1533750488959",
+    "value": "Manufacturing Execution Processes",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751664383",
+    "value": "Material Replenishment",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751772056",
+    "value": "Mining",
+    "type": "SubTrack",
+    "children": [
+      "1533751772057",
+      "1533751772058",
+      "1533751772059",
+      "1533751772060",
+      "1533751772061",
+      "1533751772062"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751772057",
+    "value": "Exploration",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751772058",
+    "value": "HSEC",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751772059",
+    "value": "Logistics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751772060",
+    "value": "Mine Operations  ",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751772061",
+    "value": "Mine Planning & Development",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751772062",
+    "value": "Processing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751772056"
+    ]
+  },
+  {
+    "identifier": "1533751915699",
+    "value": "Procurement",
+    "type": "SubTrack",
+    "children": [
+      "1533751915700",
+      "1533751915701",
+      "1533751915702",
+      "1533751915703",
+      "1533751915704",
+      "1533751915705"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533751915700",
+    "value": "Business Process",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533751915701",
+    "value": "Inventory Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533751915702",
+    "value": "Materials Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533751915703",
+    "value": "Physical Inventory",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533751915704",
+    "value": "Planning and Forecasting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533751915705",
+    "value": "Purchasing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533751915699"
+    ]
+  },
+  {
+    "identifier": "1533752088695",
+    "value": "Production Orders",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1534614363490",
+    "value": "Production Orders",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752104383",
+    "value": "Production Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752266867",
+    "value": "Quality Management",
+    "type": "SubTrack",
+    "children": [
+      "1533752266868",
+      "1533752266869",
+      "1533752266870",
+      "1533752266871",
+      "1533752266872",
+      "1533752266873",
+      "1533752266874",
+      "1533752266875",
+      "1533752266876",
+      "1533752266877"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752266868",
+    "value": "Automated Product Clearances",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266869",
+    "value": "Digitized Product Inspection",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266870",
+    "value": "Kaizen",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266871",
+    "value": "Measurement System Analysis (MSA)",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266872",
+    "value": "Product Quality Control",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266873",
+    "value": "Product Traceability",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266874",
+    "value": "Quarantine Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266875",
+    "value": "Six Sigma",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266876",
+    "value": "Statistical Process Control",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752266877",
+    "value": "Total Quality Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752266867"
+    ]
+  },
+  {
+    "identifier": "1533752435983",
+    "value": "Receivables Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752495932",
+    "value": "Repetitive Manufacturing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1525757739733",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752568485",
+    "value": "Transportation Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752745755",
+    "value": "Warehouse Management",
+    "type": "SubTrack",
+    "children": [
+      "1533752745756",
+      "1533752745757",
+      "1533752745758"
+    ],
+    "parent": [
+      "1525757739731"
+    ]
+  },
+  {
+    "identifier": "1533752745756",
+    "value": "Labor Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752745755"
+    ]
+  },
+  {
+    "identifier": "1533752745757",
+    "value": "Production Integration",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752745755"
+    ]
+  },
+  {
+    "identifier": "1533752745758",
+    "value": "Quality Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533752745755"
+    ]
+  },
+  {
+    "identifier": "1533753226675",
+    "value": "Program Management",
+    "type": "Track",
+    "children": [
+      "1533753226676",
+      "1533753226677",
+      "1533753226678",
+      "1533753226679"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533753226676",
+    "value": "Budget Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753226675"
+    ]
+  },
+  {
+    "identifier": "1533753226677",
+    "value": "Delivery Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753226675"
+    ]
+  },
+  {
+    "identifier": "1533753226678",
+    "value": "Requirements Planning and Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753226675"
+    ]
+  },
+  {
+    "identifier": "1533753226679",
+    "value": "Risk Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753226675"
+    ]
+  },
+  {
+    "identifier": "1533753411255",
+    "value": "Real Estate",
+    "type": "Track",
+    "children": [
+      "1533753411256",
+      "1533753411257",
+      "1533753411258",
+      "1533753411259",
+      "1533753411260",
+      "1533753411261",
+      "1533753411262",
+      "1533753411263",
+      "1533753411264",
+      "1533753411265"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533753411256",
+    "value": "Acquisition",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411257",
+    "value": "Disposal",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411258",
+    "value": "Document Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411259",
+    "value": "Facility Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411260",
+    "value": "Land Use Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411261",
+    "value": "Lease Administration",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411262",
+    "value": "Move Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411263",
+    "value": "Project Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411264",
+    "value": "Reporting",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1533753411265",
+    "value": "Space Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533753411255"
+    ]
+  },
+  {
+    "identifier": "1525757739792",
+    "value": "Retail",
+    "type": "Track",
+    "children": [
+      "1525757739796",
+      "1525757739797",
+      "1525757739798",
+      "1534614712606",
+      "1525757739801",
+      "1525757739802",
+      "1525757739803",
+      "1525757739793",
+      "1525757739804",
+      "1525757739805",
+      "1525757739806",
+      "1525757739807",
+      "1525757739808",
+      "1525757739810",
+      "1525757739809",
+      "1525757739811",
+      "1525757739812",
+      "1525757739795",
+      "1525757739814",
+      "1525757739815",
+      "1525757739816",
+      "1525757739817",
+      "1525757739813",
+      "1525757739794",
+      "1525757739818",
+      "1525757739819",
+      "1525757739820"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739796",
+    "value": "Allocations",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739797",
+    "value": "Analytical CRM",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739798",
+    "value": "Asset management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1534614712606",
+    "value": "Category Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739801",
+    "value": "Channel Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739802",
+    "value": "Demand Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739803",
+    "value": "Human Capital Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739793",
+    "value": "Industry Functions",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739804",
+    "value": "Invoice matching",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739805",
+    "value": "Item Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739806",
+    "value": "Loss Prevention",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739807",
+    "value": "Market Research",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739808",
+    "value": "Master Data Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739810",
+    "value": "Merchandise Lifecycle Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739809",
+    "value": "Merchandising System",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739811",
+    "value": "Point of Sale Systems",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739812",
+    "value": "Price Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739795",
+    "value": "Replenishment",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739814",
+    "value": "Returns Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739815",
+    "value": "Sales Audit",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739816",
+    "value": "Shopper Experience Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739817",
+    "value": "Space Optimization",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739813",
+    "value": "Supply Chain & Distribution",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739794",
+    "value": "Technology Adoption",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739818",
+    "value": "Trade Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739819",
+    "value": "Vendor Managed Inventory",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739820",
+    "value": "Warehouse Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1525757739792"
+    ]
+  },
+  {
+    "identifier": "1525757739775",
+    "value": "Services",
+    "type": "Track",
+    "children": [
+      "1525757739784",
+      "1525757739776"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1525757739784",
+    "value": "Education and Training",
+    "type": "SubTrack",
+    "children": [
+      "1525757739789",
+      "1525757739788",
+      "1525757739785",
+      "1525757739790",
+      "1525757739787",
+      "1525757739791"
+    ],
+    "parent": [
+      "1525757739775"
+    ]
+  },
+  {
+    "identifier": "1525757739789",
+    "value": "Corporate Training",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739788",
+    "value": "Higher Education",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739785",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739790",
+    "value": "Industry Packages and Technologies",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739787",
+    "value": "K-12 Education",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739791",
+    "value": "Technology Adoption",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739784"
+    ]
+  },
+  {
+    "identifier": "1525757739776",
+    "value": "Travel and Hospitality",
+    "type": "SubTrack",
+    "children": [
+      "1525757739781",
+      "1525757739778",
+      "1525757739777",
+      "1525757739782",
+      "1525757739780",
+      "1525757739779",
+      "1525757739783"
+    ],
+    "parent": [
+      "1525757739775"
+    ]
+  },
+  {
+    "identifier": "1525757739781",
+    "value": "Corporate Management Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739778",
+    "value": "Guest Experience",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739777",
+    "value": "Industry Functions",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739782",
+    "value": "Industry Tools and Packages",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739780",
+    "value": "Marketing and Commercial",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739779",
+    "value": "Operations",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1525757739783",
+    "value": "Technology Adoption",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1525757739776"
+    ]
+  },
+  {
+    "identifier": "1533754149030",
+    "value": "Supply Chain Management",
+    "type": "Track",
+    "children": [
+      "1533754149031",
+      "1533754149032",
+      "1533754149033",
+      "1533754149034",
+      "1533754149035",
+      "1533754149036",
+      "1533754149037",
+      "1533754149038",
+      "1533754149039",
+      "1533754149040",
+      "1533754149041"
+    ],
+    "parent": [
+      "1525757739680"
+    ]
+  },
+  {
+    "identifier": "1533754149031",
+    "value": "Customer Relationship Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149032",
+    "value": "Customer Service Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149033",
+    "value": "Demand Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149034",
+    "value": "Manufacturing Flow Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149035",
+    "value": "Product Commercialization",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149036",
+    "value": "Product Development",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149037",
+    "value": "Returns Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149038",
+    "value": "Supplier Relationship Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149039",
+    "value": "Supplier Risk Management",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149040",
+    "value": "Supply Chain Integration",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533754149041",
+    "value": "Supply Network Planning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533754149030"
+    ]
+  },
+  {
+    "identifier": "1533714235057",
+    "value": "Infosys Internal",
+    "type": "Category",
+    "children": [
+      "1533723985143",
+      "1533714227730",
+      "1533724033404",
+      "1533724055772",
+      "1533724067357",
+      "1533724074195"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1533723985143",
+    "value": "Human Resource Development",
+    "type": "Track",
+    "children": [
+      "1533724211508"
+    ],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533724211508",
+    "value": "Compass",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533723985143"
+    ]
+  },
+  {
+    "identifier": "1533714227730",
+    "value": "Information Systems",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533724033404",
+    "value": "Knowledge Management",
+    "type": "Track",
+    "children": [
+      "1533724243995",
+      "1533724776219"
+    ],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533724243995",
+    "value": "Knowledge Hub",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724033404"
+    ]
+  },
+  {
+    "identifier": "1533724776219",
+    "value": "KShop",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724033404"
+    ]
+  },
+  {
+    "identifier": "1533724055772",
+    "value": "Legal and Compliance",
+    "type": "Track",
+    "children": [
+      "1533724835682",
+      "1533724985672"
+    ],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533724835682",
+    "value": "Integrity",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724055772"
+    ]
+  },
+  {
+    "identifier": "1533724985672",
+    "value": "Intellectual Property",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724055772"
+    ]
+  },
+  {
+    "identifier": "1533724067357",
+    "value": "Quality",
+    "type": "Track",
+    "children": [
+      "1533725064499",
+      "1533725181132",
+      "1533725236265",
+      "1533725288551"
+    ],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533725064499",
+    "value": "Automation Central",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724067357"
+    ]
+  },
+  {
+    "identifier": "1533725181132",
+    "value": "Hive",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724067357"
+    ]
+  },
+  {
+    "identifier": "1533725236265",
+    "value": "PRIDE",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724067357"
+    ]
+  },
+  {
+    "identifier": "1533725288551",
+    "value": "PROMT",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724067357"
+    ]
+  },
+  {
+    "identifier": "1533724074195",
+    "value": "Training",
+    "type": "Track",
+    "children": [
+      "1533725492932",
+      "1533725512003",
+      "1533725524583",
+      "1533725537063"
+    ],
+    "parent": [
+      "1533714235057"
+    ]
+  },
+  {
+    "identifier": "1533725492932",
+    "value": "Harvard Manage Mentor",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724074195"
+    ]
+  },
+  {
+    "identifier": "1533725512003",
+    "value": "Learning Hub",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724074195"
+    ]
+  },
+  {
+    "identifier": "1533725524583",
+    "value": "",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724074195"
+    ]
+  },
+  {
+    "identifier": "1533725537063",
+    "value": "Manager Quotient",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1533724074195"
+    ]
+  },
+  {
+    "identifier": "1526555187349",
+    "value": "Marketing",
+    "type": "Category",
+    "children": [
+      "1526555412268",
+      "1526565422041",
+      "1534646923196",
+      "1526565810491",
+      "1534646806822",
+      "1534646523332",
+      "1526563850045",
+      "1534646699853",
+      "1526555494391",
+      "1534926209640"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1526555412268",
+    "value": "Brand",
+    "type": "Track",
+    "children": [
+      "1526557378683",
+      "1526557436958"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1526557378683",
+    "value": "Corporate",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555412268"
+    ]
+  },
+  {
+    "identifier": "1526557436958",
+    "value": "Employer",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555412268"
+    ]
+  },
+  {
+    "identifier": "1526565422041",
+    "value": "Client Stories",
+    "type": "Track",
+    "children": [
+      "1526565560940",
+      "1526565517538",
+      "1526565685160"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1526565560940",
+    "value": "Agile Digital at Scale",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565422041"
+    ]
+  },
+  {
+    "identifier": "1526565517538",
+    "value": "AI-powered Core",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565422041"
+    ]
+  },
+  {
+    "identifier": "1526565685160",
+    "value": "Always-on Learning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565422041"
+    ]
+  },
+  {
+    "identifier": "1534646923196",
+    "value": "Credentials",
+    "type": "Track",
+    "children": [
+      "1534646923197"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1534646923197",
+    "value": "Client Stories",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646923196"
+    ]
+  },
+  {
+    "identifier": "1526565810491",
+    "value": "Industries",
+    "type": "Track",
+    "children": [
+      "1526567229801",
+      "1526566712586",
+      "1526565954545",
+      "1526567085321",
+      "1526567871170",
+      "1526566400903",
+      "1526567430906",
+      "1526567784710",
+      "1526566854504",
+      "1526567312575",
+      "1526567503115",
+      "1526566573910",
+      "1526567716554"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1526567229801",
+    "value": "Communications, Media & Entertainment",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526566712586",
+    "value": "Consumer Packaged Goods",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526565954545",
+    "value": "Financial Services",
+    "type": "SubTrack",
+    "children": [
+      "1526566249067",
+      "1526566293604",
+      "1526566130345",
+      "1526566060286",
+      "1526660821787",
+      "1526566340127"
+    ],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526566249067",
+    "value": "Capital Markets",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526566293604",
+    "value": "Cards & Payments",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526566130345",
+    "value": "Commercial Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526566060286",
+    "value": "Consumer Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526660821787",
+    "value": "Navigate Your Next - Assets",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526566340127",
+    "value": "Risk & Compliance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565954545"
+    ]
+  },
+  {
+    "identifier": "1526567085321",
+    "value": "Hi-Tech",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567871170",
+    "value": "Information Services & Publishing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526566400903",
+    "value": "Insurance",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567430906",
+    "value": "Life Sciences & Healthcare",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567784710",
+    "value": "Logistics",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526566854504",
+    "value": "Manufacturing",
+    "type": "SubTrack",
+    "children": [
+      "1526566985301",
+      "1526566914898",
+      "1526567032527"
+    ],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526566985301",
+    "value": "Aerospace & Defense",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566854504"
+    ]
+  },
+  {
+    "identifier": "1526566914898",
+    "value": "Automotive",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566854504"
+    ]
+  },
+  {
+    "identifier": "1526567032527",
+    "value": "Industrial Manufacturing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566854504"
+    ]
+  },
+  {
+    "identifier": "1526567312575",
+    "value": "Oil & Gas",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567503115",
+    "value": "Resources",
+    "type": "SubTrack",
+    "children": [
+      "1526567599247",
+      "1526567644219",
+      "1526567548898"
+    ],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567599247",
+    "value": "Agribusiness",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567503115"
+    ]
+  },
+  {
+    "identifier": "1526567644219",
+    "value": "Chemicals",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567503115"
+    ]
+  },
+  {
+    "identifier": "1526567548898",
+    "value": "Metals & Mining",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567503115"
+    ]
+  },
+  {
+    "identifier": "1526566573910",
+    "value": "Retail",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1526567716554",
+    "value": "Utilities",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526565810491"
+    ]
+  },
+  {
+    "identifier": "1534646806822",
+    "value": "Point of View",
+    "type": "Track",
+    "children": [
+      "1534646806823",
+      "1534646806824"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1534646806823",
+    "value": "Industry",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646806822"
+    ]
+  },
+  {
+    "identifier": "1534646806824",
+    "value": "Technical",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646806822"
+    ]
+  },
+  {
+    "identifier": "1534646523332",
+    "value": "Primer",
+    "type": "Track",
+    "children": [
+      "1534646523333",
+      "1534646523334",
+      "1534646523335",
+      "1534646523336",
+      "1534646523337"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1534646523333",
+    "value": "Client/Industry",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646523332"
+    ]
+  },
+  {
+    "identifier": "1534646523334",
+    "value": "Competitors",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646523332"
+    ]
+  },
+  {
+    "identifier": "1534646523335",
+    "value": "Infosys Products and Platforms",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646523332"
+    ]
+  },
+  {
+    "identifier": "1534646523336",
+    "value": "Infosys Service Lines",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646523332"
+    ]
+  },
+  {
+    "identifier": "1534646523337",
+    "value": "Technology Overview",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646523332"
+    ]
+  },
+  {
+    "identifier": "1526563850045",
+    "value": "Products & Subsidiaries",
+    "type": "Track",
+    "children": [
+      "1526564546467",
+      "1526565205692",
+      "1526565100221",
+      "1526565522778",
+      "1526569029743"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1526564546467",
+    "value": "",
+    "type": "SubTrack",
+    "children": [
+      "1526566048479",
+      "1526566171978",
+      "1526566247608",
+      "1526566314695",
+      "1526566379299",
+      "1526564929689",
+      "1526566728214",
+      "1526564960994",
+      "1526566791076",
+      "1526566874980",
+      "1526564994310",
+      "1526564856592",
+      "1526566963940"
+    ],
+    "parent": [
+      "1526563850045"
+    ]
+  },
+  {
+    "identifier": "1526566048479",
+    "value": " Integrated Device Monitoring",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566171978",
+    "value": " Real-time Expertise Manager",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566247608",
+    "value": " Robotic Process Automation",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566314695",
+    "value": " Smart User Environment",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566379299",
+    "value": "Infosys Nia Platform",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526564929689",
+    "value": "Nia Contracts Analysis",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566728214",
+    "value": "Nia Guided Buying",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526564960994",
+    "value": "Nia Perfect Order Measurement",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566791076",
+    "value": "Nia Procurement Assistant",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566874980",
+    "value": "Nia Procurement Insights",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526564994310",
+    "value": "Nia Promotion Effectiveness",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526564856592",
+    "value": "Nia Provenance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526566963940",
+    "value": "Nia Tail Spend Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564546467"
+    ]
+  },
+  {
+    "identifier": "1526565205692",
+    "value": "Finacle Offerings",
+    "type": "SubTrack",
+    "children": [
+      "1526568243003",
+      "1526567830521",
+      "1526567870973",
+      "1526567400633",
+      "1526567096102",
+      "1526567968316",
+      "1526567919585",
+      "1526568065769",
+      "1526568006272",
+      "1526568151626",
+      "1526567573862",
+      "1526576120711",
+      "1526568288566",
+      "1526567167346",
+      "1526567214766",
+      "1526567528722",
+      "1526567441672",
+      "1526567757858",
+      "1526567320715",
+      "1526567363832",
+      "1526567663717",
+      "1526568196176"
+    ],
+    "parent": [
+      "1526563850045"
+    ]
+  },
+  {
+    "identifier": "1526568243003",
+    "value": "Finacle Alerts",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567830521",
+    "value": "Finacle Analytics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567870973",
+    "value": "Finacle Assure",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567400633",
+    "value": "Finacle Blockchain Offerings",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567096102",
+    "value": "Finacle Core Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567968316",
+    "value": "Finacle CRM Solution",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567919585",
+    "value": "Finacle Customer Assist",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526568065769",
+    "value": "Finacle Digital Wallet",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526568006272",
+    "value": "Finacle Direct Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526568151626",
+    "value": "Finacle Islamic Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567573862",
+    "value": "Finacle Liquidity Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526576120711",
+    "value": "Finacle Mobile Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526568288566",
+    "value": "Finacle Mobile Teller",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567167346",
+    "value": "Finacle Omnichannel Hub",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567214766",
+    "value": "Finacle Online Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567528722",
+    "value": "Finacle Origination",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567441672",
+    "value": "Finacle Payments",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567757858",
+    "value": "Finacle SME Enable",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567320715",
+    "value": "Finacle Treasury",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567363832",
+    "value": "Finacle Wealth Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526567663717",
+    "value": "Finacle Youth Banking",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526568196176",
+    "value": "Finanz Tools",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565205692"
+    ]
+  },
+  {
+    "identifier": "1526565100221",
+    "value": "Finacle Overview",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526563850045"
+    ]
+  },
+  {
+    "identifier": "1526565522778",
+    "value": "Infosys BPM",
+    "type": "SubTrack",
+    "children": [
+      "1526568596274",
+      "1526568644272",
+      "1526568694431",
+      "1526568728045",
+      "1526568770536",
+      "1526568805977",
+      "1533755505595",
+      "1533755517552",
+      "1526568852069",
+      "1526568883599",
+      "1526568923489",
+      "1526568959416"
+    ],
+    "parent": [
+      "1526563850045"
+    ]
+  },
+  {
+    "identifier": "1526568596274",
+    "value": "BPM Analytics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568644272",
+    "value": "Business Transformation Services",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568694431",
+    "value": "Customer Service",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568728045",
+    "value": "Digital Business Service",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568770536",
+    "value": "Finance & Accounting",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568805977",
+    "value": "Human Resources Outsourcing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1533755505595",
+    "value": "Infosys McCamish",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1533755517552",
+    "value": "Infosys Portland",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568852069",
+    "value": "Legal Process Outsourcing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568883599",
+    "value": "Robotic Process Automation",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568923489",
+    "value": "Sales & Fulfilment",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526568959416",
+    "value": "Sourcing & Procurement",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565522778"
+    ]
+  },
+  {
+    "identifier": "1526569029743",
+    "value": "Infosys Consulting",
+    "type": "SubTrack",
+    "children": [
+      "1526569232076",
+      "1526576290699",
+      "1526569087534",
+      "1526569130906",
+      "1526569433696",
+      "1526569468156",
+      "1526569505469",
+      "1526569166882",
+      "1526569199561",
+      "1526569544849",
+      "1526569584225"
+    ],
+    "parent": [
+      "1526563850045"
+    ]
+  },
+  {
+    "identifier": "1526569232076",
+    "value": "Cloud Computing - Strategy & Execution",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526576290699",
+    "value": "Connnecting with the Consumer - Enterprise Insights Program",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569087534",
+    "value": "Digital Sales Experience",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569130906",
+    "value": "Digital Transformation Strategy & Maturity Modeling",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569433696",
+    "value": "HR Transformation - SAP Success Factors",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569468156",
+    "value": "Integrated Business Planning",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569505469",
+    "value": "Multi-Speed IT Delivery",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569166882",
+    "value": "Organizational Change Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569199561",
+    "value": "S/4 HANA Migration Assessment",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569544849",
+    "value": "Supply Chain - Contract Manufacturing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1526569584225",
+    "value": "Supply Chain - On-Time Delivery & Product Optimization",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526569029743"
+    ]
+  },
+  {
+    "identifier": "1534646699853",
+    "value": "Sales Play",
+    "type": "Track",
+    "children": [
+      "1534646699854",
+      "1534646699855"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1534646699854",
+    "value": "Elevator Pitch",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646699853"
+    ]
+  },
+  {
+    "identifier": "1534646699855",
+    "value": "Infosys Differentiators",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534646699853"
+    ]
+  },
+  {
+    "identifier": "1526555494391",
+    "value": "Services",
+    "type": "Track",
+    "children": [
+      "1526557857028",
+      "1526561247313",
+      "1526561563059",
+      "1526564390777",
+      "1533756034014",
+      "1526564910839",
+      "1526565091041",
+      "1526565370861",
+      "1526565517035",
+      "1526563719982",
+      "1526565933820",
+      "1526556657383",
+      "1526566222711",
+      "1526566494105",
+      "1526566728157",
+      "1526567060497",
+      "1526566904299",
+      "1526567366370"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1526557857028",
+    "value": "ADM",
+    "type": "SubTrack",
+    "children": [
+      "1526563476051",
+      "1526563349736",
+      "1526563561326"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526563476051",
+    "value": "Agile & DevOps",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526557857028"
+    ]
+  },
+  {
+    "identifier": "1526563349736",
+    "value": "Mainframe Modernization",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526557857028"
+    ]
+  },
+  {
+    "identifier": "1526563561326",
+    "value": "Open Source Development",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526557857028"
+    ]
+  },
+  {
+    "identifier": "1526561247313",
+    "value": "AI & Automation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526561563059",
+    "value": "Analytics",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526564390777",
+    "value": "API & DPA",
+    "type": "SubTrack",
+    "children": [
+      "1526564680249",
+      "1526564794211"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526564680249",
+    "value": "API Economy",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564390777"
+    ]
+  },
+  {
+    "identifier": "1526564794211",
+    "value": "Digital Process Automation",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526564390777"
+    ]
+  },
+  {
+    "identifier": "1533756034014",
+    "value": "Automation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526564910839",
+    "value": "Blockchain",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526565091041",
+    "value": "Cloud & Infra",
+    "type": "SubTrack",
+    "children": [
+      "1526565167102",
+      "1526565258196"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526565167102",
+    "value": "Enterprise Cloud Ecosystem",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565091041"
+    ]
+  },
+  {
+    "identifier": "1526565258196",
+    "value": "Service Now / ESM Cafe",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565091041"
+    ]
+  },
+  {
+    "identifier": "1526565370861",
+    "value": "Cyber Security",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526565517035",
+    "value": "Digital Experience",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526563719982",
+    "value": "Digital Services",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526565933820",
+    "value": "Engineering",
+    "type": "SubTrack",
+    "children": [
+      "1526565999457",
+      "1526566104278"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526565999457",
+    "value": "Engineering Services",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565933820"
+    ]
+  },
+  {
+    "identifier": "1526566104278",
+    "value": "Internet of Things(IoT)",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526565933820"
+    ]
+  },
+  {
+    "identifier": "1526556657383",
+    "value": "Narrative",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526566222711",
+    "value": "Specialized Validation Services",
+    "type": "SubTrack",
+    "children": [
+      "1526566301698",
+      "1526566390114"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526566301698",
+    "value": "Big Data Testing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566222711"
+    ]
+  },
+  {
+    "identifier": "1526566390114",
+    "value": "Mobile Testing",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566222711"
+    ]
+  },
+  {
+    "identifier": "1526566494105",
+    "value": "Strategic Cloud Apps - MS Dynamics",
+    "type": "SubTrack",
+    "children": [
+      "1526566609873"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526566609873",
+    "value": "MS Dynamics",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566494105"
+    ]
+  },
+  {
+    "identifier": "1526566728157",
+    "value": "Strategic Cloud Apps - Oracle",
+    "type": "SubTrack",
+    "children": [
+      "1526566815776"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526566815776",
+    "value": "Oracle Cloud",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566728157"
+    ]
+  },
+  {
+    "identifier": "1526567060497",
+    "value": "Strategic Cloud Apps - SAP",
+    "type": "SubTrack",
+    "children": [
+      "1526567128442",
+      "1526567222757",
+      "1526567284052"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526567128442",
+    "value": "SAP Fiori",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567060497"
+    ]
+  },
+  {
+    "identifier": "1526567222757",
+    "value": "SAP S/4 HANA",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567060497"
+    ]
+  },
+  {
+    "identifier": "1526567284052",
+    "value": "SAP Success Factors",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526567060497"
+    ]
+  },
+  {
+    "identifier": "1526566904299",
+    "value": "Strategic Cloud Apps - SFDC",
+    "type": "SubTrack",
+    "children": [
+      "1526566977089"
+    ],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1526566977089",
+    "value": "Salesforce.com",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1526566904299"
+    ]
+  },
+  {
+    "identifier": "1526567366370",
+    "value": "Workplace Transformation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1526555494391"
+    ]
+  },
+  {
+    "identifier": "1534926209640",
+    "value": "ZD",
+    "type": "Track",
+    "children": [
+      "1534931002428",
+      "1534931004200",
+      "1534926466470",
+      "1534930999115",
+      "1534926495219"
+    ],
+    "parent": [
+      "1526555187349"
+    ]
+  },
+  {
+    "identifier": "1534931002428",
+    "value": "Accelerate",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534926209640"
+    ]
+  },
+  {
+    "identifier": "1534931004200",
+    "value": "Assure",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534926209640"
+    ]
+  },
+  {
+    "identifier": "1534926466470",
+    "value": "Experience",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534926209640"
+    ]
+  },
+  {
+    "identifier": "1534930999115",
+    "value": "Innovate",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534926209640"
+    ]
+  },
+  {
+    "identifier": "1534926495219",
+    "value": "Insight",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534926209640"
+    ]
+  },
+  {
+    "identifier": "1533756360914",
+    "value": "New IT Foundations",
+    "type": "Category",
+    "children": [
+      "1533756360915",
+      "1533756360916",
+      "1533756360917",
+      "1533756360918",
+      "1533756360919",
+      "1533756360920",
+      "1533756360921",
+      "1533756360922",
+      "1533756360923"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1533756360915",
+    "value": "Agile and DevOps Practices",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360916",
+    "value": "Big Data and Analytics",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360917",
+    "value": "Blockchain Basics",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360918",
+    "value": "Cybersecurity Fundamentals",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360919",
+    "value": "Digital Landscape",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360920",
+    "value": "Enterprise IT Ecosystem",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360921",
+    "value": "Essentials of Cloud",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360922",
+    "value": "Foundations of AI",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1533756360923",
+    "value": "Introduction to IoT",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533756360914"
+    ]
+  },
+  {
+    "identifier": "1526564900276",
+    "value": "Pentagon",
+    "type": "Category",
+    "children": [
+      "1526565175199",
+      "1526565010795",
+      "1526565340251",
+      "1526565245878",
+      "1526565297205"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1526565175199",
+    "value": "Accelerate",
+    "type": "Track",
+    "children": [
+      "1526563476051",
+      "1526564680249",
+      "1526564910839",
+      "1526564794211",
+      "1526565167102",
+      "1526563349736",
+      "1526566609873",
+      "1526563561326",
+      "1526566815776",
+      "1526566977089",
+      "1526567128442",
+      "1526567222757",
+      "1526567284052",
+      "1526565258196",
+      "1525757739842",
+      "1526567366370"
+    ],
+    "parent": [
+      "1526564900276"
+    ]
+  },
+  {
+    "identifier": "1526565010795",
+    "value": "Assure",
+    "type": "Track",
+    "children": [
+      "1526566301698",
+      "1526565370861",
+      "1526566390114"
+    ],
+    "parent": [
+      "1526564900276"
+    ]
+  },
+  {
+    "identifier": "1526565340251",
+    "value": "Experience",
+    "type": "Track",
+    "children": [
+      "1526565517035"
+    ],
+    "parent": [
+      "1526564900276"
+    ]
+  },
+  {
+    "identifier": "1526565245878",
+    "value": "Innovate",
+    "type": "Track",
+    "children": [
+      "1526565999457",
+      "1526566104278"
+    ],
+    "parent": [
+      "1526564900276"
+    ]
+  },
+  {
+    "identifier": "1526565297205",
+    "value": "Insight",
+    "type": "Track",
+    "children": [
+      "1526561247313",
+      "1526561563059"
+    ],
+    "parent": [
+      "1526564900276"
+    ]
+  },
+  {
+    "identifier": "1525338740972",
+    "value": "Process",
+    "type": "Category",
+    "children": [
+      "1525338740973"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1525338740973",
+    "value": "Project Management",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740972"
+    ]
+  },
+  {
+    "identifier": "1533790792043",
+    "value": "Products",
+    "type": "Category",
+    "children": [
+      "1533790792045",
+      "1533790792044",
+      "1533790792046"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1533790792045",
+    "value": "",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533790792043"
+    ]
+  },
+  {
+    "identifier": "1533790792044",
+    "value": "Finacle",
+    "type": "Track",
+    "children": [
+      "1533791094573",
+      "1534616016914",
+      "1533791275566",
+      "1533791452878",
+      "1533791543594",
+      "1533791659248",
+      "1533791726640"
+    ],
+    "parent": [
+      "1533790792043"
+    ]
+  },
+  {
+    "identifier": "1533791094573",
+    "value": "Core Banking",
+    "type": "SubTrack",
+    "children": [
+      "1533791094574",
+      "1533791094579",
+      "1533791094580"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791094574",
+    "value": "Loans",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791094573"
+    ]
+  },
+  {
+    "identifier": "1533791094579",
+    "value": "Technical",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791094573"
+    ]
+  },
+  {
+    "identifier": "1533791094580",
+    "value": "Trade Finance",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791094573"
+    ]
+  },
+  {
+    "identifier": "1534616016914",
+    "value": "CRM",
+    "type": "SubTrack",
+    "children": [
+      "1534615990917"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1534615990917",
+    "value": "CRM",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1534616016914"
+    ]
+  },
+  {
+    "identifier": "1533791275566",
+    "value": "Finanz Tools",
+    "type": "SubTrack",
+    "children": [
+      "1533791293604"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791293604",
+    "value": "WS Application Server",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791275566"
+    ]
+  },
+  {
+    "identifier": "1533791452878",
+    "value": "Mobile Banking",
+    "type": "SubTrack",
+    "children": [
+      "1533791452879",
+      "1533791452880"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791452879",
+    "value": "IMPS",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791452878"
+    ]
+  },
+  {
+    "identifier": "1533791452880",
+    "value": "Schema",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791452878"
+    ]
+  },
+  {
+    "identifier": "1533791543594",
+    "value": "Online Banking",
+    "type": "SubTrack",
+    "children": [
+      "1533791557071"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791557071",
+    "value": "User Management",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791543594"
+    ]
+  },
+  {
+    "identifier": "1533791659248",
+    "value": "Payments",
+    "type": "SubTrack",
+    "children": [
+      "1533791659249",
+      "1533791659250"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791659249",
+    "value": "NEFT/RTGS",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791659248"
+    ]
+  },
+  {
+    "identifier": "1533791659250",
+    "value": "SWIFT",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791659248"
+    ]
+  },
+  {
+    "identifier": "1533791726640",
+    "value": "Treasury",
+    "type": "SubTrack",
+    "children": [
+      "1533791726641",
+      "1533791726642"
+    ],
+    "parent": [
+      "1533790792044"
+    ]
+  },
+  {
+    "identifier": "1533791726641",
+    "value": "Forex",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791726640"
+    ]
+  },
+  {
+    "identifier": "1533791726642",
+    "value": "Multi Currency",
+    "type": "SubSubTrack",
+    "children": [],
+    "parent": [
+      "1533791726640"
+    ]
+  },
+  {
+    "identifier": "1533790792046",
+    "value": "Nia",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1533790792043"
+    ]
+  },
+  {
+    "identifier": "1525338740953",
+    "value": "Sales",
+    "type": "Category",
+    "children": [
+      "1525338740971"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1525338740971",
+    "value": "Sales Competencies",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740953"
+    ]
+  },
+  {
+    "identifier": "1525338740922",
+    "value": "Technology",
+    "type": "Category",
+    "children": [
+      "1525338740943",
+      "1534069826255",
+      "1534069826256",
+      "1534069826257",
+      "1525338740949",
+      "1534069826258",
+      "1534069826259",
+      "1534069826268",
+      "1525338740948",
+      "1534069826260",
+      "1525338740950",
+      "1525338740927",
+      "1525338740951",
+      "1525338740928",
+      "1534069826261",
+      "1525338740929",
+      "1534069826262",
+      "1534069826263",
+      "1525338740944",
+      "1525338740937",
+      "1525338740938",
+      "1534069826264",
+      "1534069826269",
+      "1525338740931",
+      "1534069826265",
+      "1525338740932",
+      "1525338740930",
+      "1525338740942",
+      "1525338740946",
+      "1534069826266",
+      "1525338740936",
+      "1525338740933",
+      "1534069826267",
+      "1525338740934"
+    ],
+    "parent": [
+      "1525338740921"
+    ]
+  },
+  {
+    "identifier": "1525338740943",
+    "value": "Agile Practices",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826255",
+    "value": "Analytics",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826256",
+    "value": "Apple Technologies",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826257",
+    "value": "Artificial Intelligence",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740949",
+    "value": "AS/400",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826258",
+    "value": "Automation",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826259",
+    "value": "Big Data",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826268",
+    "value": "Blockchain",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740948",
+    "value": "Business Analysis",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826260",
+    "value": "Business Intelligence",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740950",
+    "value": "Cloud Computing",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740927",
+    "value": "Cloud Infrastructure",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740951",
+    "value": "Cyber Security",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740928",
+    "value": "Data Science",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826261",
+    "value": "DevOps",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740929",
+    "value": "Digital",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826262",
+    "value": "Digital Commerce",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826263",
+    "value": "Digital Marketing",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740944",
+    "value": "Engineering Services",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740937",
+    "value": "Enterprise Applications and Integration",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740938",
+    "value": "Enterprise Cloud Applications",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826264",
+    "value": "Infrastructure Management",
+    "type": "Track",
+    "children": [
+      "1534070157097",
+      "1534070157098",
+      "1534070157099",
+      "1534070157100",
+      "1534070157101",
+      "1534070157102"
+    ],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534070157097",
+    "value": "Automation",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534070157098",
+    "value": "End User Computing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534070157099",
+    "value": "Enterprise Computing",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534070157100",
+    "value": "Infrastructure Application",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534070157101",
+    "value": "Network",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534070157102",
+    "value": "Open Source Technologies",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826264"
+    ]
+  },
+  {
+    "identifier": "1534069826269",
+    "value": "IoT",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740931",
+    "value": "Java",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826265",
+    "value": "Machine Learning",
+    "type": "Track",
+    "children": [
+      "1534070353417",
+      "1534070353418"
+    ],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534070353417",
+    "value": "Supervised Learning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826265"
+    ]
+  },
+  {
+    "identifier": "1534070353418",
+    "value": "Unsupervised Learning",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826265"
+    ]
+  },
+  {
+    "identifier": "1525338740932",
+    "value": "Mainframes",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740930",
+    "value": "Microsoft Technologies",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740942",
+    "value": "Mobile Computing",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740946",
+    "value": "Open Source",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826266",
+    "value": "Oracle Enterprise Applications",
+    "type": "Track",
+    "children": [
+      "1534070546808",
+      "1534070546809",
+      "1534070546807",
+      "1534070546810",
+      "1534070546811"
+    ],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534070546808",
+    "value": "Oracle Acquired Products",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826266"
+    ]
+  },
+  {
+    "identifier": "1534070546809",
+    "value": "Oracle Cloud Applications",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826266"
+    ]
+  },
+  {
+    "identifier": "1534070546807",
+    "value": "Oracle E-Business Suite",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826266"
+    ]
+  },
+  {
+    "identifier": "1534070546810",
+    "value": "Oracle Fusion Middleware",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826266"
+    ]
+  },
+  {
+    "identifier": "1534070546811",
+    "value": "Oracle Technologies",
+    "type": "SubTrack",
+    "children": [],
+    "parent": [
+      "1534069826266"
+    ]
+  },
+  {
+    "identifier": "1525338740936",
+    "value": "SAP",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740933",
+    "value": "UI",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1534069826267",
+    "value": "User Experience",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338740934",
+    "value": "Validation Solutions",
+    "type": "Track",
+    "children": [],
+    "parent": [
+      "1525338740922"
+    ]
+  },
+  {
+    "identifier": "1525338741148",
+    "value": "NewServicesTheme",
+    "type": "Catalog",
+    "children": [
+      "1525338741149",
+      "1525338741152",
+      "1525338741155",
+      "1525338741157",
+      "1525338741160",
+      "1525338741162",
+      "1525338741164",
+      "1525338741172",
+      "1525338741174",
+      "1525338741177"
+    ],
+    "parent": [
+      "1525338740920"
+    ]
+  },
+  {
+    "identifier": "1525338741149",
+    "value": "BPM & APIEconomy",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741150",
+      "1525338741151"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741150",
+    "value": "API Economy",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741149"
+    ]
+  },
+  {
+    "identifier": "1525338741151",
+    "value": "Business Process Management (Pega)",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741149"
+    ]
+  },
+  {
+    "identifier": "1525338741152",
+    "value": "Cloud Infra Ecosystem",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741153",
+      "1525338741154"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741153",
+    "value": "Oracle Cloud Ecosystem",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741152"
+    ]
+  },
+  {
+    "identifier": "1525338741154",
+    "value": "Public Cloud workload migration (AWS + Azure)",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741152"
+    ]
+  },
+  {
+    "identifier": "1525338741155",
+    "value": "Cyber Security",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741156"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741156",
+    "value": "Cyber Security",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741155"
+    ]
+  },
+  {
+    "identifier": "1525338741157",
+    "value": "Data Analytics",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741158",
+      "1525338741159"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741158",
+    "value": "Big Data & Analytics",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741157"
+    ]
+  },
+  {
+    "identifier": "1525338741159",
+    "value": "Data Monetization",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741157"
+    ]
+  },
+  {
+    "identifier": "1525338741160",
+    "value": "Digital Factory",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741161"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741161",
+    "value": "Digital Factory/ADS",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741160"
+    ]
+  },
+  {
+    "identifier": "1525338741162",
+    "value": "Internet of Things",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741163"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741163",
+    "value": "Internet of Things",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741162"
+    ]
+  },
+  {
+    "identifier": "1525338741164",
+    "value": "Modernization",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741165",
+      "1525338741166",
+      "1525338741167",
+      "1525338741168",
+      "1525338741169",
+      "1525338741170",
+      "1525338741171"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741165",
+    "value": "BI Modernization",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741166",
+    "value": "DevOps & Agile adoption in the enterprise",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741167",
+    "value": "Mainframe Modernization",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741168",
+    "value": "Open Source Development & Migration",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741169",
+    "value": "Product Cost Optimization",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741170",
+    "value": "SDN - Software Defined Networks",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741171",
+    "value": "Workload Transformation for the Cloud",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741164"
+    ]
+  },
+  {
+    "identifier": "1525338741172",
+    "value": "ServiceNow ESM Cafe",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741173"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741173",
+    "value": "ServiceNow ESM Cafe",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741172"
+    ]
+  },
+  {
+    "identifier": "1525338741174",
+    "value": "Specialized Validation Services",
+    "type": "NewSe rvicesTheme",
+    "children": [
+      "1525338741175",
+      "1525338741176"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741175",
+    "value": "Big Data Testing",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741174"
+    ]
+  },
+  {
+    "identifier": "1525338741176",
+    "value": "Mobility Testing",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741174"
+    ]
+  },
+  {
+    "identifier": "1525338741177",
+    "value": "Strategic Cloud Apps",
+    "type": "NewServicesTheme",
+    "children": [
+      "1525338741178",
+      "1525338741179",
+      "1525338741180",
+      "1525338741181",
+      "1525338741182",
+      "1525338741183",
+      "1525338741184",
+      "1525338741185"
+    ],
+    "parent": [
+      "1525338741148"
+    ]
+  },
+  {
+    "identifier": "1525338741178",
+    "value": "HANA BI Migration & Simplification",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741179",
+    "value": "HCM Cloud - SuccessFactors",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741180",
+    "value": "MS Dynamics - CRM",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741181",
+    "value": "Oracle Edge",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741182",
+    "value": "Oracle Industry solutions/Vertical Stacks",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741183",
+    "value": "S/4 HANA Adoption & Landscape Transformation",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741184",
+    "value": "Salesforce.com / Net Suite",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  },
+  {
+    "identifier": "1525338741185",
+    "value": "UX Transformation - SAP Fiori",
+    "type": "NewServices",
+    "children": [],
+    "parent": [
+      "1525338741177"
+    ]
+  }
+]

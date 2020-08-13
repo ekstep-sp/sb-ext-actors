@@ -1,0 +1,118 @@
+/*               "Copyright 2020 Infosys Ltd.
+               Use of this source code is governed by GPL v3 license that can be found in the LICENSE file or at https://opensource.org/licenses/GPL-3.0
+               This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3" */
+package com.infosys.controller;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.bind.annotation.*;
+import org.sunbird.common.Constants;
+import org.sunbird.common.models.response.Response;
+import org.sunbird.common.models.response.ResponseParams;
+import org.sunbird.common.models.util.LoggerEnum;
+import org.sunbird.common.models.util.ProjectLogger;
+import org.sunbird.common.models.util.ProjectUtil;
+import org.sunbird.common.request.ExecutionContext;
+import org.sunbird.common.request.Request;
+import org.sunbird.common.responsecode.ResponseCode;
+
+import java.io.IOException;
+import java.util.Map;
+
+@RestController
+@CrossOrigin(origins = "*")
+public class CourseController {
+
+    /**
+     * Fetches courses based on search query text
+     *
+     * @param req Request body containing query text, filters and sorting
+     * @return Response
+     * @throws IOException
+     */
+    @PostMapping("/v1/course/search")
+    public Response search(@RequestBody Request req) throws IOException {
+        Response resp = new Response();
+        Map<String, Object> reqMap = req.getRequest();
+        ProjectLogger.log("Search course request received as ", reqMap, LoggerEnum.INFO.name());
+        //Response map containing info to be sent as result along with other info
+        String json = "{\"count\":2,\"course\":[{\"code\":\"do_2123384948492779521115\",\"channel\":\"in.ekstep\",\"description\":\"STANDARD IV MATHS\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-09-23T10:52:02.031+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-09-23T14:53:11.175+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123384948492779521115\",\"creator\":\"CreatorUser\",\"createdFor\":[\"01232003237608652844\",\"01231711180382208027\"],\"audience\":[\"Instructor\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1506643134141\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"d4dbcab1-4f99-4edc-8dc6-a8f66149cfbe\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"STDIV-1\",\"IL_UNIQUE_ID\":\"do_2123384948492779521115\",\"status\":\"Live\",\"node_id\":73875,\"keywords\":[\"maths\"],\"conceptData\":\"(1) concepts selected\",\"faculty\":[\"Vinod\"],\"tutor\":[\"vinod-turot\"],\"concepts\":[\"Num:C3:SC2\"],\"children\":[\"do_2123386094466580481116\",\"do_2123208084824801281774\",\"do_2123320740891443201157\"],\"lastUpdatedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"gradeLevel\":[\"Grade 4\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/6755f184977a2d60daac4b17734b064f_1476686916929.thumb.jpeg\",\"subject\":\"English\",\"board\":\"CBSE\",\"resourceType\":\"Course\",\"lastSubmittedOn\":\"2017-09-23T14:53:36.768+0000\",\"lastPublishedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594701_do_2123384948492779521115_2.0_spine.ecar\",\"size\":722411}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/6755f184977a2d60daac4b17734b064f_1476686916929.jpeg\",\"pkgVersion\":2,\"s3Key\":\"ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"size\":2132104,\"lastPublishedOn\":\"2017-09-23T14:56:33.118+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-09-28T23:58:54.141+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/do_2123384948492779521115toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":1,\\\"Resource\\\":1,\\\"Collection\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":5,\"mimeTypesCount\":\"{\\\"application/pdf\\\":1,\\\"application/vnd.ekstep.content-collection\\\":3,\\\"application/vnd.ekstep.ecml-archive\\\":2,\\\"video/x-youtube\\\":2}\",\"me_averageRating\":0,\"me_totalSideloads\":0,\"me_totalDownloads\":3,\"me_totalComments\":0,\"me_totalRatings\":0,\"c_null_private_batch_count\":0,\"es_metadata_id\":\"do_2123384948492779521115\"},{\"code\":\"org.sunbird.dz7X0z\",\"channel\":\"in.ekstep\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-10-06T06:01:21.852+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-10-06T06:08:07.472+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123475532337315841108\",\"creator\":\"NTPSystem Admin\",\"createdFor\":[\"ORG_001\"],\"audience\":[\"Learner\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1507270087472\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"7526ab9d-e8a6-478b-83e2-6ff1296c302e\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"Maths multiple\",\"IL_UNIQUE_ID\":\"do_2123475532337315841108\",\"resourceType\":\"Story\",\"status\":\"Live\",\"node_id\":75768,\"children\":[\"do_2123475540275036161111\",\"do_2123475540275036161110\"],\"lastUpdatedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"gradeLevel\":[\"Grade 1\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/10-1_1485252928236.thumb.png\",\"subject\":\"Mathematics\",\"description\":\"Maths multiple\",\"board\":\"CBSE\",\"concepts\":[\"LO39\"],\"lastSubmittedOn\":\"2017-10-06T06:03:47.972+0000\",\"lastPublishedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039529_do_2123475532337315841108_1.0_spine.ecar\",\"size\":156008}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/assets/10-1_1485252928236.png\",\"pkgVersion\":1,\"s3Key\":\"ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"size\":156007,\"lastPublishedOn\":\"2017-10-06T06:07:16.735+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-10-06T06:07:19.829+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/do_2123475532337315841108toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":4,\"mimeTypesCount\":\"{\\\"application/vnd.ekstep.content-collection\\\":2,\\\"video/x-youtube\\\":4}\",\"es_metadata_id\":\"do_2123475532337315841108\"}]}";
+        ObjectMapper map = new ObjectMapper();
+        Map<String, Object> respMap = map.readValue(json, Map.class);
+        //Setting other attributes of response like version, timestamp, response param etc.
+        resp.setVer("v1");
+        resp.setId("api.course.search");
+        resp.setTs(ProjectUtil.getFormattedDate());
+        ResponseCode code = ResponseCode.getResponse(ResponseCode.success.getErrorCode());
+        code.setResponseCode(ResponseCode.OK.getResponseCode());
+        //Preparing and setting response param
+        ResponseParams params = new ResponseParams();
+        params.setMsgid(ExecutionContext.getRequestId());
+        params.setStatus(ResponseCode.getHeaderResponseCode(code.getResponseCode()).name());
+        resp.setParams(params);
+        //Finally adding response map to actual response
+        resp.put(Constants.RESPONSE, respMap);
+        return resp;
+    }
+
+    /**
+     * Fetches courses the user has bookmarked
+     *
+     * @param userId
+     * @return Response
+     * @throws IOException
+     */
+    @GetMapping("/v1/course/bookmark/{uid}")
+    public Response getBookmarkedCourses(@PathVariable("uid") String userId) throws IOException {
+        Response resp = new Response();
+        ProjectLogger.log("Fetch bookmarked course request received for userId ", userId, LoggerEnum.INFO.name());
+        //Response map containing info to be sent as result along with other info
+        String json = "{\"count\":2,\"course\":[{\"code\":\"do_2123384948492779521115\",\"channel\":\"in.ekstep\",\"description\":\"STANDARD IV MATHS\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-09-23T10:52:02.031+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-09-23T14:53:11.175+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123384948492779521115\",\"creator\":\"CreatorUser\",\"createdFor\":[\"01232003237608652844\",\"01231711180382208027\"],\"audience\":[\"Instructor\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1506643134141\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"d4dbcab1-4f99-4edc-8dc6-a8f66149cfbe\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"STDIV-1\",\"IL_UNIQUE_ID\":\"do_2123384948492779521115\",\"status\":\"Live\",\"node_id\":73875,\"keywords\":[\"maths\"],\"conceptData\":\"(1) concepts selected\",\"faculty\":[\"Vinod\"],\"tutor\":[\"vinod-turot\"],\"concepts\":[\"Num:C3:SC2\"],\"children\":[\"do_2123386094466580481116\",\"do_2123208084824801281774\",\"do_2123320740891443201157\"],\"lastUpdatedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"gradeLevel\":[\"Grade 4\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/6755f184977a2d60daac4b17734b064f_1476686916929.thumb.jpeg\",\"subject\":\"English\",\"board\":\"CBSE\",\"resourceType\":\"Course\",\"lastSubmittedOn\":\"2017-09-23T14:53:36.768+0000\",\"lastPublishedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594701_do_2123384948492779521115_2.0_spine.ecar\",\"size\":722411}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/6755f184977a2d60daac4b17734b064f_1476686916929.jpeg\",\"pkgVersion\":2,\"s3Key\":\"ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"size\":2132104,\"lastPublishedOn\":\"2017-09-23T14:56:33.118+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-09-28T23:58:54.141+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/do_2123384948492779521115toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":1,\\\"Resource\\\":1,\\\"Collection\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":5,\"mimeTypesCount\":\"{\\\"application/pdf\\\":1,\\\"application/vnd.ekstep.content-collection\\\":3,\\\"application/vnd.ekstep.ecml-archive\\\":2,\\\"video/x-youtube\\\":2}\",\"me_averageRating\":0,\"me_totalSideloads\":0,\"me_totalDownloads\":3,\"me_totalComments\":0,\"me_totalRatings\":0,\"c_null_private_batch_count\":0,\"es_metadata_id\":\"do_2123384948492779521115\"},{\"code\":\"org.sunbird.dz7X0z\",\"channel\":\"in.ekstep\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-10-06T06:01:21.852+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-10-06T06:08:07.472+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123475532337315841108\",\"creator\":\"NTPSystem Admin\",\"createdFor\":[\"ORG_001\"],\"audience\":[\"Learner\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1507270087472\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"7526ab9d-e8a6-478b-83e2-6ff1296c302e\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"Maths multiple\",\"IL_UNIQUE_ID\":\"do_2123475532337315841108\",\"resourceType\":\"Story\",\"status\":\"Live\",\"node_id\":75768,\"children\":[\"do_2123475540275036161111\",\"do_2123475540275036161110\"],\"lastUpdatedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"gradeLevel\":[\"Grade 1\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/10-1_1485252928236.thumb.png\",\"subject\":\"Mathematics\",\"description\":\"Maths multiple\",\"board\":\"CBSE\",\"concepts\":[\"LO39\"],\"lastSubmittedOn\":\"2017-10-06T06:03:47.972+0000\",\"lastPublishedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039529_do_2123475532337315841108_1.0_spine.ecar\",\"size\":156008}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/assets/10-1_1485252928236.png\",\"pkgVersion\":1,\"s3Key\":\"ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"size\":156007,\"lastPublishedOn\":\"2017-10-06T06:07:16.735+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-10-06T06:07:19.829+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/do_2123475532337315841108toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":4,\"mimeTypesCount\":\"{\\\"application/vnd.ekstep.content-collection\\\":2,\\\"video/x-youtube\\\":4}\",\"es_metadata_id\":\"do_2123475532337315841108\"}]}";
+        ObjectMapper map = new ObjectMapper();
+        Map<String, Object> respMap = map.readValue(json, Map.class);
+        //Setting other attributes of response like version, timestamp, response param etc.
+        resp.setVer("v1");
+        resp.setId("api.course.bookmark");
+        resp.setTs(ProjectUtil.getFormattedDate());
+        ResponseCode code = ResponseCode.getResponse(ResponseCode.success.getErrorCode());
+        code.setResponseCode(ResponseCode.OK.getResponseCode());
+        //Preparing and setting response param
+        ResponseParams params = new ResponseParams();
+        params.setMsgid(ExecutionContext.getRequestId());
+        params.setStatus(ResponseCode.getHeaderResponseCode(code.getResponseCode()).name());
+        resp.setParams(params);
+        //Finally adding response map to actual response
+        resp.put(Constants.RESPONSE, respMap);
+        return resp;
+    }
+
+    /**
+     * Fetches the courses matches the user's interest area
+     *
+     * @param userId
+     * @return Response
+     * @throws IOException
+     */
+    @GetMapping("/v1/course/topic/{uid}")
+    public Response getCoursesByTopic(@PathVariable("uid") String userId) throws IOException {
+        Response resp = new Response();
+        ProjectLogger.log("Fetch bookmarked course request received for userId ", userId, LoggerEnum.INFO.name());
+        //Response map containing info to be sent as result along with other info
+        String json = "{\"count\":2,\"course\":[{\"code\":\"do_2123384948492779521115\",\"channel\":\"in.ekstep\",\"description\":\"STANDARD IV MATHS\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-09-23T10:52:02.031+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-09-23T14:53:11.175+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123384948492779521115\",\"creator\":\"CreatorUser\",\"createdFor\":[\"01232003237608652844\",\"01231711180382208027\"],\"audience\":[\"Instructor\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1506643134141\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"d4dbcab1-4f99-4edc-8dc6-a8f66149cfbe\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"STDIV-1\",\"IL_UNIQUE_ID\":\"do_2123384948492779521115\",\"status\":\"Live\",\"node_id\":73875,\"keywords\":[\"maths\"],\"conceptData\":\"(1) concepts selected\",\"faculty\":[\"Vinod\"],\"tutor\":[\"vinod-turot\"],\"concepts\":[\"Num:C3:SC2\"],\"children\":[\"do_2123386094466580481116\",\"do_2123208084824801281774\",\"do_2123320740891443201157\"],\"lastUpdatedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"gradeLevel\":[\"Grade 4\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/6755f184977a2d60daac4b17734b064f_1476686916929.thumb.jpeg\",\"subject\":\"English\",\"board\":\"CBSE\",\"resourceType\":\"Course\",\"lastSubmittedOn\":\"2017-09-23T14:53:36.768+0000\",\"lastPublishedBy\":\"79a644c1-3f42-473e-8ffc-4f81fa9aa2ab\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123384948492779521115/stdiv-1_1506178594701_do_2123384948492779521115_2.0_spine.ecar\",\"size\":722411}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/6755f184977a2d60daac4b17734b064f_1476686916929.jpeg\",\"pkgVersion\":2,\"s3Key\":\"ecar_files/do_2123384948492779521115/stdiv-1_1506178594188_do_2123384948492779521115_2.0.ecar\",\"size\":2132104,\"lastPublishedOn\":\"2017-09-23T14:56:33.118+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-09-28T23:58:54.141+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123384948492779521115/artifact/do_2123384948492779521115toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":1,\\\"Resource\\\":1,\\\"Collection\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":5,\"mimeTypesCount\":\"{\\\"application/pdf\\\":1,\\\"application/vnd.ekstep.content-collection\\\":3,\\\"application/vnd.ekstep.ecml-archive\\\":2,\\\"video/x-youtube\\\":2}\",\"me_averageRating\":0,\"me_totalSideloads\":0,\"me_totalDownloads\":3,\"me_totalComments\":0,\"me_totalRatings\":0,\"c_null_private_batch_count\":0,\"es_metadata_id\":\"do_2123384948492779521115\"},{\"code\":\"org.sunbird.dz7X0z\",\"channel\":\"in.ekstep\",\"language\":[\"English\"],\"mimeType\":\"application/vnd.ekstep.content-collection\",\"idealScreenSize\":\"normal\",\"createdOn\":\"2017-10-06T06:01:21.852+0000\",\"objectType\":\"Content\",\"contentDisposition\":\"inline\",\"lastUpdatedOn\":\"2017-10-06T06:08:07.472+0000\",\"contentEncoding\":\"gzip\",\"contentType\":\"Course\",\"identifier\":\"do_2123475532337315841108\",\"creator\":\"NTPSystem Admin\",\"createdFor\":[\"ORG_001\"],\"audience\":[\"Learner\"],\"IL_SYS_NODE_TYPE\":\"DATA_NODE\",\"visibility\":\"Default\",\"os\":[\"All\"],\"consumerId\":\"fa271a76-c15a-4aa1-adff-31dd04682a1f\",\"mediaType\":\"content\",\"osId\":\"org.ekstep.quiz.app\",\"graph_id\":\"domain\",\"nodeType\":\"DATA_NODE\",\"versionKey\":\"1507270087472\",\"idealScreenDensity\":\"hdpi\",\"createdBy\":\"7526ab9d-e8a6-478b-83e2-6ff1296c302e\",\"compatibilityLevel\":4,\"IL_FUNC_OBJECT_TYPE\":\"Content\",\"name\":\"Maths multiple\",\"IL_UNIQUE_ID\":\"do_2123475532337315841108\",\"resourceType\":\"Story\",\"status\":\"Live\",\"node_id\":75768,\"children\":[\"do_2123475540275036161111\",\"do_2123475540275036161110\"],\"lastUpdatedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"gradeLevel\":[\"Grade 1\"],\"appIcon\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/10-1_1485252928236.thumb.png\",\"subject\":\"Mathematics\",\"description\":\"Maths multiple\",\"board\":\"CBSE\",\"concepts\":[\"LO39\"],\"lastSubmittedOn\":\"2017-10-06T06:03:47.972+0000\",\"lastPublishedBy\":\"feaace75-ffec-4304-8e2d-214cf38373ad\",\"downloadUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"variants\":{\"spine\":{\"ecarUrl\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/ecar_files/do_2123475532337315841108/maths-multiple_1507270039529_do_2123475532337315841108_1.0_spine.ecar\",\"size\":156008}},\"posterImage\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/assets/10-1_1485252928236.png\",\"pkgVersion\":1,\"s3Key\":\"ecar_files/do_2123475532337315841108/maths-multiple_1507270039357_do_2123475532337315841108_1.0.ecar\",\"size\":156007,\"lastPublishedOn\":\"2017-10-06T06:07:16.735+0000\",\"SYS_INTERNAL_LAST_UPDATED_ON\":\"2017-10-06T06:07:19.829+0000\",\"toc_url\":\"https://ekstep-public-qa.s3-ap-south-1.amazonaws.com/content/do_2123475532337315841108/artifact/do_2123475532337315841108toc.json\",\"contentTypesCount\":\"{\\\"CourseUnit\\\":2,\\\"Story\\\":4}\",\"leafNodesCount\":4,\"mimeTypesCount\":\"{\\\"application/vnd.ekstep.content-collection\\\":2,\\\"video/x-youtube\\\":4}\",\"es_metadata_id\":\"do_2123475532337315841108\"}]}";
+        ObjectMapper map = new ObjectMapper();
+        Map<String, Object> respMap = map.readValue(json, Map.class);
+        //Setting other attributes of response like version, timestamp, response param etc.
+        resp.setVer("v1");
+        resp.setId("api.course.topic");
+        resp.setTs(ProjectUtil.getFormattedDate());
+        ResponseCode code = ResponseCode.getResponse(ResponseCode.success.getErrorCode());
+        code.setResponseCode(ResponseCode.OK.getResponseCode());
+        //Preparing and setting response param
+        ResponseParams params = new ResponseParams();
+        params.setMsgid(ExecutionContext.getRequestId());
+        params.setStatus(ResponseCode.getHeaderResponseCode(code.getResponseCode()).name());
+        resp.setParams(params);
+        //Finally adding response map to actual response
+        resp.put(Constants.RESPONSE, respMap);
+        return resp;
+    }
+}
