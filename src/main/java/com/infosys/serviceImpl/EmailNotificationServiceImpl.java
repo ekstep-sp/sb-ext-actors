@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -1013,7 +1014,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
 			String toEmailId = tempTo.get("email").toString();
-			if (!toEmailId.matches(LexConstants.EMAIL_REGEX) || (rootOrg.equals(LexConstants.INFOSYS) && !domains.contains("@" + toEmailId.split("@")[1]))) {
+			if (rootOrg.equals(LexConstants.INFOSYS) && !domains.contains("@" + toEmailId.split("@")[1])) {
 				invalidIds.add(toEmailId);
 				continue;
 			}
@@ -1052,7 +1053,18 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		if (!verifyIds.equals("")) {
 			List<String> invalids = new ArrayList<>();
-			Map<String, Object> ids = userUtilService.verifyUsers(rootOrg, Arrays.asList(verifyIds.split(",")));
+			List<String> verifyIdList = Arrays.asList(verifyIds.split(","))
+					.parallelStream()
+					.filter(ids -> {
+						if (!ids.matches(LexConstants.EMAIL_REGEX)){
+							invalidIds.add(ids);
+							return false;
+						}
+						return true;
+					})
+					.collect(Collectors.toList());
+
+			Map<String, Object> ids = userUtilService.verifyUsers(rootOrg, verifyIdList);
 			invalidIds.addAll(((List<String>) ids.get("invalid_users")));
 			for (String id : invalidIds)
 				invalids.add(id.replace("@infosys", "@ad.infosys"));
