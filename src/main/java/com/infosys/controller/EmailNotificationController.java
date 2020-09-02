@@ -29,14 +29,14 @@ public class EmailNotificationController {
 
 	// New uuid Fetch Email
 	@PostMapping("/v2/Notification/Authoring/Review")
-	public Response sendReviewNotification_v2(@RequestHeader (name = "rootOrg") String rootOrg,@RequestBody Map<String, Object> requestBody) {
+	public Response sendReviewNotification_v2(@RequestBody Map<String, Object> requestBody) {
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.mail.review");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
 			notificationService.convertUUIDtoEmail(requestBody);
-			notificationService.VerifyForReview(rootOrg, requestBody);
+			notificationService.VerifyForReview(requestBody);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.NotifyReview(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));
@@ -50,13 +50,13 @@ public class EmailNotificationController {
 	}
 
 	@PostMapping("/v1/Notification/Authoring/Review")
-	public Response sendReviewNotification(@RequestHeader (name = "rootOrg") String rootOrg, @RequestBody Map<String, Object> requestBody) {
+	public Response sendReviewNotification(@RequestBody Map<String, Object> requestBody) {
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.mail.review");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
-			notificationService.VerifyForReview(rootOrg, requestBody);
+			notificationService.VerifyForReview(requestBody);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.NotifyReview(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));

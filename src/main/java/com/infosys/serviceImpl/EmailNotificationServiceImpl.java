@@ -965,10 +965,10 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	}
 
 	@Override
-	public void VerifyForReview(String rootOrg, Map<String, Object> data) {
+	public void VerifyForReview(Map<String, Object> data) {
 		try {
 			if (this.ValidateReview(data).equals("valid")) {
-				this.validateUserIds(rootOrg, data);
+				this.validateUserIds(data);
 			} else {
 				data.put("message", "Invalid Request Data!");
 				data.put("invalid_ids", new HashSet<String>());
@@ -995,6 +995,10 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		} catch (Exception e) {
 			ProjectLogger.log("EmailError : " + e.getMessage(), e);
 		}
+	}
+
+	private void validateUserIds(Map<String, Object> data) {
+		validateUserIds("Infosys", data);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -1055,7 +1059,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		if (!verifyIds.equals("")) {
 			List<String> invalids = new ArrayList<>();
-			Map<String, Object> ids = userUtilService.verifyUsers(Arrays.asList(verifyIds.split(",")));
+			Map<String, Object> ids = userUtilService.verifyUsers(root_org, Arrays.asList(verifyIds.split(",")));
 			invalidIds.addAll(((List<String>) ids.get("invalid_users")));
 			for (String id : invalidIds)
 				invalids.add(id.replace("@infosys", "@ad.infosys"));

@@ -23,7 +23,7 @@ public interface EmailNotificationService {
 
     void VerifyForOneMail(Map<String, Object> data);
 
-    void VerifyForReview(String rootOrg,Map<String, Object> data);
+    void VerifyForReview(Map<String, Object> data);
 
     void VerifyForGroup(Map<String, Object> data);
 

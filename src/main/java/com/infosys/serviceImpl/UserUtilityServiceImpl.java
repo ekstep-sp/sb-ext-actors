@@ -846,8 +846,12 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	 * being shared is a list of valid users.
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	public Map<String, Object> verifyUsers(List<String> emails) {
+		return verifyUsers("Infosys", emails);
+	}
+	@Override
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> verifyUsers(String rootOrg, List<String> emails) {
 		List<String> graphApiValidUsers = new ArrayList<>();
 		List<String> validUsers = new ArrayList<>();
 		List<String> dataForGraphApi = new ArrayList<>();
@@ -858,7 +862,7 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 				emails = new ArrayList<>(temp);
 				emails.replaceAll(String::toLowerCase);
 			}
-			Map<String, Object> validUserData = userVerificationFromUserDb(emails);
+			Map<String, Object> validUserData = userVerificationFromUserDb(rootOrg, emails);
 			validUsers = (ArrayList<String>) validUserData.get("valid_users");
 			emails.removeAll(validUsers);
 			if (validUserData.containsKey("validate_options")
@@ -896,8 +900,13 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	 */
 	@Override
 	public String getValidationOptions() {
+		return getValidationOptions("Infosys");
+	}
+
+	@Override
+	public String getValidationOptions(String rootOrg) {
 		Select select = QueryBuilder.select().column("value").from(bodhiKeyspace, appPropertiesTable);
-		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", "space"));
+		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", rootOrg));
 		ProjectLogger.log("Query: " + select, LoggerEnum.DEBUG);
 		ResultSet appResults = connectionManager.getSession(bodhiKeyspace).execute(select);
 		String emailValidationOptions = "";
@@ -907,13 +916,13 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		return emailValidationOptions;
 	}
 
-	private Map<String, Object> userVerificationFromUserDb(List<String> userData) {
+	private Map<String, Object> userVerificationFromUserDb(String rootOrg, List<String> userData) {
 		Map<String, Object> output = new HashMap<String, Object>();
 		ArrayList<String> validUsers = new ArrayList<>();
 		ArrayList<String> validateOptions = new ArrayList<>();
 		validateOptions.add("user");
 		try {
-			String emailValidationOptions = this.getValidationOptions();
+			String emailValidationOptions = this.getValidationOptions(rootOrg);
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
@@ -927,7 +936,7 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 			output.put("validate_options", validateOptions);
 			output.put("valid_users", validUsers);
 		} catch (Exception e) {
-			ProjectLogger.log(Constants.EXCEPTION_MSG_FETCH + LexJsonKey.MV_USER + " : " + e.getMessage(), e);
+			ProjectLogger.log(Constants.EXCEPTION_MSG_FETCH + LexJsonKey.USER + " : " + e.getMessage(), e);
 			throw new ProjectCommonException(ResponseCode.SERVER_ERROR.getErrorCode(),
 					ResponseCode.SERVER_ERROR.getErrorMessage(), ResponseCode.SERVER_ERROR.getResponseCode());
 		}
