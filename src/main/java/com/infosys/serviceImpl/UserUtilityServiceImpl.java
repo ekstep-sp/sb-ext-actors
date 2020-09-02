@@ -924,7 +924,7 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
-			if (rootOrg.equals("Infosys")) {
+			if (rootOrg.equals(LexConstants.INFOSYS)) {
 				Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
 				emailSelect.where(QueryBuilder.in("email", userData));
 				ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
