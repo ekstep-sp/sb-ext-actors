@@ -41,7 +41,8 @@ public class LexConstants {
 	public static final String ORG = "com.infosys.org";
 	public static final String NEO4J_IP = "com.infosys.neo4j-ip";
 	public static final String RESPONSE = "response";
-
+	public static final String INFOSYS = "Infosys";
+	public static final String EMAIL_REGEX = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
 	public LexConstants() {
 
 	}

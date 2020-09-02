@@ -34,6 +34,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 
+import com.infosys.util.LexConstants;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.pdfbox.multipdf.Overlay;
@@ -998,7 +999,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	}
 
 	private void validateUserIds(Map<String, Object> data) {
-		validateUserIds("Infosys", data);
+		validateUserIds(LexConstants.INFOSYS, data);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -1008,19 +1009,11 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		String bccList = "";
 		Set<String> invalidIds = new HashSet<String>();
 
-		String root_org = rootOrg;
-		Map<String, Object> mailData = userUtilService.getMailData(root_org);
-//		Map<String, Object> mailData = new HashMap<>();
-//		mailData.put("senderId","");
-//		mailData.put("senderName","");
-//		if(data.containsKey("emailTo"))
-//		mailData.put("domains",data.get("emailTo").toString());
-//		List<String> domains = new ArrayList<>(Arrays.asList(data.get("emailTo").toString()));
+		Map<String, Object> mailData = userUtilService.getMailData(rootOrg);
 		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
-			String toEmailId = tempTo.get("email").toString().contains("@") ? tempTo.get("email").toString()
-					: tempTo.get("email").toString() + "";
-			if (!domains.contains("@" + toEmailId.split("@")[1])) {
+			String toEmailId = tempTo.get("email").toString();
+			if (!toEmailId.matches(LexConstants.EMAIL_REGEX) || (rootOrg.equals(LexConstants.INFOSYS) && !domains.contains("@" + toEmailId.split("@")[1]))) {
 				invalidIds.add(toEmailId);
 				continue;
 			}
@@ -1059,7 +1052,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		if (!verifyIds.equals("")) {
 			List<String> invalids = new ArrayList<>();
-			Map<String, Object> ids = userUtilService.verifyUsers(root_org, Arrays.asList(verifyIds.split(",")));
+			Map<String, Object> ids = userUtilService.verifyUsers(rootOrg, Arrays.asList(verifyIds.split(",")));
 			invalidIds.addAll(((List<String>) ids.get("invalid_users")));
 			for (String id : invalidIds)
 				invalids.add(id.replace("@infosys", "@ad.infosys"));
@@ -1491,7 +1484,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		contents.endText();
 
 //     contents.drawImage(image_header, -5, 1020, 960, 181);
-//     
+//
 		contents.close();
 
 		Overlay overlay = new Overlay();
@@ -1533,7 +1526,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				list.add(data);
 			}
 			requestBody.put(key,list);
-			
+
 		}
 	}
 

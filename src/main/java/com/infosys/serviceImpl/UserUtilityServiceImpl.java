@@ -1,5 +1,5 @@
 /*               "Copyright 2020 Infosys Ltd.
-               Use of this source code is governed by GPL v3 license that can be found in the LICENSE file or at 
+               Use of this source code is governed by GPL v3 license that can be found in the LICENSE file or at
                This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3" */
 package com.infosys.serviceImpl;
 
@@ -95,6 +95,7 @@ import com.infosys.model.CourseProgress;
 import com.infosys.service.LearningHistoryService;
 import com.infosys.service.UserUtilityService;
 import com.infosys.util.ConfigurationsUtil;
+import com.infosys.util.LexConstants;
 import com.infosys.util.LexJsonKey;
 import com.infosys.util.LexProjectUtil;
 import com.infosys.util.Util;
@@ -847,8 +848,9 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	 */
 	@Override
 	public Map<String, Object> verifyUsers(List<String> emails) {
-		return verifyUsers("Infosys", emails);
+		return verifyUsers(LexConstants.INFOSYS, emails);
 	}
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> verifyUsers(String rootOrg, List<String> emails) {
@@ -856,12 +858,8 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		List<String> validUsers = new ArrayList<>();
 		List<String> dataForGraphApi = new ArrayList<>();
 		if (emails != null && !emails.isEmpty()) {
-			{
-				Set<String> temp = new HashSet<String>();
-				temp.addAll(emails);
-				emails = new ArrayList<>(temp);
-				emails.replaceAll(String::toLowerCase);
-			}
+			emails = new ArrayList<>(new HashSet<>(emails));
+			emails.replaceAll(String::toLowerCase);
 			Map<String, Object> validUserData = userVerificationFromUserDb(rootOrg, emails);
 			validUsers = (ArrayList<String>) validUserData.get("valid_users");
 			emails.removeAll(validUsers);
@@ -1035,10 +1033,10 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 
 	@Override
 	public Map<String, Object> getMailData() {
-		return getMailData("Infosys");
+		return getMailData(LexConstants.INFOSYS);
 	}
 
-	@Cacheable("domainCache")
+	@Cacheable(value = LexConstants.DOMAIL_CACHE, key = "#rootOrg")
 	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Object> getMailData(String rootOrg) {
