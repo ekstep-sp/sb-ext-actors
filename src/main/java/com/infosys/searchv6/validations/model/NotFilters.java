@@ -69,6 +69,11 @@ public class NotFilters implements Serializable {
     private List<String> authoringDisabled = Collections.emptyList();
     private List<String> isMetaEditingDisabled = Collections.emptyList();
     private List<String> isContentEditingDisabled = Collections.emptyList();
+    // Start - Allow filtering by assetType and theme (For SpaceSocietalPlatform)
+    private List<String> assetType = Collections.emptyList();
+    private List<String> theme = Collections.emptyList();
+    // Stop
+
 
 //    @AssertTrue(message = "Can be applied only if " + SearchConstants.FILTER_CONTENT_TYPE_FIELD_KEY + " has " + SearchConstants.RESOURCE)
 //    private boolean isResourceType() {
@@ -163,6 +168,24 @@ public class NotFilters implements Serializable {
     public void setContentType(List<String> contentType) {
         this.contentType = contentType;
     }
+
+    // Start - Allow filtering by assetType and theme (For SpaceSocietalPlatform)
+    public List<String> getAssetType() {
+        return this.assetType;
+    }
+
+    public void setAssetType(List<String> assetType) {
+        this.assetType = assetType;
+    }
+
+    public List<String> getTheme() {
+        return this.theme;
+    }
+
+    public void setTheme(List<String> theme) {
+        this.theme = theme;
+    }
+    // Stop
 
     public List<String> getUnit() {
         return this.unit;

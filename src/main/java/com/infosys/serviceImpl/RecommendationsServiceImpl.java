@@ -170,7 +170,16 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			"creatorContacts",
 			"appIcon",
 			"trackContacts",
-			"publisherDetails"
+			"publisherDetails",
+			"assetType",
+			"codebase",
+			"documentation",
+			"email_id",
+			"interface_api",
+			"spaceLicense",
+			"profile_link",
+			"sandbox",
+			"theme"
 	));
 
 	@Override
@@ -184,12 +193,12 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			boolQuery.filter(QueryBuilders.boolQuery().must(QueryBuilders.termQuery("learningMode", learningMode)));
 		}
 
-		if (externalContent)
-			boolQuery.filter(QueryBuilders.boolQuery()
-					.mustNot(QueryBuilders.termQuery("isExternal", true)));
-		else
-			boolQuery.filter(
-					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
+//		if (externalContent)
+//			boolQuery.filter(QueryBuilders.boolQuery()
+//					.mustNot(QueryBuilders.termQuery("isExternal", true)));
+//		else
+//			boolQuery.filter(
+//					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
 
 		if (contentTypefiltersArray.size() > 0) {
 			boolQuery.mustNot(
@@ -203,8 +212,8 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 		fields.add("totalRating."+rootOrg);
 		Object[] fieldsObjs = fields.toArray();
 //		boolQuery.mustNot(QueryBuilders.nestedQuery("collections",QueryBuilders.boolQuery().filter(QueryBuilders.existsQuery("collections")), ScoreMode.Avg));
-		boolQuery.filter(QueryBuilders.termQuery("isStandAlone", isStandAlone));
-		boolQuery.filter(QueryBuilders.termQuery("status","Live"));
+//		boolQuery.filter(QueryBuilders.termQuery("isStandAlone", isStandAlone));
+		boolQuery.filter(QueryBuilders.termQuery("status","Draft"));
 		boolQuery.filter(QueryBuilders.termQuery("rootOrg", rootOrg));
 //		boolQuery.filter(QueryBuilders.nestedQuery("org", QueryBuilders.boolQuery().must(QueryBuilders.termQuery("org.org", org)).must(QueryBuilders.rangeQuery("validTill").gte("now/d")), ScoreMode.Avg));
 

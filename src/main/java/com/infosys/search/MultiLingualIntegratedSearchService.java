@@ -21,6 +21,7 @@ import com.infosys.exception.BadRequestException;
 import com.infosys.exception.NoContentException;
 import com.infosys.model.FilterItem;
 import com.infosys.search.validations.model.*;
+import com.infosys.searchv6.validations.model.AggregationRequest;
 import com.infosys.util.LexProjectUtil;
 import com.infosys.util.SearchConstants;
 import org.apache.commons.lang.WordUtils;
@@ -273,6 +274,19 @@ class MultiLingualIntegratedSearchService {
 //                paramsMap.put(pair.getKey()+"_orders", sort);
 //            }
 //        }
+//        Start - handle Aggregations for new filters (space societal platform)
+        validatedSearchData.getVisibleFilters()
+                .forEach((key, val) -> {
+                    paramsMap.put(key + SearchConstants.TEMPLATE_AGGS_SUFFIX, true);
+                    paramsMap.put(key + SearchConstants.TEMPLATE_AGGS_ORDER_SUFFIX, val.getOrder());
+                });
+
+        validatedSearchData.getNotVisibleFilters()
+                .forEach((key, val) -> {
+                    paramsMap.put(key + SearchConstants.TEMPLATE_AGGS_SUFFIX, true);
+                    paramsMap.put(key + SearchConstants.TEMPLATE_AGGS_ORDER_SUFFIX, val.getOrder());
+                });
+//        End
     }
 
     private Response packageResponse(Map<String, Object> result) {
@@ -317,12 +331,13 @@ class MultiLingualIntegratedSearchService {
                     filterItem.setType("older");
                     filterItem.setDisplayName("Older");
                     filterItemList.add(filterItem);
-
-                    Map<String, Object> topicAggMap = new HashMap<>();
-                    topicAggMap.put("type", SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LAST_UPDATED_ON_AGGS_KEY).get(0));
-                    topicAggMap.put("displayName", SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LAST_UPDATED_ON_AGGS_KEY).get(1));
-                    topicAggMap.put("content", filterItemList);
-                    filtersMap.add(topicAggMap);
+//      Commented(Space Societal Platform)
+//                    Map<String, Object> topicAggMap = new HashMap<>();
+//                    topicAggMap.put("type", SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LAST_UPDATED_ON_AGGS_KEY).get(0));
+//                    topicAggMap.put("displayName", SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LAST_UPDATED_ON_AGGS_KEY).get(1));
+//                    topicAggMap.put("content", filterItemList);
+//                    filtersMap.add(topicAggMap);
+//      End
                 }
             }
 
@@ -535,14 +550,50 @@ class MultiLingualIntegratedSearchService {
         Map<String, List<String>> data = new HashMap<>(SearchConstants.aggAndFilterNamesMap);
 //        if (validatedSearchData.getFilters().getContentType().contains(SearchConstants.COURSE)) {
 //            data.put(SearchConstants.IS_EXTERNAL_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.IS_EXTERNAL_AGGS_KEY));
-            data.put(SearchConstants.LEARNING_MODE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LEARNING_MODE_AGGS_KEY));
+//            data.put(SearchConstants.LEARNING_MODE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LEARNING_MODE_AGGS_KEY));
+//      Created New filter method (Space Societal Platform)
+        Map<String, List<String>> final_data = new HashMap<>();
+        Map<String, AggregationRequest> visibleFilters = validatedSearchData.getVisibleFilters();
+        if(visibleFilters==null || visibleFilters.isEmpty()) {
+            final_data.put(SearchConstants.LEARNING_MODE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LEARNING_MODE_AGGS_KEY));
+            final_data.put(SearchConstants.CONCEPTS_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.CONCEPTS_AGGS_KEY));
+            final_data.put(SearchConstants.CONTENT_TYPE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.CONTENT_TYPE_AGGS_KEY));
+            final_data.put(SearchConstants.SOURCE_SHORT_NAME_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.SOURCE_SHORT_NAME_AGGS_KEY));
+            final_data.put(SearchConstants.COMPLEXITY_LEVEL_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.COMPLEXITY_LEVEL_AGGS_KEY));
+            final_data.put(SearchConstants.CATALOG_PATHS_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.CATALOG_PATHS_AGGS_KEY));
+            final_data.put(SearchConstants.DURATION_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.DURATION_AGGS_KEY));
+            final_data.put(SearchConstants.REGION_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.REGION_AGGS_KEY));
+            final_data.put(SearchConstants.LABELS_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.LABELS_AGGS_KEY));
+            final_data.put(SearchConstants.EXCLUSIVE_CONTENT_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.EXCLUSIVE_CONTENT_AGGS_KEY));
+            final_data.put(SearchConstants.ASSET_TYPE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.ASSET_TYPE_AGGS_KEY));
+            final_data.put(SearchConstants.THEME_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.THEME_AGGS_KEY));
+            final_data.put(SearchConstants.RESOURCE_TYPE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.RESOURCE_TYPE_AGGS_KEY));
+
+        }
+        else {
+            ArrayList<String> fltrs = new ArrayList<>(validatedSearchData.getVisibleFilters().keySet());
+            int i;
+            ArrayList<String> fltrs_aggs= new ArrayList<String>();
+            for(i=0;i<fltrs.size();i++){
+
+                fltrs_aggs.add(fltrs.get(i)+("_aggs"));
+            }
+            int j;
+            for(j=0;j<fltrs_aggs.size();j++) {
+                if (data.keySet().contains(fltrs_aggs.get(j))) {
+                    final_data.put(fltrs_aggs.get(j), SearchConstants.FIELD_DISPLAYNAME_PAIR.get(fltrs_aggs.get(j)));
+
+                }
+            }
+        }
+
 //        }
 //        if (validatedSearchData.getFilters().getContentType().contains(SearchConstants.RESOURCE)) {
 //            data.put(SearchConstants.RESOURCE_CATEGORY_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.RESOURCE_CATEGORY_AGGS_KEY));
-            data.put(SearchConstants.RESOURCE_TYPE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.RESOURCE_TYPE_AGGS_KEY));
+//            data.put(SearchConstants.RESOURCE_TYPE_AGGS_KEY, SearchConstants.FIELD_DISPLAYNAME_PAIR.get(SearchConstants.RESOURCE_TYPE_AGGS_KEY));
 //        }
-//        System.out.println(data);
-        return data;
+        return final_data;
+//        End
     }
 
     private Long[] getDurationRangeArray(String string) {

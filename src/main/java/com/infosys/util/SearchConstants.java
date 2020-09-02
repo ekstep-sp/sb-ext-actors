@@ -45,6 +45,11 @@ public class SearchConstants {
 	public static final String FILTER_SOURCE_SHORT_NAME_FIELD_KEY = "sourceShortName";
 	public static final String FILTER_RESOURCE_CATEGORY_FIELD_KEY = "resourceCategory";
 	public static final String FILTER_CONTENT_TYPE_FIELD_KEY = "contentType";
+	//	Start (Space Societal Platform)
+	public static final String FILTER_ASSET_TYPE_FIELD_KEY = "assetType";
+	public static final String FILTER_THEME_FIELD_KEY = "theme";
+	public static final String TEMPLATE_AGGS_ORDER_SUFFIX = "AggsOrder";
+	// 	End
 	public static final String FILTER_FILE_TYPE_FIELD_KEY = "fileType";
 	public static final String FILTER_DURATION_FIELD_KEY = "duration";
 	public static final String FILTER_COMPLEXITY_LEVEL_FIELD_KEY = "complexityLevel";
@@ -76,6 +81,10 @@ public class SearchConstants {
 	public static final String COMPLEXITY_LEVEL_AGGS_KEY = "complexityLevel_aggs";
 //	public static final String FILE_TYPE_AGGS_KEY = "fileType_aggs";
 	public static final String CONTENT_TYPE_AGGS_KEY = "contentType_aggs";
+	//	Start (Space Societal Platform)
+	public static final String ASSET_TYPE_AGGS_KEY = "assetType_aggs";
+	public static final String THEME_AGGS_KEY = "theme_aggs";
+	// 	End
 	public static final String CONCEPTS_AGGS_KEY = "concepts_aggs";
 	public static final String LAST_UPDATED_ON_AGGS_KEY = "lastUpdatedOn_aggs";
 	public static final String RESOURCE_TYPE_AGGS_KEY = "resourceType_aggs";
@@ -114,10 +123,14 @@ public class SearchConstants {
 	static {
 		FIELD_DISPLAYNAME_PAIR.put(CATALOG_PATHS_AGGS_KEY, Arrays.asList("catalogPaths","Catalog"));
 		FIELD_DISPLAYNAME_PAIR.put(DURATION_AGGS_KEY, Arrays.asList("duration","Duration"));
-		FIELD_DISPLAYNAME_PAIR.put(SOURCE_SHORT_NAME_AGGS_KEY, Arrays.asList("sourceShortName","Source"));
+		FIELD_DISPLAYNAME_PAIR.put(SOURCE_SHORT_NAME_AGGS_KEY, Arrays.asList("sourceShortName","Created By"));
 		FIELD_DISPLAYNAME_PAIR.put(COMPLEXITY_LEVEL_AGGS_KEY, Arrays.asList("complexityLevel","Level"));
 //		FIELD_DISPLAYNAME_PAIR.put(FILE_TYPE_AGGS_KEY, Arrays.asList("fileType","Type"));
 		FIELD_DISPLAYNAME_PAIR.put(CONTENT_TYPE_AGGS_KEY, Arrays.asList("contentType","Content Type"));
+//	Start (Space Societal Platform)
+		FIELD_DISPLAYNAME_PAIR.put(ASSET_TYPE_AGGS_KEY, Arrays.asList("assetType","Type"));
+		FIELD_DISPLAYNAME_PAIR.put(THEME_AGGS_KEY, Arrays.asList("theme","SDGs"));
+//	End
 		FIELD_DISPLAYNAME_PAIR.put(CONCEPTS_AGGS_KEY, Arrays.asList("concepts","Concepts"));
 		FIELD_DISPLAYNAME_PAIR.put(LAST_UPDATED_ON_AGGS_KEY, Arrays.asList("lastUpdatedOn","Published Date"));
 		FIELD_DISPLAYNAME_PAIR.put(RESOURCE_TYPE_AGGS_KEY, Arrays.asList("resourceType","Format"));
@@ -144,6 +157,12 @@ public class SearchConstants {
 		aggAndFilterNamesMap.put(REGION_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(REGION_AGGS_KEY));
 		aggAndFilterNamesMap.put(LABELS_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(LABELS_AGGS_KEY));
 		aggAndFilterNamesMap.put(EXCLUSIVE_CONTENT_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(EXCLUSIVE_CONTENT_AGGS_KEY));
+//	Start (Space Societal Platform)
+		aggAndFilterNamesMap.put(ASSET_TYPE_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(ASSET_TYPE_AGGS_KEY));
+		aggAndFilterNamesMap.put(THEME_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(THEME_AGGS_KEY));
+		aggAndFilterNamesMap.put(RESOURCE_TYPE_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(RESOURCE_TYPE_AGGS_KEY));
+
+//	End
 	}
 	
 	public SearchConstants() {

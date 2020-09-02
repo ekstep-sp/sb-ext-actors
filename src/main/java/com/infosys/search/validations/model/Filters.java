@@ -70,6 +70,11 @@ public class Filters implements Serializable {
     private List<String> isInIntranet = Collections.emptyList();
     private List<String> mimeType = Collections.emptyList();
 
+    // Start - Add new filters (space societal platform)
+    private List<String> assetType = Collections.emptyList();
+    private List<String> theme = Collections.emptyList();
+    // End
+
 //    @AssertTrue(message = "Can be applied only if " + SearchConstants.FILTER_CONTENT_TYPE_FIELD_KEY + " has " + SearchConstants.RESOURCE)
 //    private boolean isResourceType() {
 //        if (resourceType.size() > 0) {
@@ -203,6 +208,25 @@ public class Filters implements Serializable {
     public void setContentType(List<String> contentType) {
         this.contentType = contentType;
     }
+
+    // Start- getters setters of newly added metafields (spacesocietalplatform)
+    public List<String> getAssetType() {
+        return this.assetType;
+    }
+
+    public void setAssetType(List<String> assetType) {
+        this.assetType = assetType;
+    }
+
+    public List<String> getTheme() {
+        return this.theme;
+    }
+
+    public void setTheme(List<String> theme) {
+        this.theme = theme;
+    }
+
+    // End
 
     public List<String> getUnit() {
         return this.unit;
