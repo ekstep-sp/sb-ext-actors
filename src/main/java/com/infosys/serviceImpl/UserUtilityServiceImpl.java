@@ -897,7 +897,7 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	@Override
 	public String getValidationOptions() {
 		Select select = QueryBuilder.select().column("value").from(bodhiKeyspace, appPropertiesTable);
-		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", "Infosys"));
+		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", "space"));
 		ProjectLogger.log("Query: " + select, LoggerEnum.DEBUG);
 		ResultSet appResults = connectionManager.getSession(bodhiKeyspace).execute(select);
 		String emailValidationOptions = "";
@@ -917,8 +917,8 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
-			Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
-			emailSelect.where(QueryBuilder.in("email", userData));
+			Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.USER);
+			emailSelect.where(QueryBuilder.in("email", userData)).allowFiltering();
 			ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
 			ResultSet results = connectionManager.getSession(JsonKey.SUNBIRD).execute(emailSelect);
 			for (Row row : results) {
@@ -1024,15 +1024,20 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		return url;
 	}
 
+	@Override
+	public Map<String, Object> getMailData() {
+		return getMailData("Infosys");
+	}
+
 	@Cacheable("domainCache")
 	@SuppressWarnings("unchecked")
 	@Override
-	public Map<String, Object> getMailData() {
+	public Map<String, Object> getMailData(String rootOrg) {
 		Map<String, Object> ret = new HashMap<String, Object>();
 		try {
 			Map<String, Object> propertyMap = new HashMap<String, Object>();
 			// hard coding root_org here because this will be removed soon.
-			propertyMap.put("root_org", "Infosys");
+			propertyMap.put("root_org", rootOrg);
 			propertyMap.put("key", Arrays.asList("valid_domains", "mail_id", "mail_name"));
 			Response result = this.getRecordsByProperties(bodhiKeyspace, appPropertiesTable, propertyMap);
 

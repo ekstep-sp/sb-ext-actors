@@ -46,6 +46,8 @@ public interface UserUtilityService {
 
 	Map<String, Object> getMailData();
 
+	Map<String, Object> getMailData(String rootOrg);
+
 	SearchHits getMetaByIDListandSource(List<String> id, String[] source) throws IOException;
 
 	Boolean checkContentStore(String contentHost, String contentPort);

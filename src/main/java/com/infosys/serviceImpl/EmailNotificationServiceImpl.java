@@ -965,10 +965,10 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	}
 
 	@Override
-	public void VerifyForReview(Map<String, Object> data) {
+	public void VerifyForReview(String rootOrg, Map<String, Object> data) {
 		try {
 			if (this.ValidateReview(data).equals("valid")) {
-				this.validateUserIds(data);
+				this.validateUserIds(rootOrg, data);
 			} else {
 				data.put("message", "Invalid Request Data!");
 				data.put("invalid_ids", new HashSet<String>());
@@ -980,9 +980,14 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 	@Override
 	public void VerifyForOneMail(Map<String, Object> data) {
+		VerifyForOneMail("Infosys", data);
+	}
+
+	@Override
+	public void VerifyForOneMail(String rootOrg, Map<String, Object> data) {
 		try {
 			if (this.Validate(data).equals("valid")) {
-				this.validateUserIds(data);
+				this.validateUserIds(rootOrg, data);
 			} else {
 				data.put("message", "Invalid Request Data!");
 				data.put("invalid_ids", new HashSet<String>());
@@ -993,12 +998,20 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	}
 
 	@SuppressWarnings("unchecked")
-	private void validateUserIds(Map<String, Object> data) {
+	private void validateUserIds(String rootOrg, Map<String, Object> data) {
 		String toList = "";
 		String ccList = "";
 		String bccList = "";
 		Set<String> invalidIds = new HashSet<String>();
-		Map<String, Object> mailData = userUtilService.getMailData();
+
+		String root_org = rootOrg;
+		Map<String, Object> mailData = userUtilService.getMailData(root_org);
+//		Map<String, Object> mailData = new HashMap<>();
+//		mailData.put("senderId","");
+//		mailData.put("senderName","");
+//		if(data.containsKey("emailTo"))
+//		mailData.put("domains",data.get("emailTo").toString());
+//		List<String> domains = new ArrayList<>(Arrays.asList(data.get("emailTo").toString()));
 		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
 			String toEmailId = tempTo.get("email").toString().contains("@") ? tempTo.get("email").toString()

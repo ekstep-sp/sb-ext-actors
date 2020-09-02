@@ -12,11 +12,7 @@ import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.sunbird.common.Constants;
 import org.sunbird.common.models.response.Response;
 import org.sunbird.common.models.util.ProjectUtil;
@@ -33,14 +29,14 @@ public class EmailNotificationController {
 
 	// New uuid Fetch Email
 	@PostMapping("/v2/Notification/Authoring/Review")
-	public Response sendReviewNotification_v2(@RequestBody Map<String, Object> requestBody) {
+	public Response sendReviewNotification_v2(@RequestHeader (name = "rootOrg") String rootOrg,@RequestBody Map<String, Object> requestBody) {
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.mail.review");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
 			notificationService.convertUUIDtoEmail(requestBody);
-			notificationService.VerifyForReview(requestBody);
+			notificationService.VerifyForReview(rootOrg, requestBody);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.NotifyReview(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));
@@ -54,13 +50,13 @@ public class EmailNotificationController {
 	}
 
 	@PostMapping("/v1/Notification/Authoring/Review")
-	public Response sendReviewNotification(@RequestBody Map<String, Object> requestBody) {
+	public Response sendReviewNotification(@RequestHeader (name = "rootOrg") String rootOrg, @RequestBody Map<String, Object> requestBody) {
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.mail.review");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
-			notificationService.VerifyForReview(requestBody);
+			notificationService.VerifyForReview(rootOrg, requestBody);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.NotifyReview(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));
@@ -96,14 +92,14 @@ public class EmailNotificationController {
 	}
 
 	@PostMapping("/v1/Notification/Send")
-	public Response sendNotification(@RequestBody Map<String, Object> requestBody) {
+	public Response sendNotification(@RequestHeader (name = "rootOrg") String rootOrg, @RequestBody Map<String, Object> requestBody) {
 
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.content.create");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
-			notificationService.VerifyForOneMail(requestBody);
+			notificationService.VerifyForOneMail(rootOrg, requestBody);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.Notify(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));
