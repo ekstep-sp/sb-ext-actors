@@ -926,17 +926,23 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
-			Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.USER);
-			emailSelect.where(QueryBuilder.in("email", userData)).allowFiltering();
-			ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
-			ResultSet results = connectionManager.getSession(JsonKey.SUNBIRD).execute(emailSelect);
-			for (Row row : results) {
-				validUsers.add(row.getString(0).toLowerCase().trim());
+			if (rootOrg.equals("Infosys")) {
+				Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
+				emailSelect.where(QueryBuilder.in("email", userData));
+				ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
+				ResultSet results = connectionManager.getSession(JsonKey.SUNBIRD).execute(emailSelect);
+				for (Row row : results) {
+					validUsers.add(row.getString(0).toLowerCase().trim());
+				}
+			} else {
+				for (String row : userData) {
+					validUsers.add(row.toLowerCase().trim());
+				}
 			}
 			output.put("validate_options", validateOptions);
 			output.put("valid_users", validUsers);
 		} catch (Exception e) {
-			ProjectLogger.log(Constants.EXCEPTION_MSG_FETCH + LexJsonKey.USER + " : " + e.getMessage(), e);
+			ProjectLogger.log(Constants.EXCEPTION_MSG_FETCH + LexJsonKey.MV_USER + " : " + e.getMessage(), e);
 			throw new ProjectCommonException(ResponseCode.SERVER_ERROR.getErrorCode(),
 					ResponseCode.SERVER_ERROR.getErrorMessage(), ResponseCode.SERVER_ERROR.getResponseCode());
 		}
