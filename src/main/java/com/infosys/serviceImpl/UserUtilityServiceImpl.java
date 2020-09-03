@@ -924,6 +924,9 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
+			/*
+			// Commented the original Code for removing DB validation of users - rish-dev
+
 			if (rootOrg.equals(LexConstants.INFOSYS)) {
 				Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
 				emailSelect.where(QueryBuilder.in("email", userData));
@@ -936,6 +939,10 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 				for (String row : userData) {
 					validUsers.add(row.toLowerCase().trim());
 				}
+			}*/
+			// Adding users directly to valid users
+			for (String row : userData) {
+				validUsers.add(row.toLowerCase().trim());
 			}
 			output.put("validate_options", validateOptions);
 			output.put("valid_users", validUsers);
@@ -1042,7 +1049,7 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		return getMailData(LexConstants.INFOSYS);
 	}
 
-	@Cacheable(value = LexConstants.DOMAIL_CACHE, key = "#rootOrg")
+	@Cacheable(LexConstants.DOMAIL_CACHE)
 	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Object> getMailData(String rootOrg) {
