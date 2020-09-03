@@ -8,16 +8,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import javax.activation.DataHandler;
@@ -30,6 +21,11 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 
+import com.infosys.exception.BadRequestException;
+import com.infosys.model.cassandra.SmtpConfig;
+import com.infosys.model.cassandra.SmtpConfigPrimaryKeyModel;
+import com.infosys.repository.SmtpConfigRepository;
+import com.infosys.service.SmtpConfigService;
 import com.infosys.util.LexConstants;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
@@ -75,11 +71,20 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	@Autowired
 	UserUtilityService userUtilService;
 
+	@Autowired
+	SmtpConfigRepository smtpConfigRepository;
+
+	@Autowired
+	SmtpConfigService smtpConfigService;
+
 	SimpleDateFormat formatter = new SimpleDateFormat("MMM dd, yyyy");
 	SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 	private PropertiesCache properties = PropertiesCache.getInstance();
 	private String SMTPHOST;
+	private int SMTPPORT2;
 	private String SMTPPORT;
+	private String SMTPUSER;
+	private String SMTPPASSWORD;
 	private String bodhiKeyspace = LexJsonKey.BODHI_DB_KEYSPACE;
 	private String shareTable = properties.getProperty(LexJsonKey.SHARED_GOALS_TRACKER);
 	private CassandraOperation cassandraOperation = ServiceFactory.getInstance();
@@ -90,14 +95,27 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	@SuppressWarnings({ "unchecked", "unused" })
 	@Override
 	public Map<String, Object> Notify(Map<String, Object> data) {
-		SMTPHOST = System.getenv(LexJsonKey.SMTP_HOST);
-		SMTPPORT = System.getenv(LexJsonKey.SMTP_PORT);
 
-		if (ProjectUtil.isStringNullOREmpty(SMTPHOST) || ProjectUtil.isStringNullOREmpty(SMTPPORT)) {
-			ProjectLogger.log("SMTP config is not coming form System variable.");
-			SMTPHOST = properties.getProperty(LexJsonKey.SMTP_HOST);
-			SMTPPORT = properties.getProperty(LexJsonKey.SMTP_PORT);
+		if (data.get(LexJsonKey.ROOT_ORG) == null || data.get(LexJsonKey.ROOT_ORG).toString().isEmpty()) {
+			throw new BadRequestException("Missing required info rootOrg");
 		}
+		String rootOrg = data.get(LexJsonKey.ROOT_ORG).toString();
+		String org;
+		if (data.get(LexJsonKey.ORG) == null || data.get(LexJsonKey.ORG).toString().isEmpty()) {
+			org = rootOrg;
+		} else {
+			org = data.get(LexJsonKey.ORG).toString();
+		}
+		SmtpConfig smtpConfig = smtpConfigService.getSmtpConfig(rootOrg,org);
+		SMTPHOST = smtpConfig.getHost();
+		SMTPPORT2 = smtpConfig.getPort();
+		SMTPUSER = smtpConfig.getUserName();
+		SMTPPASSWORD = smtpConfig.getPassword();
+//		if (ProjectUtil.isStringNullOREmpty(SMTPHOST) || ProjectUtil.isStringNullOREmpty(SMTPPORT)) {
+//			ProjectLogger.log("SMTP config is not coming form System variable.");
+//			SMTPHOST = properties.getProperty(LexJsonKey.SMTP_HOST);
+//			SMTPPORT = properties.getProperty(LexJsonKey.SMTP_PORT);
+//		}
 		Map<String, Object> ret = new HashMap<String, Object>();
 		String msg = "Success";
 		String sharedByEmail = "";
@@ -128,14 +146,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", SMTPHOST);
-		props.put("mail.smtp.port", SMTPPORT);
-		Authenticator authenticator = new Authenticator() {
-			@Override
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("","");
-			}
-		};
-		Session session = Session.getDefaultInstance(props, authenticator);
+		props.put("mail.smtp.port", SMTPPORT2);
+
+		Session session = Session.getDefaultInstance(props);
 
 		try {
 			Multipart multipart = new MimeMultipart();
@@ -397,7 +410,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			imageBodyPart.setDisposition(MimeBodyPart.INLINE);
 			multipart.addBodyPart(imageBodyPart);
 			Transport transport = session.getTransport("smtp");
-			transport.connect(SMTPHOST, 58, "","");
+			transport.connect(SMTPHOST, SMTPPORT2, SMTPUSER, SMTPPASSWORD);
 //			transport.connect();
 			transport.sendMessage(message,message.getAllRecipients());
 //			Transport.send(message);

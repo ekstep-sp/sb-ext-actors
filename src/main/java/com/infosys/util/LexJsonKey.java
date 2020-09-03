@@ -113,6 +113,7 @@ public class LexJsonKey {
 
 	public static final String USER = "user";
 	public static final String ROOT_ORG = "rootOrg";
+	public static final String ORG = "org";
 
 	public static final String ErrorUserBadges = "user_badge_error";
 	public static final String ASSESSMENT_BY_CONTENT_USER = "assessment_by_content_user";
