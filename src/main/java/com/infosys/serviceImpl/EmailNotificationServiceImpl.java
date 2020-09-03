@@ -23,12 +23,7 @@ import java.util.stream.Collectors;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
@@ -54,6 +49,9 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
+import org.springframework.cache.CacheManager;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -69,6 +67,7 @@ import com.infosys.service.EmailNotificationService;
 import com.infosys.service.UserUtilityService;
 import com.infosys.util.LexJsonKey;
 import com.infosys.util.Templates;
+import sun.security.util.Password;
 
 @Service
 public class EmailNotificationServiceImpl implements EmailNotificationService {
@@ -130,8 +129,13 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		Properties props = new Properties();
 		props.put("mail.smtp.host", SMTPHOST);
 		props.put("mail.smtp.port", SMTPPORT);
-
-		Session session = Session.getDefaultInstance(props, null);
+		Authenticator authenticator = new Authenticator() {
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("","");
+			}
+		};
+		Session session = Session.getDefaultInstance(props, authenticator);
 
 		try {
 			Multipart multipart = new MimeMultipart();
@@ -392,8 +396,11 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			// imageBodyPart.setHeader("Content-ID", "<Image>");
 			imageBodyPart.setDisposition(MimeBodyPart.INLINE);
 			multipart.addBodyPart(imageBodyPart);
-
-			Transport.send(message);
+			Transport transport = session.getTransport("smtp");
+			transport.connect(SMTPHOST, 58, "","");
+//			transport.connect();
+			transport.sendMessage(message,message.getAllRecipients());
+//			Transport.send(message);
 
 		} catch (Exception e) {
 			msg = e.getMessage();
@@ -1009,8 +1016,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		String ccList = "";
 		String bccList = "";
 		Set<String> invalidIds = new HashSet<String>();
-
+//		CacheProperties.EhCache cache = (CacheProperties.EhCache) CacheManager.getCache("myCache").getNativeCache();
 		Map<String, Object> mailData = userUtilService.getMailData(rootOrg);
+		System.out.println(mailData);
 		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
 			String toEmailId = tempTo.get("email").toString();
