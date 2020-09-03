@@ -1033,9 +1033,10 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		Map<String, Object> mailData = userUtilService.getMailData(rootOrg);
 		System.out.println(mailData);
 		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
+		boolean checkDomainCondition = !domains.contains("@");
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
 			String toEmailId = tempTo.get("email").toString();
-			if (rootOrg.equals(LexConstants.INFOSYS) && !domains.contains("@" + toEmailId.split("@")[1])) {
+			if (checkDomainCondition && !domains.contains("@" + toEmailId.split("@")[1])) {
 				invalidIds.add(toEmailId);
 				continue;
 			}
