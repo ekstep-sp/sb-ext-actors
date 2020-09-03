@@ -1032,7 +1032,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 //		CacheProperties.EhCache cache = (CacheProperties.EhCache) CacheManager.getCache("myCache").getNativeCache();
 		Map<String, Object> mailData = userUtilService.getMailData(rootOrg);
 		System.out.println(mailData);
-		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
+		List<String> domains = Arrays.stream(mailData.get("domains").toString().split(","))
+				.map(String::trim).collect(Collectors.toList());
+		// To bypass domain check if we have '@' entry in domains list
 		boolean checkDomainCondition = !domains.contains("@");
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
 			String toEmailId = tempTo.get("email").toString();
@@ -1075,8 +1077,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		if (!verifyIds.equals("")) {
 			List<String> invalids = new ArrayList<>();
-			List<String> verifyIdList = Arrays.asList(verifyIds.split(","))
-					.parallelStream()
+			List<String> verifyIdList = Arrays.stream(verifyIds.split(","))
 					.filter(ids -> {
 						if (!ids.matches(LexConstants.EMAIL_REGEX)){
 							invalidIds.add(ids);
