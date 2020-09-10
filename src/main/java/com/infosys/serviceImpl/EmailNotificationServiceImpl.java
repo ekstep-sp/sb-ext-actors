@@ -8,32 +8,25 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 
+import com.infosys.exception.BadRequestException;
+import com.infosys.model.cassandra.SmtpConfig;
+import com.infosys.model.cassandra.SmtpConfigPrimaryKeyModel;
+import com.infosys.repository.SmtpConfigRepository;
+import com.infosys.service.SmtpConfigService;
+import com.infosys.util.LexConstants;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.pdfbox.multipdf.Overlay;
@@ -52,6 +45,9 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
+import org.springframework.cache.CacheManager;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -67,6 +63,7 @@ import com.infosys.service.EmailNotificationService;
 import com.infosys.service.UserUtilityService;
 import com.infosys.util.LexJsonKey;
 import com.infosys.util.Templates;
+import sun.security.util.Password;
 
 @Service
 public class EmailNotificationServiceImpl implements EmailNotificationService {
@@ -74,11 +71,20 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	@Autowired
 	UserUtilityService userUtilService;
 
+	@Autowired
+	SmtpConfigRepository smtpConfigRepository;
+
+	@Autowired
+	SmtpConfigService smtpConfigService;
+
 	SimpleDateFormat formatter = new SimpleDateFormat("MMM dd, yyyy");
 	SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
 	private PropertiesCache properties = PropertiesCache.getInstance();
 	private String SMTPHOST;
+	private int SMTPPORT2;
 	private String SMTPPORT;
+	private String SMTPUSER;
+	private String SMTPPASSWORD;
 	private String bodhiKeyspace = LexJsonKey.BODHI_DB_KEYSPACE;
 	private String shareTable = properties.getProperty(LexJsonKey.SHARED_GOALS_TRACKER);
 	private CassandraOperation cassandraOperation = ServiceFactory.getInstance();
@@ -89,14 +95,27 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	@SuppressWarnings({ "unchecked", "unused" })
 	@Override
 	public Map<String, Object> Notify(Map<String, Object> data) {
-		SMTPHOST = System.getenv(LexJsonKey.SMTP_HOST);
-		SMTPPORT = System.getenv(LexJsonKey.SMTP_PORT);
 
-		if (ProjectUtil.isStringNullOREmpty(SMTPHOST) || ProjectUtil.isStringNullOREmpty(SMTPPORT)) {
-			ProjectLogger.log("SMTP config is not coming form System variable.");
-			SMTPHOST = properties.getProperty(LexJsonKey.SMTP_HOST);
-			SMTPPORT = properties.getProperty(LexJsonKey.SMTP_PORT);
+		if (data.get(LexJsonKey.ROOT_ORG) == null || data.get(LexJsonKey.ROOT_ORG).toString().isEmpty()) {
+			throw new BadRequestException("Missing required info rootOrg");
 		}
+		String rootOrg = data.get(LexJsonKey.ROOT_ORG).toString();
+		String org;
+		if (data.get(LexJsonKey.ORG) == null || data.get(LexJsonKey.ORG).toString().isEmpty()) {
+			org = rootOrg;
+		} else {
+			org = data.get(LexJsonKey.ORG).toString();
+		}
+		SmtpConfig smtpConfig = smtpConfigService.getSmtpConfig(rootOrg,org);
+		SMTPHOST = smtpConfig.getHost();
+		SMTPPORT2 = smtpConfig.getPort();
+		SMTPUSER = smtpConfig.getUserName();
+		SMTPPASSWORD = smtpConfig.getPassword();
+//		if (ProjectUtil.isStringNullOREmpty(SMTPHOST) || ProjectUtil.isStringNullOREmpty(SMTPPORT)) {
+//			ProjectLogger.log("SMTP config is not coming form System variable.");
+//			SMTPHOST = properties.getProperty(LexJsonKey.SMTP_HOST);
+//			SMTPPORT = properties.getProperty(LexJsonKey.SMTP_PORT);
+//		}
 		Map<String, Object> ret = new HashMap<String, Object>();
 		String msg = "Success";
 		String sharedByEmail = "";
@@ -127,9 +146,9 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		Properties props = new Properties();
 		props.put("mail.smtp.host", SMTPHOST);
-		props.put("mail.smtp.port", SMTPPORT);
+		props.put("mail.smtp.port", SMTPPORT2);
 
-		Session session = Session.getDefaultInstance(props, null);
+		Session session = Session.getDefaultInstance(props);
 
 		try {
 			Multipart multipart = new MimeMultipart();
@@ -390,8 +409,11 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			// imageBodyPart.setHeader("Content-ID", "<Image>");
 			imageBodyPart.setDisposition(MimeBodyPart.INLINE);
 			multipart.addBodyPart(imageBodyPart);
-
-			Transport.send(message);
+			Transport transport = session.getTransport("smtp");
+			transport.connect(SMTPHOST, SMTPPORT2, SMTPUSER, SMTPPASSWORD);
+//			transport.connect();
+			transport.sendMessage(message,message.getAllRecipients());
+//			Transport.send(message);
 
 		} catch (Exception e) {
 			msg = e.getMessage();
@@ -980,9 +1002,14 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 	@Override
 	public void VerifyForOneMail(Map<String, Object> data) {
+		VerifyForOneMail("Infosys", data);
+	}
+
+	@Override
+	public void VerifyForOneMail(String rootOrg, Map<String, Object> data) {
 		try {
 			if (this.Validate(data).equals("valid")) {
-				this.validateUserIds(data);
+				this.validateUserIds(rootOrg, data);
 			} else {
 				data.put("message", "Invalid Request Data!");
 				data.put("invalid_ids", new HashSet<String>());
@@ -992,18 +1019,26 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	private void validateUserIds(Map<String, Object> data) {
+		validateUserIds(LexConstants.INFOSYS, data);
+	}
+
+	@SuppressWarnings("unchecked")
+	private void validateUserIds(String rootOrg, Map<String, Object> data) {
 		String toList = "";
 		String ccList = "";
 		String bccList = "";
 		Set<String> invalidIds = new HashSet<String>();
-		Map<String, Object> mailData = userUtilService.getMailData();
-		List<String> domains = new ArrayList<>(Arrays.asList(mailData.get("domains").toString().split(",")));
+//		CacheProperties.EhCache cache = (CacheProperties.EhCache) CacheManager.getCache("myCache").getNativeCache();
+		Map<String, Object> mailData = userUtilService.getMailData(rootOrg);
+		System.out.println(mailData);
+		List<String> domains = Arrays.stream(mailData.get("domains").toString().split(","))
+				.map(String::trim).collect(Collectors.toList());
+		// To bypass domain check if we have '@' entry in domains list
+		boolean checkDomainCondition = !domains.contains("@");
 		for (Map<String, Object> tempTo : (List<Map<String, Object>>) data.get("emailTo")) {
-			String toEmailId = tempTo.get("email").toString().contains("@") ? tempTo.get("email").toString()
-					: tempTo.get("email").toString() + "";
-			if (!domains.contains("@" + toEmailId.split("@")[1])) {
+			String toEmailId = tempTo.get("email").toString();
+			if (checkDomainCondition && !domains.contains("@" + toEmailId.split("@")[1])) {
 				invalidIds.add(toEmailId);
 				continue;
 			}
@@ -1042,7 +1077,17 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 
 		if (!verifyIds.equals("")) {
 			List<String> invalids = new ArrayList<>();
-			Map<String, Object> ids = userUtilService.verifyUsers(Arrays.asList(verifyIds.split(",")));
+			List<String> verifyIdList = Arrays.stream(verifyIds.split(","))
+					.filter(ids -> {
+						if (!ids.matches(LexConstants.EMAIL_REGEX)){
+							invalidIds.add(ids);
+							return false;
+						}
+						return true;
+					})
+					.collect(Collectors.toList());
+
+			Map<String, Object> ids = userUtilService.verifyUsers(rootOrg, verifyIdList);
 			invalidIds.addAll(((List<String>) ids.get("invalid_users")));
 			for (String id : invalidIds)
 				invalids.add(id.replace("@infosys", "@ad.infosys"));
@@ -1474,7 +1519,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 		contents.endText();
 
 //     contents.drawImage(image_header, -5, 1020, 960, 181);
-//     
+//
 		contents.close();
 
 		Overlay overlay = new Overlay();
@@ -1516,7 +1561,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				list.add(data);
 			}
 			requestBody.put(key,list);
-			
+
 		}
 	}
 

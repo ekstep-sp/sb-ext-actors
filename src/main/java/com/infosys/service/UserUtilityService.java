@@ -26,6 +26,8 @@ public interface UserUtilityService {
 
 	Map<String, Object> verifyUsers(List<String> emails);
 
+	Map<String, Object> verifyUsers(String rootOrg, List<String> emails);
+
 	byte[] getUserPhotoFromActiveDirectory(String mailId);
 
 	List<Map<String, Object>> getUsersFromActiveDirectory(List<String> mailIds);
@@ -46,6 +48,8 @@ public interface UserUtilityService {
 
 	Map<String, Object> getMailData();
 
+	Map<String, Object> getMailData(String rootOrg);
+
 	SearchHits getMetaByIDListandSource(List<String> id, String[] source) throws IOException;
 
 	Boolean checkContentStore(String contentHost, String contentPort);
@@ -53,6 +57,8 @@ public interface UserUtilityService {
 	String checkElasticSearch();
 
 	String getValidationOptions();
+
+	String getValidationOptions(String rootOrg);
 
 	void insertRecordInElasticSearchAutocompleteIndex(Map<String, Object> requestMap);
 

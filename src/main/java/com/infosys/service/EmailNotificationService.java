@@ -19,6 +19,8 @@ public interface EmailNotificationService {
     
     public Map<String, Object> NotifyReview(Map<String, Object> data);
 
+    void VerifyForOneMail(String rootOrg, Map<String, Object> data);
+
     void VerifyForOneMail(Map<String, Object> data);
 
     void VerifyForReview(Map<String, Object> data);

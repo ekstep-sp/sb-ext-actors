@@ -1,5 +1,5 @@
 /*               "Copyright 2020 Infosys Ltd.
-               Use of this source code is governed by GPL v3 license that can be found in the LICENSE file or at 
+               Use of this source code is governed by GPL v3 license that can be found in the LICENSE file or at
                This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3" */
 package com.infosys.serviceImpl;
 
@@ -95,6 +95,7 @@ import com.infosys.model.CourseProgress;
 import com.infosys.service.LearningHistoryService;
 import com.infosys.service.UserUtilityService;
 import com.infosys.util.ConfigurationsUtil;
+import com.infosys.util.LexConstants;
 import com.infosys.util.LexJsonKey;
 import com.infosys.util.LexProjectUtil;
 import com.infosys.util.Util;
@@ -846,19 +847,20 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	 * being shared is a list of valid users.
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	public Map<String, Object> verifyUsers(List<String> emails) {
+		return verifyUsers(LexConstants.INFOSYS, emails);
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public Map<String, Object> verifyUsers(String rootOrg, List<String> emails) {
 		List<String> graphApiValidUsers = new ArrayList<>();
 		List<String> validUsers = new ArrayList<>();
 		List<String> dataForGraphApi = new ArrayList<>();
 		if (emails != null && !emails.isEmpty()) {
-			{
-				Set<String> temp = new HashSet<String>();
-				temp.addAll(emails);
-				emails = new ArrayList<>(temp);
-				emails.replaceAll(String::toLowerCase);
-			}
-			Map<String, Object> validUserData = userVerificationFromUserDb(emails);
+			emails = new ArrayList<>(new HashSet<>(emails));
+			emails.replaceAll(String::toLowerCase);
+			Map<String, Object> validUserData = userVerificationFromUserDb(rootOrg, emails);
 			validUsers = (ArrayList<String>) validUserData.get("valid_users");
 			emails.removeAll(validUsers);
 			if (validUserData.containsKey("validate_options")
@@ -896,8 +898,13 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 	 */
 	@Override
 	public String getValidationOptions() {
+		return getValidationOptions("Infosys");
+	}
+
+	@Override
+	public String getValidationOptions(String rootOrg) {
 		Select select = QueryBuilder.select().column("value").from(bodhiKeyspace, appPropertiesTable);
-		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", "Infosys"));
+		select.where(eq("key", LexJsonKey.EMAIL_VALIDATE_OPTIONS)).and(eq("root_org", rootOrg));
 		ProjectLogger.log("Query: " + select, LoggerEnum.DEBUG);
 		ResultSet appResults = connectionManager.getSession(bodhiKeyspace).execute(select);
 		String emailValidationOptions = "";
@@ -907,22 +914,35 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		return emailValidationOptions;
 	}
 
-	private Map<String, Object> userVerificationFromUserDb(List<String> userData) {
+	private Map<String, Object> userVerificationFromUserDb(String rootOrg, List<String> userData) {
 		Map<String, Object> output = new HashMap<String, Object>();
 		ArrayList<String> validUsers = new ArrayList<>();
 		ArrayList<String> validateOptions = new ArrayList<>();
 		validateOptions.add("user");
 		try {
-			String emailValidationOptions = this.getValidationOptions();
+			String emailValidationOptions = this.getValidationOptions(rootOrg);
 			if (emailValidationOptions.toLowerCase().contains("graph")) {
 				validateOptions.add("graph");
 			}
-			Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
-			emailSelect.where(QueryBuilder.in("email", userData));
-			ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
-			ResultSet results = connectionManager.getSession(JsonKey.SUNBIRD).execute(emailSelect);
-			for (Row row : results) {
-				validUsers.add(row.getString(0).toLowerCase().trim());
+			/*
+			// Commented the original Code for removing DB validation of users - rish-dev
+
+			if (rootOrg.equals(LexConstants.INFOSYS)) {
+				Select emailSelect = QueryBuilder.select().column("email").from(JsonKey.SUNBIRD, LexJsonKey.MV_USER);
+				emailSelect.where(QueryBuilder.in("email", userData));
+				ProjectLogger.log("Query: " + emailSelect, LoggerEnum.DEBUG);
+				ResultSet results = connectionManager.getSession(JsonKey.SUNBIRD).execute(emailSelect);
+				for (Row row : results) {
+					validUsers.add(row.getString(0).toLowerCase().trim());
+				}
+			} else {
+				for (String row : userData) {
+					validUsers.add(row.toLowerCase().trim());
+				}
+			}*/
+			// Adding users directly to valid users
+			for (String row : userData) {
+				validUsers.add(row.toLowerCase().trim());
 			}
 			output.put("validate_options", validateOptions);
 			output.put("valid_users", validUsers);
@@ -1024,15 +1044,20 @@ public class UserUtilityServiceImpl implements UserUtilityService {
 		return url;
 	}
 
-	@Cacheable("domainCache")
-	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Object> getMailData() {
+		return getMailData(LexConstants.INFOSYS);
+	}
+
+	@Cacheable(LexConstants.DOMAIL_CACHE)
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map<String, Object> getMailData(String rootOrg) {
 		Map<String, Object> ret = new HashMap<String, Object>();
 		try {
 			Map<String, Object> propertyMap = new HashMap<String, Object>();
 			// hard coding root_org here because this will be removed soon.
-			propertyMap.put("root_org", "Infosys");
+			propertyMap.put("root_org", rootOrg);
 			propertyMap.put("key", Arrays.asList("valid_domains", "mail_id", "mail_name"));
 			Response result = this.getRecordsByProperties(bodhiKeyspace, appPropertiesTable, propertyMap);
 

@@ -110,6 +110,11 @@ public class LexJsonKey {
 	public static final String USER_PERSONALROLE = "user_personalrole";
 	public static final String EMAIL_VALIDATE_OPTIONS = "email_validate_options";
 	public static final String MV_USER = "mv_user";
+
+	public static final String USER = "user";
+	public static final String ROOT_ORG = "rootOrg";
+	public static final String ORG = "org";
+
 	public static final String ErrorUserBadges = "user_badge_error";
 	public static final String ASSESSMENT_BY_CONTENT_USER = "assessment_by_content_user";
 

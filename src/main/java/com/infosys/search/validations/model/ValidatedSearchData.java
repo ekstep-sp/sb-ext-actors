@@ -6,6 +6,7 @@ package com.infosys.search.validations.model;
 import com.infosys.search.MultiLingualIntegratedSearchController;
 import com.infosys.search.validations.groups.ValidationGroupAuthoringToolSearch;
 import com.infosys.search.validations.groups.ValidationGroupGeneralSearch;
+import com.infosys.searchv6.validations.model.AggregationRequest;
 import joptsimple.internal.Strings;
 
 import javax.validation.Valid;
@@ -46,6 +47,17 @@ public class ValidatedSearchData implements Serializable {
     private List<Map<SortableFields, SortOrders>> sort = new ArrayList<>();
     private Map<SortableAggregations, List<Map<AggregationSortType, SortOrders>>> aggregationsSorting = new HashMap<>();
 
+    //    Start(societal Platform)
+    private Boolean didYouMean = true;
+
+    @Size(max = 20, message = "Maximum only 20 aggregations can be requested")
+    private Map<String, AggregationRequest> visibleFilters = Collections.emptyMap();
+
+    @Size(max = 20, message = "Maximum only 20 aggregations can be requested")
+    private Map<String, AggregationRequest> notVisibleFilters = Collections.emptyMap();
+
+    private List<String> searchOn = Arrays.asList("learningObjective^1","preRequisites^1","subTitle^1","catalogPaths^1","childrenDescription^1","childrenTitle^1","concepts.name^1","description^1","keywords^1","sourceShortName^1","sourceName^1","name^2");
+    //  End
     @AssertTrue(message = "uuid can not be empty")
     private boolean isUuid() {
         if (MultiLingualIntegratedSearchController.isAccessControlEnabled) {
@@ -173,6 +185,31 @@ public class ValidatedSearchData implements Serializable {
     public void setSort(List<Map<SortableFields, SortOrders>> sort) {
         this.sort = sort;
     }
+    //    Start (Space Societal Platform)
+    public Map<String, AggregationRequest> getVisibleFilters() { return visibleFilters; }
+
+    public void setVisibleFilters(Map<String, AggregationRequest> visibleFilters) { this.visibleFilters = visibleFilters; }
+
+    public Map<String, AggregationRequest> getNotVisibleFilters() { return notVisibleFilters; }
+
+    public void setNotVisibleFilters(Map<String, AggregationRequest> notVisibleFilters) { this.notVisibleFilters = notVisibleFilters; }
+
+    public Boolean getDidYouMean() {
+        return didYouMean;
+    }
+
+    public void setDidYouMean(Boolean didYouMean) {
+        this.didYouMean = didYouMean;
+    }
+
+    public List<String> getSearchOn() {
+        return searchOn;
+    }
+
+    public void setSearchOn(List<String> searchOn) {
+        this.searchOn = searchOn;
+    }
+//    Stop
 
     public Map<SortableAggregations, List<Map<AggregationSortType, SortOrders>>> getAggregationsSorting() {
         return aggregationsSorting;

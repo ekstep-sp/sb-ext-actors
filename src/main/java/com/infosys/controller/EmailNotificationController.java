@@ -9,14 +9,12 @@ import java.util.Map;
 
 import javax.mail.MessagingException;
 
+import com.infosys.util.LexConstants;
+import com.infosys.util.LexJsonKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.sunbird.common.Constants;
 import org.sunbird.common.models.response.Response;
 import org.sunbird.common.models.util.ProjectUtil;
@@ -96,14 +94,18 @@ public class EmailNotificationController {
 	}
 
 	@PostMapping("/v1/Notification/Send")
-	public Response sendNotification(@RequestBody Map<String, Object> requestBody) {
+	public Response sendNotification(@RequestHeader (name = "rootOrg") String rootOrg,
+									 @RequestHeader (name = "org", defaultValue = "") String org,
+									 @RequestBody Map<String, Object> requestBody) {
 
 		Response resp = new Response();
 		resp.setVer("v1");
 		resp.setId("api.content.create");
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
-			notificationService.VerifyForOneMail(requestBody);
+			notificationService.VerifyForOneMail(rootOrg, requestBody);
+			requestBody.put(LexJsonKey.ROOT_ORG, rootOrg);
+			requestBody.put(LexJsonKey.ORG, org);
 			if (!requestBody.containsKey("emailTo"))
 				notificationService.Notify(requestBody);
 			resp.put(Constants.RESPONSE, requestBody.get("message"));

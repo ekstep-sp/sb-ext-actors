@@ -21,6 +21,11 @@ String message;
 		ProjectLogger.log(message  + " at " + this.getStackTrace()[0],LoggerEnum.ERROR);
 	}
 
+	public ApplicationLogicError(String message, Throwable cause) {
+		this(message);
+		super.initCause(cause);
+	}
+
 	public String getMessage() {
 		return message;
 	}
