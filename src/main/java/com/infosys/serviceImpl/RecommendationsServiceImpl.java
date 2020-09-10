@@ -9,6 +9,7 @@ import java.util.*;
 import javax.annotation.PostConstruct;
 
 import com.googlecode.concurrenttrees.radix.RadixTree;
+import com.infosys.repository.UserContentRatingRepository;
 import com.infosys.searchv6.validations.model.*;
 import com.infosys.searchv6.GeneralMultiLingualIntegratedSearchServicev6;
 import com.infosys.service.TopicService;
@@ -69,6 +70,9 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 
 	@Autowired
 	RestTemplate restTemplate;
+
+	@Autowired
+	private UserContentRatingRepository userResourceRatingRepo;
 
 	@Value("${infosys.core.ip}")
 	String CoreIp;
@@ -193,12 +197,12 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			boolQuery.filter(QueryBuilders.boolQuery().must(QueryBuilders.termQuery("learningMode", learningMode)));
 		}
 
-//		if (externalContent)
-//			boolQuery.filter(QueryBuilders.boolQuery()
-//					.mustNot(QueryBuilders.termQuery("isExternal", true)));
-//		else
-//			boolQuery.filter(
-//					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
+		if (externalContent)
+			boolQuery.filter(QueryBuilders.boolQuery()
+					.mustNot(QueryBuilders.termQuery("isExternal", true)));
+		else
+			boolQuery.filter(
+					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
 
 		if (contentTypefiltersArray.size() > 0) {
 			boolQuery.mustNot(
@@ -213,7 +217,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 		Object[] fieldsObjs = fields.toArray();
 //		boolQuery.mustNot(QueryBuilders.nestedQuery("collections",QueryBuilders.boolQuery().filter(QueryBuilders.existsQuery("collections")), ScoreMode.Avg));
 //		boolQuery.filter(QueryBuilders.termQuery("isStandAlone", isStandAlone));
-		boolQuery.filter(QueryBuilders.termQuery("status","Draft"));
+		boolQuery.filter(QueryBuilders.termQuery("status","Live"));
 		boolQuery.filter(QueryBuilders.termQuery("rootOrg", rootOrg));
 //		boolQuery.filter(QueryBuilders.nestedQuery("org", QueryBuilders.boolQuery().must(QueryBuilders.termQuery("org.org", org)).must(QueryBuilders.rangeQuery("validTill").gte("now/d")), ScoreMode.Avg));
 
@@ -244,16 +248,24 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 		List<Map<String, Object>> responseData = new ArrayList<>();
 		searchResult.getHits().forEach(hit -> {
 			Map<String, Object> data = hit.getSourceAsMap();
-			Object viewCount = ((Map<String, Object>) data.getOrDefault("viewCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object averageRating = ((Map<String, Object>) data.getOrDefault("averageRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object uniqueUsersCount = ((Map<String, Object>) data.getOrDefault("uniqueUsersCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object totalRating = ((Map<String, Object>) data.getOrDefault("totalRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-
-			data.put("viewCount",viewCount);
-			data.put("averageRating",averageRating);
-			data.put("uniqueUsersCount",uniqueUsersCount);
-			data.put("totalRating",totalRating);
-
+//			Start: Find averageRating and count - Societal Platform Space
+//			Object viewCount = ((Map<String, Object>) data.getOrDefault("viewCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
+//			Object averageRating = ((Map<String, Object>) data.getOrDefault("averageRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
+//			Object uniqueUsersCount = ((Map<String, Object>) data.getOrDefault("uniqueUsersCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
+//			Object totalRating = ((Map<String, Object>) data.getOrDefault("totalRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
+//
+//			data.put("viewCount",viewCount);
+//			data.put("averageRating",averageRating);
+//			data.put("uniqueUsersCount",uniqueUsersCount);
+//			data.put("totalRating",totalRating);
+			Map<String, Object> ratingDetailMap = userResourceRatingRepo.getAvgRatingAndRatingCountForContentId(rootOrg,
+					data.get("identifier").toString());
+//			data.putAll(ratingDetailMap);
+			data.put("viewCount", ratingDetailMap.getOrDefault("viewCount",0.0));
+			data.put("averageRating", ratingDetailMap.getOrDefault("averageRating",0.0));
+			data.put("uniqueUsersCount", ratingDetailMap.getOrDefault("viewCount",0.0));
+//			data.put("totalRating", ratingDetailMap.getOrDefault("viewCount",0.0));
+//			End
 			responseData.add(data);
 		});
 
