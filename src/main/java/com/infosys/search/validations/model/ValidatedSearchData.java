@@ -56,7 +56,7 @@ public class ValidatedSearchData implements Serializable {
     @Size(max = 20, message = "Maximum only 20 aggregations can be requested")
     private Map<String, AggregationRequest> notVisibleFilters = Collections.emptyMap();
 
-    private List<String> searchOn = Arrays.asList("learningObjective^1","preRequisites^1","subTitle^1","catalogPaths^1","childrenDescription^1","childrenTitle^1","concepts.name^1","description^1","keywords^1","sourceShortName^1","sourceName^1","name^2");
+    private List<String> searchOn = Arrays.asList("learningObjective^1","preRequisites^1","subTitle^1","catalogPaths^1","childrenDescription^1","childrenTitle^1","concepts.name^1","description^1","keywords^1","sourceShortName^1","sourceName^1","name^2","region^1","theme^1");
     //  End
     @AssertTrue(message = "uuid can not be empty")
     private boolean isUuid() {
