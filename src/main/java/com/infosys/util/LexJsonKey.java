@@ -130,6 +130,12 @@ public class LexJsonKey {
 	public static final String USER_PREFERENCES = "user_preferences";
 	public static final String RECENT_PLAYLIST_MV = "mv_recent_playlist";
 
+	// Added for Public Content Sharing
+	public static final String PUBLIC_CONTENT_DATA = "public_content_data";
+	public static final String DOMAIN_MAPPING = "domain_mapping";
+	public static final String PUBLIC_CONTENT_URL = "public_content_url";
+	// END
+
 	public LexJsonKey() {
 
 	}

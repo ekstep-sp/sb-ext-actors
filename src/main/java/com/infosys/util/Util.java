@@ -224,6 +224,9 @@ public class Util {
 		dbInfoMap.put(LexJsonKey.USER_PREFERENCES, getDbInfoObject(BODHI_KEY_SPACE_NAME, "user_preferences"));
 		dbInfoMap.put(LexJsonKey.RECENT_PLAYLIST_MV, getDbInfoObject(BODHI_KEY_SPACE_NAME, "mv_recent_playlist"));
 
+		// Added for Public Content Sharing
+		dbInfoMap.put(LexJsonKey.PUBLIC_CONTENT_DATA, getDbInfoObject(BODHI_KEY_SPACE_NAME, "public_content"));
+		// END
 	}
 
 	/**
