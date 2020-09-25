@@ -398,17 +398,18 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				throw new Exception("Invalid Email Type");
 			}
 			message.setContent(multipart);
-
-			MimeBodyPart imageBodyPart = new MimeBodyPart();
-			DataSource fds = new FileDataSource(userUtilService.getImageFromContentStore());
-			// DataSource fds = new FileDataSource(
-			// this.streamToFile(resourceLoader.getResource("classpath:LexHeader.png").getInputStream()));
-			imageBodyPart.setDataHandler(new DataHandler(fds));
-			imageBodyPart.setContentID("<Image>");
-			imageBodyPart.setFileName("LEXLOGO.png");
-			// imageBodyPart.setHeader("Content-ID", "<Image>");
-			imageBodyPart.setDisposition(MimeBodyPart.INLINE);
-			multipart.addBodyPart(imageBodyPart);
+// Removed imagepart from email template: Space societal Platform
+//			MimeBodyPart imageBodyPart = new MimeBodyPart();
+//			DataSource fds = new FileDataSource(userUtilService.getImageFromContentStore());
+//			// DataSource fds = new FileDataSource(
+//			// this.streamToFile(resourceLoader.getResource("classpath:LexHeader.png").getInputStream()));
+//			imageBodyPart.setDataHandler(new DataHandler(fds));
+//			imageBodyPart.setContentID("<Image>");
+//			imageBodyPart.setFileName("LEXLOGO.png");
+//			// imageBodyPart.setHeader("Content-ID", "<Image>");
+//			imageBodyPart.setDisposition(MimeBodyPart.INLINE);
+//			multipart.addBodyPart(imageBodyPart);
+//			End
 			Transport transport = session.getTransport("smtp");
 			transport.connect(SMTPHOST, SMTPPORT2, SMTPUSER, SMTPPASSWORD);
 //			transport.connect();
