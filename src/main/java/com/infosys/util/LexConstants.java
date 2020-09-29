@@ -43,6 +43,7 @@ public class LexConstants {
 	public static final String RESPONSE = "response";
 	public static final String INFOSYS = "Infosys";
 	public static final String EMAIL_REGEX = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
+	public static final String IDENTIFIER = "identifier";
 	public LexConstants() {
 
 	}

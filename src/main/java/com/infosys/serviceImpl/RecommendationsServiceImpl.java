@@ -5,10 +5,10 @@ package com.infosys.serviceImpl;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
-import com.googlecode.concurrenttrees.radix.RadixTree;
 import com.infosys.repository.UserContentRatingRepository;
 import com.infosys.searchv6.validations.model.*;
 import com.infosys.searchv6.GeneralMultiLingualIntegratedSearchServicev6;
@@ -246,32 +246,30 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 				RequestOptions.DEFAULT);
 
 		List<Map<String, Object>> responseData = new ArrayList<>();
+		List<String> contentIds = new ArrayList<>();
 		searchResult.getHits().forEach(hit -> {
 			Map<String, Object> data = hit.getSourceAsMap();
-//			Start: Find averageRating and count - Societal Platform Space
-//			Object viewCount = ((Map<String, Object>) data.getOrDefault("viewCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-//			Object averageRating = ((Map<String, Object>) data.getOrDefault("averageRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-//			Object uniqueUsersCount = ((Map<String, Object>) data.getOrDefault("uniqueUsersCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-//			Object totalRating = ((Map<String, Object>) data.getOrDefault("totalRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-//
-//			data.put("viewCount",viewCount);
-//			data.put("averageRating",averageRating);
-//			data.put("uniqueUsersCount",uniqueUsersCount);
-//			data.put("totalRating",totalRating);
-			Map<String, Object> ratingDetailMap = userResourceRatingRepo.getAvgRatingAndRatingCountForContentId(rootOrg,
-					data.get("identifier").toString());
-//			data.putAll(ratingDetailMap);
-			data.put("viewCount", ratingDetailMap.getOrDefault("viewCount",0.0));
-			data.put("averageRating", ratingDetailMap.getOrDefault("averageRating",0.0));
-			data.put("uniqueUsersCount", ratingDetailMap.getOrDefault("viewCount",0.0));
-//			data.put("totalRating", ratingDetailMap.getOrDefault("viewCount",0.0));
-//			End
+			contentIds.add(data.get(LexConstants.IDENTIFIER).toString());
 			responseData.add(data);
 		});
-
-		resp.put("greyOut",false);
-		resp.put(LexConstants.RESPONSE, responseData);
+		resp.put("greyOut", false);
+		resp.put(LexConstants.RESPONSE, addRatingsToSearchData(responseData, rootOrg, contentIds));
 		return resp;
+	}
+
+	private List<Map<String, Object>> addRatingsToSearchData(List<Map<String, Object>> responseData, String rootOrg, List<String> contentIds) {
+		if (responseData.isEmpty()) {
+			return responseData;
+		}
+		Map<String, Map<String, Object>> allRatings = userResourceRatingRepo.getAvgRatingAndRatingCountForContentIds(rootOrg, contentIds)
+				.stream()
+				.collect(Collectors.toMap(item -> item.get("content_id").toString(), item -> item));
+		return responseData.stream().peek(data -> {
+			Map<String, Object> ratingDetailMap = allRatings.getOrDefault(data.get(LexConstants.IDENTIFIER).toString(), new HashMap<>());
+			data.put("viewCount", ratingDetailMap.getOrDefault("viewCount", 0.0));
+			data.put("averageRating", ratingDetailMap.getOrDefault("averageRating", 0.0));
+			data.put("uniqueUsersCount", ratingDetailMap.getOrDefault("viewCount", 0.0));
+		}).collect(Collectors.toList());
 	}
 
 	@Override
@@ -343,22 +341,14 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 				RequestOptions.DEFAULT);
 
 		List<Map<String, Object>> responseData = new ArrayList<>();
+		List<String> contentIds = new ArrayList<>();
 		searchResult.getHits().forEach(hit -> {
 			Map<String, Object> data = hit.getSourceAsMap();
-			Object viewCount = ((Map<String, Object>) data.getOrDefault("viewCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object averageRating = ((Map<String, Object>) data.getOrDefault("averageRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object uniqueUsersCount = ((Map<String, Object>) data.getOrDefault("uniqueUsersCount", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-			Object totalRating = ((Map<String, Object>) data.getOrDefault("totalRating", new HashMap<>())).getOrDefault(rootOrg, 0.0);
-
-			data.put("viewCount",viewCount);
-			data.put("averageRating",averageRating);
-			data.put("uniqueUsersCount",uniqueUsersCount);
-			data.put("totalRating",totalRating);
-
+			contentIds.add(data.get(LexConstants.IDENTIFIER).toString());
 			responseData.add(data);
 		});
-
-		resp.put(LexConstants.RESPONSE, responseData);
+		resp.put("greyOut", false);
+		resp.put(LexConstants.RESPONSE, addRatingsToSearchData(responseData, rootOrg, contentIds));
 		return resp;
 	}
 
@@ -670,6 +660,10 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			filtersGroup.setAndFilters(Collections.singletonList(filters));
 			validatedSearchData.setFilters(Collections.singletonList(filtersGroup));
 			Map<String, Object> searchResponse = generalMultiLingualIntegratedSearchServicev6.performSearch(validatedSearchData);
+			List<Map<String, Object>> results = (List<Map<String, Object>>) searchResponse.get("result");
+			List<String> contentIds = new ArrayList<>();
+			results.forEach(hit -> contentIds.add(hit.get(LexConstants.IDENTIFIER).toString()));
+			searchResponse.put("result", addRatingsToSearchData(results, rootOrg, contentIds));
 			Response response = new Response();
 			response.put("greyOut",false);
 			response.put("response", searchResponse);
