@@ -29,8 +29,12 @@ import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import org.sunbird.common.models.response.Response;
 
@@ -245,7 +249,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 		List<String> contentIds = new ArrayList<>();
 		searchResult.getHits().forEach(hit -> {
 			Map<String, Object> data = hit.getSourceAsMap();
-			contentIds.add(data.get("identifier").toString());
+			contentIds.add(data.get(LexConstants.IDENTIFIER).toString());
 			responseData.add(data);
 		});
 		resp.put("greyOut", false);
@@ -254,11 +258,14 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 	}
 
 	private List<Map<String, Object>> addRatingsToSearchData(List<Map<String, Object>> responseData, String rootOrg, List<String> contentIds) {
-		Map<String, Map<String, Object>> allRatings = userResourceRatingRepo.getAvgRatingAndRatingCountForMultipleContentIds(rootOrg, contentIds)
+		if (responseData.isEmpty()) {
+			return responseData;
+		}
+		Map<String, Map<String, Object>> allRatings = userResourceRatingRepo.getAvgRatingAndRatingCountForContentIds(rootOrg, contentIds)
 				.stream()
 				.collect(Collectors.toMap(item -> item.get("content_id").toString(), item -> item));
 		return responseData.stream().peek(data -> {
-			Map<String, Object> ratingDetailMap = allRatings.getOrDefault(data.get("identifier").toString(), new HashMap<>());
+			Map<String, Object> ratingDetailMap = allRatings.getOrDefault(data.get(LexConstants.IDENTIFIER).toString(), new HashMap<>());
 			data.put("viewCount", ratingDetailMap.getOrDefault("viewCount", 0.0));
 			data.put("averageRating", ratingDetailMap.getOrDefault("averageRating", 0.0));
 			data.put("uniqueUsersCount", ratingDetailMap.getOrDefault("viewCount", 0.0));
@@ -337,7 +344,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 		List<String> contentIds = new ArrayList<>();
 		searchResult.getHits().forEach(hit -> {
 			Map<String, Object> data = hit.getSourceAsMap();
-			contentIds.add(data.get("identifier").toString());
+			contentIds.add(data.get(LexConstants.IDENTIFIER).toString());
 			responseData.add(data);
 		});
 		resp.put("greyOut", false);
@@ -655,7 +662,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			Map<String, Object> searchResponse = generalMultiLingualIntegratedSearchServicev6.performSearch(validatedSearchData);
 			List<Map<String, Object>> results = (List<Map<String, Object>>) searchResponse.get("result");
 			List<String> contentIds = new ArrayList<>();
-			results.forEach(hit -> contentIds.add(hit.get("identifier").toString()));
+			results.forEach(hit -> contentIds.add(hit.get(LexConstants.IDENTIFIER).toString()));
 			searchResponse.put("result", addRatingsToSearchData(results, rootOrg, contentIds));
 			Response response = new Response();
 			response.put("greyOut",false);
