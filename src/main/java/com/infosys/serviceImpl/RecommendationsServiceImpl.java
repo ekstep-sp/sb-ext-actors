@@ -281,14 +281,14 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			boolQuery.mustNot(
 					QueryBuilders.boolQuery().filter(QueryBuilders.termsQuery("contentType", contentTypefiltersArray)));
 		}
-
-		if (externalContent)
-			boolQuery.filter(QueryBuilders.boolQuery()
-					.mustNot(QueryBuilders.termsQuery("sourceShortName.keyword", sourceShortName)));
-		else
-			boolQuery.filter(
-					QueryBuilders.boolQuery().must(QueryBuilders.termsQuery("sourceShortName.keyword", sourceShortName)));
-
+// SPace filter removed
+//		if (externalContent)
+//			boolQuery.filter(QueryBuilders.boolQuery()
+//					.mustNot(QueryBuilders.termsQuery("sourceShortName.keyword", sourceShortName)));
+//		else
+//			boolQuery.filter(
+//					QueryBuilders.boolQuery().must(QueryBuilders.termsQuery("sourceShortName.keyword", sourceShortName)));
+//  End
 		if (null != learningMode) {
 			boolQuery.filter(QueryBuilders.boolQuery().must(QueryBuilders.termQuery("learningMode", learningMode)));
 		}

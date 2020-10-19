@@ -4,5 +4,5 @@ docker run --name sbext-build sb-ext-service-build:eagle && docker cp sbext-buil
 docker rm -f sbext-build
 docker rmi -f sb-ext-service-build
 
-docker build --no-cache -t eagle-docker.tarento.com/lex-sb-ext-service:gold .
-docker push eagle-docker.tarento.com/lex-sb-ext-service:gold
+docker build --no-cache -t 708570229439.dkr.ecr.us-east-1.amazonaws.com/sb-ext-service:remove_filter_latest_recommendations .
+docker push 708570229439.dkr.ecr.us-east-1.amazonaws.com/sb-ext-service:remove_filter_latest_recommendations
