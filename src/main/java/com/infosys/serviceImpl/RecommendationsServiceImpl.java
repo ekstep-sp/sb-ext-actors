@@ -197,12 +197,14 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			boolQuery.filter(QueryBuilders.boolQuery().must(QueryBuilders.termQuery("learningMode", learningMode)));
 		}
 
-		if (externalContent)
-			boolQuery.filter(QueryBuilders.boolQuery()
-					.mustNot(QueryBuilders.termQuery("isExternal", true)));
-		else
-			boolQuery.filter(
-					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
+//     Start : Removed isExternal filter from ES (SPace Societal Platform)
+//		if (externalContent)
+//			boolQuery.filter(QueryBuilders.boolQuery()
+//					.mustNot(QueryBuilders.termQuery("isExternal", true)));
+//		else
+//			boolQuery.filter(
+//					QueryBuilders.boolQuery().must(QueryBuilders.termQuery("isExternal", false)));
+//    End
 
 		if (contentTypefiltersArray.size() > 0) {
 			boolQuery.mustNot(
