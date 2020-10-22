@@ -609,7 +609,7 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 	}
 
 	@Override
-	public Response getInterests(UUID userId, List<String> learningMode, int pageNumber, int pageSize, List<String> includeContentTypes, Boolean externalContentFilter, List<String> locales, String rootOrg, List<String> sourceFields, Boolean isInIntranet, Boolean isStandAlone) throws Exception {
+	public Response getInterests(UUID userId, List<String> learningMode, int pageNumber, int pageSize, List<String> includeContentTypes, Boolean externalContentFilter, List<String> locales, String rootOrg, List<String> sourceFields, Boolean isInIntranet, Boolean isStandAlone, boolean isSort) throws Exception {
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("rootOrg",rootOrg);
 		if (null !=locales && !locales.isEmpty())
