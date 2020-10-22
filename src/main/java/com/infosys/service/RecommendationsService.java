@@ -30,5 +30,5 @@ public interface RecommendationsService {
 
     List<Map<String, Object>> getTrendingOrg(UUID userId, String rootOrg, String org, int pageNumber, int pageSize, List<String> filtersArray, List<String> locales, List<String> sourceFields, Boolean isInIntranet)throws Exception;
 
-    Response getInterests(UUID userId, List<String> learningMode, int pageNumber, int pageSize, List<String> excludeContentTypes, Boolean externalContentFilter, List<String> locale, String rootOrg, List<String> sourceFields, Boolean isInIntranet, Boolean isStandAlone) throws Exception;
+    Response getInterests(UUID userId, List<String> learningMode, int pageNumber, int pageSize, List<String> excludeContentTypes, Boolean externalContentFilter, List<String> locale, String rootOrg, List<String> sourceFields, Boolean isInIntranet, Boolean isStandAlone, boolean isSort) throws Exception;
 }

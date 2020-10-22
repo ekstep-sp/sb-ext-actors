@@ -661,11 +661,16 @@ public class RecommendationsServiceImpl implements RecommendationsService {
 			FiltersGroup filtersGroup = new FiltersGroup();
 			filtersGroup.setAndFilters(Collections.singletonList(filters));
 			validatedSearchData.setFilters(Collections.singletonList(filtersGroup));
+			validatedSearchData.setSearchOn(Arrays.asList("keywords^1", "region^1", "theme^1"));
 			Map<String, Object> searchResponse = generalMultiLingualIntegratedSearchServicev6.performSearch(validatedSearchData);
 			List<Map<String, Object>> results = (List<Map<String, Object>>) searchResponse.get("result");
 			List<String> contentIds = new ArrayList<>();
 			results.forEach(hit -> contentIds.add(hit.get(LexConstants.IDENTIFIER).toString()));
-			searchResponse.put("result", addRatingsToSearchData(results, rootOrg, contentIds));
+			List<Map<String, Object>> resoponse = addRatingsToSearchData(results, rootOrg, contentIds);
+			if (isSort) {
+				resoponse.sort((o1, o2) -> o2.getOrDefault("publishedOn", "").toString().compareTo(o1.getOrDefault("publishedOn", "").toString()));
+			}
+			searchResponse.put("result", resoponse);
 			Response response = new Response();
 			response.put("greyOut",false);
 			response.put("response", searchResponse);

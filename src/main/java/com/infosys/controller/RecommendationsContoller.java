@@ -194,7 +194,7 @@ public class RecommendationsContoller {
         	resp.put("error", "pageSize and pageNumber must be an integer");
         	return new ResponseEntity<Response>(resp,HttpStatus.BAD_REQUEST);
         }
-        
+
         List<String> contentTypefiltersArray = Arrays.asList(contenttypeFilters.split(","));
 
         if(null == externalContent)
@@ -221,7 +221,8 @@ public class RecommendationsContoller {
     }
 
     @GetMapping("/{userId}/recommendations/interest")
-    public ResponseEntity<Response> getInterest(@PathVariable UUID userId, @RequestParam(value="learningMode", required=false,defaultValue = "") String learningModes, @RequestParam(value = "pageSize", defaultValue = "10") String pageSizeStr, @RequestParam(value = "pageNumber", defaultValue = "0") String pageNumberStr, @RequestParam(value = "includeContentType", defaultValue = "",required = false) String includeContentTypes, @RequestParam(value="externalContent", required=false) Boolean externalContentFilter, @RequestHeader(value = "rootOrg",defaultValue = "") String rootOrg, @RequestHeader(value = "langCode",required = false) List<String> locales,@RequestParam(value="sourceFields", required=false) List<String> sourceFields, @RequestParam(value="isInIntranet",required = false) Boolean isInIntranet, @RequestParam(value="isStandAlone",required = false) Boolean isStandAlone) {
+    public ResponseEntity<Response> getInterest(@PathVariable UUID userId, @RequestParam(value="learningMode", required=false,defaultValue = "") String learningModes, @RequestParam(value = "pageSize", defaultValue = "10") String pageSizeStr, @RequestParam(value = "pageNumber", defaultValue = "0") String pageNumberStr, @RequestParam(value = "includeContentType", defaultValue = "",required = false) String includeContentTypes, @RequestParam(value="externalContent", required=false) Boolean externalContentFilter, @RequestHeader(value = "rootOrg",defaultValue = "") String rootOrg, @RequestHeader(value = "langCode",required = false) List<String> locales,@RequestParam(value="sourceFields", required=false) List<String> sourceFields, @RequestParam(value="isInIntranet",required = false) Boolean isInIntranet, @RequestParam(value="isStandAlone",required = false) Boolean isStandAlone,
+                                                @RequestParam(value="sort", required = false, defaultValue = "false") boolean sort) {
         Response resp = new Response();
 
         int pageSize;
@@ -250,7 +251,7 @@ public class RecommendationsContoller {
 
 
         try {
-            resp = recommendationsService.getInterests(userId, learningModesFilter, pageNumber, pageSize, includeContentTypesFilter, externalContentFilter, locales, rootOrg, sourceFields, isInIntranet, isStandAlone);
+            resp = recommendationsService.getInterests(userId, learningModesFilter, pageNumber, pageSize, includeContentTypesFilter, externalContentFilter, locales, rootOrg, sourceFields, isInIntranet, isStandAlone, sort);
         } catch (BadRequestException e) {
             ProjectLogger.log("Recommendations.getInterest", e);
             return new ResponseEntity<>(ErrorGenerator.generateErrorResponse(ResponseCode.invalidRequestData, "Recommendations.getInterest", "1", e.getMessage()), HttpStatus.BAD_REQUEST);
