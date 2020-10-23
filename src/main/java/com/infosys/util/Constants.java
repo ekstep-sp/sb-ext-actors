@@ -70,8 +70,22 @@ public class Constants {
 	public static final List<String> RESOURCE_CATEGORY_AGGS_FIELD_DISPLAYNAME_PAIR = Arrays.asList("resourceCategory",
 			"Category");
 	public static final String CATALOG = "catalog";
-	
+
 	public static final String INFOSYS_ROOTORG = "infosys";
+
+	public static final String BASIC_DATE_TIME_NO_MILLIS = "yyyyMMdd'T'HHmmss+00:00";
+	public static final String COUNT_CONTENT_AGG_KEY = "count";
+
+	public static class ML_SEARCH {
+		public static final String STATUS = "status";
+		public static final String STATUS_LIVE = "Live";
+		public static final String ROOT_ORG = "rootOrg";
+		public static final String ACCESS_PATHS = "accessPaths";
+		public static final String ACCESS_PATHS_SEPARATOR = "/";
+		public static final String CONTENT_TYPE = "contentType";
+		public static final String PUBLISHED_ON = "publishedOn";
+		public static final String LAST_UPDATED_ON = "lastUpdatedOn";
+	}
 
 	public Constants() {
 	}
