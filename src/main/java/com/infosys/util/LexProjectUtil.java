@@ -216,7 +216,7 @@ public class LexProjectUtil {
 		// return String.format("%02d:%02d.%d",minute, second, millis);
 		return "Time taken: " + durationInMillis;
 	}
-	public static String getFormattedDate(Timestamp date){
+	public static String getEsFormattedDate(Timestamp date){
 		if(date != null) {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
             return simpleDateFormat.format(date);

@@ -11,8 +11,7 @@ import org.sunbird.common.models.util.ProjectUtil;
 import org.sunbird.common.responsecode.ResponseCode;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -48,8 +47,8 @@ public class ContentAnalyticsController {
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
 			// Parsing in format required by ElasticSearch
-			String sDate = LexProjectUtil.getFormattedDate(startDate);
-			String eDate = LexProjectUtil.getFormattedDate(endDate);
+			String sDate = LexProjectUtil.getEsFormattedDate(startDate);
+			String eDate = LexProjectUtil.getEsFormattedDate(endDate);
 			Map<String, Object> result = contentAnalyticsService.getContentCountByStatus(rootOrg, org, langCode, contentStatus, sDate, eDate);
 			status = result.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK;
 			resp.put(Constants.RESPONSE, result);
@@ -75,8 +74,8 @@ public class ContentAnalyticsController {
 	public ResponseEntity<?> getExternalResources(@RequestHeader("rootOrg") String rootOrg,
 														 @RequestHeader("org") String org,
 														 @PathVariable("langCode") String langCode,
-														 @RequestParam(value = "searchSize" , required = false , defaultValue="1000") Integer searchSize,
-												         @RequestParam(value = "offSet" , required = false , defaultValue="0") Integer offSet,
+														 @RequestParam(value = "searchSize" , required = false , defaultValue = "1000") int searchSize,
+												         @RequestParam(value = "offSet" , required = false , defaultValue = "0") int offSet,
 														 @RequestParam(value = "startDate", required = false) Timestamp startDate,
 														 @RequestParam(value = "endDate", required = false) Timestamp endDate) {
 		HttpStatus status;
@@ -86,9 +85,9 @@ public class ContentAnalyticsController {
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
 			// Parsing in format required by ElasticSearch
-			String sDate = LexProjectUtil.getFormattedDate(startDate);
-			String eDate = LexProjectUtil.getFormattedDate(endDate);
-			ArrayList<String> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate , searchSize , offSet);
+			String sDate = LexProjectUtil.getEsFormattedDate(startDate);
+			String eDate = LexProjectUtil.getEsFormattedDate(endDate);
+			List<String> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate , searchSize , offSet);
 			status = result.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK;
 			resp.put(Constants.RESPONSE, result);
 		} catch (Exception e) {
