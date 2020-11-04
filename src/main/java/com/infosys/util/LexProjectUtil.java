@@ -3,6 +3,9 @@
                This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3" */
 package com.infosys.util;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Krishnendu_C on 8/16/2018.
  */
@@ -212,6 +215,13 @@ public class LexProjectUtil {
 		long minute = (durationInMillis / (1000 * 60)) % 60;
 		// return String.format("%02d:%02d.%d",minute, second, millis);
 		return "Time taken: " + durationInMillis;
+	}
+	public static String getFormattedDate(Timestamp date){
+		if(date != null) {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
+            return simpleDateFormat.format(date);
+		}
+		return null;
 	}
 
 }
