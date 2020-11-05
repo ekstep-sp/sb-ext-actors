@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -68,13 +67,12 @@ public class ContentAnalyticsServiceImpl implements ContentAnalyticsService {
             // For Live content filtering to be done on publishedOn
             queryBuilder.filter(getDateFilter(Constants.ML_SEARCH.STATUS_LIVE, startDate, endDate));
         }
-        AggregationBuilder builder = AggregationBuilders.terms(Constants.COUNT_CONTENT_AGG_KEY).field(Constants.ML_SEARCH.CONTENT_TYPE);
         SearchRequest searchRequest = new SearchRequest(indexName);
         SearchResponse searchResponse = ConnectionManager.getClient().search(
                 searchRequest.types(LexProjectUtil.EsType.new_lex_search.getTypeName())
                         .searchType(SearchType.QUERY_THEN_FETCH)
-                        .source(new SearchSourceBuilder().query(queryBuilder)
-                                .size(searchSize).from(offSet).aggregation(builder)),
+                        .source(new SearchSourceBuilder().query(queryBuilder).fetchSource("identifier","")
+                                .size(searchSize).from(offSet)),
                 RequestOptions.DEFAULT);
         // Returning list of External Resources
         return Arrays.stream(searchResponse.getHits().getHits()).map(hit -> hit.getSourceAsMap().get(Constants.IDENTIFIER).toString()).collect(Collectors.toList());
