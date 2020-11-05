@@ -75,7 +75,7 @@ public class Constants {
 
 	public static final String BASIC_DATE_TIME_NO_MILLIS = "yyyyMMdd'T'HHmmss+00:00";
 	public static final String COUNT_CONTENT_AGG_KEY = "count";
-
+    public static final String IDENTIFIER = "identifier";
 	public static class ML_SEARCH {
 		public static final String STATUS = "status";
 		public static final String STATUS_LIVE = "Live";
@@ -85,6 +85,7 @@ public class Constants {
 		public static final String CONTENT_TYPE = "contentType";
 		public static final String PUBLISHED_ON = "publishedOn";
 		public static final String LAST_UPDATED_ON = "lastUpdatedOn";
+		public static final String IS_EXTERNAL = "isExternal";
 	}
 
 	public Constants() {
