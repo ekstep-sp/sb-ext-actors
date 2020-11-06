@@ -62,14 +62,14 @@ public class ContentAnalyticsController {
 	}
 
 	/**
-	 * @param rootOrg    Name of root Organization
-	 * @param org        Name of Organization inside rootOrg
-	 * @param langCode   e.g. en,ar,es
-	 * @param searchSize Search Size
-	 * @param offSet     Defines the offset from the first result you want to fetch
-	 * @param startDate  Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-	 * @param endDate    Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-     * @param include    Optional comma seperated required fields default = identifier,name
+	 * @param rootOrg       Name of root Organization
+	 * @param org           Name of Organization inside rootOrg
+	 * @param langCode      e.g. en,ar,es
+	 * @param searchSize    Search Size
+	 * @param offSet        Defines the offset from the first result you want to fetch
+	 * @param startDate     Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param endDate       Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param includeFields Optional comma seperated required fields default = identifier,name
 	 * @return List of External Resources which are in Live state based on date filters if provided
 	 */
 	@GetMapping("/v1/content/{langCode}/external/resources")

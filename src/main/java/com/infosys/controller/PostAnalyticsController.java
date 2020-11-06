@@ -25,13 +25,13 @@ public class PostAnalyticsController {
 	}
 
 	/**
-	 * @param rootOrg    Name of root Organization
-	 * @param org        Name of Organization inside rootOrg
-	 * @param postKind   Blog
-	 * @param postStatus Active,InActive
-	 * @param startDate  Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-	 * @param endDate    Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-	 * @param include    Optional comma seperated required fields default = id,postContent.title,postCreator.name
+	 * @param rootOrg       Name of root Organization
+	 * @param org           Name of Organization inside rootOrg
+	 * @param postKind      Blog
+	 * @param postStatus    Active,InActive
+	 * @param startDate     Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param endDate       Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param includeFields Optional comma seperated required fields default = id,postContent.title,postCreator.name
 	 * @return List of Post Analytic contents
 	 */
 	@GetMapping("/v1/post/{postKind}/{postStatus}")
