@@ -74,6 +74,7 @@ public class Constants {
 	public static final String INFOSYS_ROOTORG = "infosys";
 
 	public static final String BASIC_DATE_TIME_NO_MILLIS = "yyyyMMdd'T'HHmmss+00:00";
+	public static final String BASIC_DATE_TIME_POST_ANALYTIC_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 	public static final String COUNT_CONTENT_AGG_KEY = "count";
     public static final String IDENTIFIER = "identifier";
 	public static class ML_SEARCH {
@@ -86,6 +87,14 @@ public class Constants {
 		public static final String PUBLISHED_ON = "publishedOn";
 		public static final String LAST_UPDATED_ON = "lastUpdatedOn";
 		public static final String IS_EXTERNAL = "isExternal";
+	}
+	public static class POST_SEARCH {
+		public static final String STATUS_ACTIVE = "Active";
+		public static final String STATUS_INACTIVE = "Inactive";
+		public static final String POST_KIND = "postKind";
+		public static final String PUBLISHED_ON = "dtPublished";
+		public static final String CREATED_ON = "dtCreated";
+
 	}
 
 	public Constants() {

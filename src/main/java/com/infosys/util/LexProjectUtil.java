@@ -26,7 +26,7 @@ public class LexProjectUtil {
 		lex_user_feedback("lex_feedback"), lexUserAutoComplete("userautocomplete"), authoring_tool("mlsearch_*"),
 		skills("lexskillsindex_v1"), unit("lexunitindex"), authoring_tool_bkup("mlsearch_*"), client("clientindex_v1"),
 		bodhi_ui(bodhi_ui_index), new_lex_search("mlsearch_*"), access_control_groups("accesscontrolgroups"),
-		topic_topic("arl_lex_topic"), topic_details("topicdetails"), ml_search_all("mlsearch_*");
+		topic_topic("arl_lex_topic"), topic_details("topicdetails"), ml_search_all("mlsearch_*") , post("post");
 
 		private String indexName;
 
@@ -58,7 +58,7 @@ public class LexProjectUtil {
 		autoCompleteType("autocomplete"), usernotes("usernotes"), history("history"),
 		userprofilevisibility("userprofilevisibility"), feedback("feedback"), resource("searchresources"),
 		skills("skills"), unit("units"), client("clienttype"), new_lex_search("searchresources"),
-		access_control_group("group"), topic_topic("topic_pid"), topic_details("doc");
+		access_control_group("group"), topic_topic("topic_pid"), topic_details("doc"),post("post");
 
 		private String typeName;
 
@@ -216,12 +216,21 @@ public class LexProjectUtil {
 		// return String.format("%02d:%02d.%d",minute, second, millis);
 		return "Time taken: " + durationInMillis;
 	}
-	public static String getEsFormattedDate(Timestamp date){
-		if(date != null) {
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
-            return simpleDateFormat.format(date);
+
+	public static String getFormattedDate(Timestamp date, String format) {
+		if (date != null) {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+			return simpleDateFormat.format(date);
 		}
 		return null;
+	}
+
+	public static String getEsFormattedDate(Timestamp date) {
+		return getFormattedDate(date, com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
+	}
+
+	public static String getEsFormattedDateForPostAnalyticContent(Timestamp date) {
+		return getFormattedDate(date, com.infosys.util.Constants.BASIC_DATE_TIME_POST_ANALYTIC_FORMAT);
 	}
 
 }
