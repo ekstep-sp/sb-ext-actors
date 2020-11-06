@@ -25,21 +25,21 @@ public class ContentAnalyticsController {
 	}
 
 	/**
-	 * @param rootOrg Name of root Organization
-	 * @param org Name of Organization inside rootOrg
-	 * @param langCode e.g. en,ar,es
+	 * @param rootOrg       Name of root Organization
+	 * @param org           Name of Organization inside rootOrg
+	 * @param langCode      e.g. en,ar,es
 	 * @param contentStatus Draft,Reviewed,Live
-	 * @param startDate Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-	 * @param endDate Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param startDate     Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param endDate       Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
 	 * @return Response model of  ount of contentType Resource,Collection,Course etc based on status, date filters
 	 */
 	@GetMapping("/v1/content/{langCode}/{contentStatus}/count")
 	public ResponseEntity<Response> getContentCountStats(@RequestHeader("rootOrg") String rootOrg,
-														@RequestHeader("org") String org,
-														@PathVariable("langCode") String langCode,
-														@PathVariable("contentStatus") String contentStatus,
-														@RequestParam(value = "startDate", required = false) Timestamp startDate,
-														@RequestParam(value = "endDate", required = false) Timestamp endDate) {
+														 @RequestHeader("org") String org,
+														 @PathVariable("langCode") String langCode,
+														 @PathVariable("contentStatus") String contentStatus,
+														 @RequestParam(value = "startDate", required = false) Timestamp startDate,
+														 @RequestParam(value = "endDate", required = false) Timestamp endDate) {
 		HttpStatus status;
 		Response resp = new Response();
 		resp.setVer("v1");
@@ -60,24 +60,27 @@ public class ContentAnalyticsController {
 		}
 		return new ResponseEntity<>(resp, status);
 	}
+
 	/**
-	 * @param rootOrg Name of root Organization
-	 * @param org Name of Organization inside rootOrg
-	 * @param langCode e.g. en,ar,es
+	 * @param rootOrg    Name of root Organization
+	 * @param org        Name of Organization inside rootOrg
+	 * @param langCode   e.g. en,ar,es
 	 * @param searchSize Search Size
-	 * @param offSet Defines the offset from the first result you want to fetch
-	 * @param startDate Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
-	 * @param endDate Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param offSet     Defines the offset from the first result you want to fetch
+	 * @param startDate  Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param endDate    Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+     * @param include    Optional comma seperated required fields default = identifier,name
 	 * @return List of External Resources which are in Live state based on date filters if provided
 	 */
 	@GetMapping("/v1/content/{langCode}/external/resources")
 	public ResponseEntity<?> getExternalResources(@RequestHeader("rootOrg") String rootOrg,
-														 @RequestHeader("org") String org,
-														 @PathVariable("langCode") String langCode,
-														 @RequestParam(value = "searchSize" , required = false , defaultValue = "1000") int searchSize,
-												         @RequestParam(value = "offSet" , required = false , defaultValue = "0") int offSet,
-														 @RequestParam(value = "startDate", required = false) Timestamp startDate,
-														 @RequestParam(value = "endDate", required = false) Timestamp endDate) {
+												  @RequestHeader("org") String org,
+												  @PathVariable("langCode") String langCode,
+												  @RequestParam(value = "searchSize", required = false, defaultValue = "1000") int searchSize,
+												  @RequestParam(value = "offSet", required = false, defaultValue = "0") int offSet,
+												  @RequestParam(value = "startDate", required = false) Timestamp startDate,
+												  @RequestParam(value = "endDate", required = false) Timestamp endDate,
+												  @RequestParam(value = "include", required = false, defaultValue = "identifier,name") String[] includeFields) {
 		HttpStatus status;
 		Response resp = new Response();
 		resp.setVer("v1");
@@ -87,7 +90,7 @@ public class ContentAnalyticsController {
 			// Parsing in format required by ElasticSearch
 			String sDate = LexProjectUtil.getEsFormattedDate(startDate);
 			String eDate = LexProjectUtil.getEsFormattedDate(endDate);
-			List<String> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate , searchSize , offSet);
+			List<Map<String, Object>> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate, searchSize, offSet, includeFields);
 			status = result.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK;
 			resp.put(Constants.RESPONSE, result);
 		} catch (Exception e) {

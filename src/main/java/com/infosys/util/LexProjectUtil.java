@@ -216,19 +216,21 @@ public class LexProjectUtil {
 		// return String.format("%02d:%02d.%d",minute, second, millis);
 		return "Time taken: " + durationInMillis;
 	}
-	public static String getEsFormattedDate(Timestamp date){
-		if(date != null) {
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
-            return simpleDateFormat.format(date);
-		}
-		return null;
-	}
-	public static String getEsFormattedDateForPostAnalyticContent(Timestamp date){
-		if(date != null) {
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.infosys.util.Constants.BASIC_DATE_TIME_POST_ANALYTIC_FORMAT);
+
+	public static String getFormattedDate(Timestamp date, String format) {
+		if (date != null) {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
 			return simpleDateFormat.format(date);
 		}
 		return null;
+	}
+
+	public static String getEsFormattedDate(Timestamp date) {
+		return getFormattedDate(date, com.infosys.util.Constants.BASIC_DATE_TIME_NO_MILLIS);
+	}
+
+	public static String getEsFormattedDateForPostAnalyticContent(Timestamp date) {
+		return getFormattedDate(date, com.infosys.util.Constants.BASIC_DATE_TIME_POST_ANALYTIC_FORMAT);
 	}
 
 }
