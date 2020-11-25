@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class PostAnalyticsServiceImpl implements PostAnalyticsService {
 
 	@Override
-	public List<Map<String, Object>> getPostAnalyticContent(String rootOrg, String org, String postKind, String postStatus, String startDate, String endDate, String[] includeFields) throws Exception {
+	public List<Map<String, Object>> getPostAnalyticContent(String rootOrg, String org, String postKind, String postStatus, String startDate, String endDate,int searchSize, int offSet, String[] includeFields) throws Exception {
 		String indexName = LexProjectUtil.EsIndex.post.getIndexName();
 		BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery()
 				.must(QueryBuilders.termQuery(Constants.ML_SEARCH.STATUS, StringUtils.capitalize(postStatus)))
@@ -40,7 +40,7 @@ public class PostAnalyticsServiceImpl implements PostAnalyticsService {
 		SearchResponse searchResponse = ConnectionManager.getClient().search(
 				searchRequest.types(LexProjectUtil.EsType.post.getTypeName())
 						.searchType(SearchType.QUERY_THEN_FETCH)
-						.source(new SearchSourceBuilder().query(boolQueryBuilder).fetchSource(includeFields, null)),
+						.source(new SearchSourceBuilder().query(boolQueryBuilder).fetchSource(includeFields, null).size(searchSize).from(offSet)),
 				RequestOptions.DEFAULT);
 		return Arrays.stream(searchResponse.getHits().getHits()).map(SearchHit::getSourceAsMap).collect(Collectors.toList());
 

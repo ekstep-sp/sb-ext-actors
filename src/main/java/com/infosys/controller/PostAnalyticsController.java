@@ -31,6 +31,8 @@ public class PostAnalyticsController {
 	 * @param postStatus    Active,InActive
 	 * @param startDate     Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
 	 * @param endDate       Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
+	 * @param searchSize    Search Size
+	 * @param offSet        Defines the offset from the first result you want to fetch
 	 * @param includeFields Optional comma seperated required fields default = id,postContent.title,postCreator.name
 	 * @return List of Post Analytic contents
 	 */
@@ -41,6 +43,8 @@ public class PostAnalyticsController {
 													 @PathVariable("postStatus") String postStatus,
 													 @RequestParam(value = "startDate", required = false) Timestamp startDate,
 													 @RequestParam(value = "endDate", required = false) Timestamp endDate,
+													 @RequestParam(value = "searchSize", required = false, defaultValue = "1000") int searchSize,
+													 @RequestParam(value = "offSet", required = false, defaultValue = "0") int offSet,
 													 @RequestParam(value = "include", required = false, defaultValue = "id,postContent.title,postCreator.name") String[] includeFields) {
 		HttpStatus status;
 		Response resp = new Response();
@@ -51,7 +55,7 @@ public class PostAnalyticsController {
 			// Parsing in format required by ElasticSearch
 			String sDate = LexProjectUtil.getEsFormattedDateForPostAnalyticContent(startDate);
 			String eDate = LexProjectUtil.getEsFormattedDateForPostAnalyticContent(endDate);
-			List<Map<String, Object>> result = postAnalyticsService.getPostAnalyticContent(rootOrg, org, postKind, postStatus, sDate, eDate, includeFields);
+			List<Map<String, Object>> result = postAnalyticsService.getPostAnalyticContent(rootOrg, org, postKind, postStatus, sDate, eDate,searchSize, offSet, includeFields);
 			status = result.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK;
 			resp.put(Constants.RESPONSE, result);
 		} catch (Exception e) {
