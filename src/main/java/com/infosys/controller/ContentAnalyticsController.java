@@ -70,6 +70,7 @@ public class ContentAnalyticsController {
 	 * @param startDate     Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
 	 * @param endDate       Optional format = yyyy-MM-dd HH:mm:ss timeZone = GMT
 	 * @param includeFields Optional comma seperated required fields default = identifier,name
+	 * @param search_query   Optional search query based on which list will be displayed of external resources
 	 * @return List of External Resources which are in Live state based on date filters if provided
 	 */
 	@GetMapping("/v1/content/{langCode}/external/resources")
@@ -80,7 +81,8 @@ public class ContentAnalyticsController {
 												  @RequestParam(value = "offSet", required = false, defaultValue = "0") int offSet,
 												  @RequestParam(value = "startDate", required = false) Timestamp startDate,
 												  @RequestParam(value = "endDate", required = false) Timestamp endDate,
-												  @RequestParam(value = "include", required = false, defaultValue = "identifier,name") String[] includeFields) {
+												  @RequestParam(value = "include", required = false, defaultValue = "identifier,name") String[] includeFields,
+												  @RequestParam(value = "search_query",required = false , defaultValue = "*") String search_query) {
 		HttpStatus status;
 		Response resp = new Response();
 		resp.setVer("v1");
@@ -88,9 +90,10 @@ public class ContentAnalyticsController {
 		resp.setTs(ProjectUtil.getFormattedDate());
 		try {
 			// Parsing in format required by ElasticSearch
+			search_query = search_query != "*" ? "*"+search_query +"*" : search_query;
 			String sDate = LexProjectUtil.getEsFormattedDate(startDate);
 			String eDate = LexProjectUtil.getEsFormattedDate(endDate);
-			List<Map<String, Object>> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate, searchSize, offSet, includeFields);
+			List<Map<String, Object>> result = contentAnalyticsService.getExternalResourcesList(rootOrg, org, langCode, sDate, eDate, searchSize, offSet, includeFields,search_query);
 			status = result.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK;
 			resp.put(Constants.RESPONSE, result);
 		} catch (Exception e) {
