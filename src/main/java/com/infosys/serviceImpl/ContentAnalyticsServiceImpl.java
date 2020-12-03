@@ -10,6 +10,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.search.SearchHit;
@@ -57,10 +58,11 @@ public class ContentAnalyticsServiceImpl implements ContentAnalyticsService {
 	}
 
 	@Override
-	public List<Map<String, Object>> getExternalResourcesList(String rootOrg, String org, String langCode, String startDate, String endDate, int searchSize, int offSet, String[] includeFields) throws IOException {
+	public List<Map<String, Object>> getExternalResourcesList(String rootOrg, String org, String langCode, String startDate, String endDate, int searchSize, int offSet, String[] includeFields,String search_query) throws IOException {
 		// indexName is based on langCode e.g mlsearch_en
 		String indexName = LexProjectUtil.EsIndex.multi_lingual_search_index.getIndexName() + SearchConstants.SEARCH_INDEX_LOCALE_DELIMITER + langCode;
 		BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
+				.must(QueryBuilders.queryStringQuery(search_query).field("name").allowLeadingWildcard(true).type(MultiMatchQueryBuilder.Type.BEST_FIELDS))
 				.must(QueryBuilders.termQuery(Constants.ML_SEARCH.STATUS, StringUtils.capitalize(Constants.ML_SEARCH.STATUS_LIVE)))
 				.must(QueryBuilders.termQuery(Constants.ML_SEARCH.IS_EXTERNAL, "true"))
 				.must(QueryBuilders.termQuery(Constants.ML_SEARCH.CONTENT_TYPE, SearchConstants.RESOURCE))
