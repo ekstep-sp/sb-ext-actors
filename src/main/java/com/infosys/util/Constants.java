@@ -85,6 +85,7 @@ public class Constants {
 		public static final String ACCESS_PATHS_SEPARATOR = "/";
 		public static final String CONTENT_TYPE = "contentType";
 		public static final String PUBLISHED_ON = "publishedOn";
+		public static final String LAST_PUBLISHED_ON = "lastPublishedOn";
 		public static final String LAST_UPDATED_ON = "lastUpdatedOn";
 		public static final String IS_EXTERNAL = "isExternal";
 	}

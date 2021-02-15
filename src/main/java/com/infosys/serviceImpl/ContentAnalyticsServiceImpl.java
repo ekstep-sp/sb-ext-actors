@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -89,5 +90,47 @@ public class ContentAnalyticsServiceImpl implements ContentAnalyticsService {
 				Constants.ML_SEARCH.PUBLISHED_ON : Constants.ML_SEARCH.LAST_UPDATED_ON)
 				.gte(startDate)
 				.lte(endDate);
+	}
+
+	@Override
+	public List<Map<String, Object>> getContentList(Map<String, Map<String, Map<String, Object>>> searchFilters, String langCode, int searchSize, int offSet, String[] includeFields, String search_query) throws IOException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+		String indexName = LexProjectUtil.EsIndex.multi_lingual_search_index.getIndexName() + SearchConstants.SEARCH_INDEX_LOCALE_DELIMITER + langCode;
+		BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
+				.must(QueryBuilders.queryStringQuery(search_query).field("name").allowLeadingWildcard(true).type(MultiMatchQueryBuilder.Type.BEST_FIELDS));
+		setSearchFilters(queryBuilder, searchFilters);
+		SearchResponse searchResponse = getSearchResponse(indexName, LexProjectUtil.EsType.new_lex_search.getTypeName(),
+				new SearchSourceBuilder().query(queryBuilder).fetchSource(includeFields, null).size(searchSize).from(offSet));
+		// Returning list of filtered content
+		return Arrays.stream(searchResponse.getHits().getHits()).map(SearchHit::getSourceAsMap).collect(Collectors.toList());
+	}
+
+	public void setSearchFilters(BoolQueryBuilder queryBuilder, Map<String, Map<String, Map<String, Object>>> searchFilters) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+		Map<String, Object> mustTermFiters = searchFilters.get(SearchConstants.MUST).get(SearchConstants.TERM);
+		mustTermFiters.forEach((key, value) -> queryBuilder.must(QueryBuilders.termQuery(key, value)));
+		Map<String, Object> mustNotTermFiters = searchFilters.get(SearchConstants.MUST_NOT).get(SearchConstants.TERM);
+		mustNotTermFiters.forEach((key, value) -> queryBuilder.mustNot(QueryBuilders.termQuery(key, value)));
+		Map<String, Object> rangeFilters = searchFilters.get(SearchConstants.FILTERS).get(SearchConstants.RANGE);
+		for (Map.Entry<String, Object> entry : rangeFilters.entrySet()) {
+			String key = entry.getKey();
+			Object value = entry.getValue();
+			RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery(key);
+			Map<?, ?> rangeMap = (Map<?, ?>) value;
+			for (Map.Entry<?, ?> mapEntry : rangeMap.entrySet()) {
+				Object rangeKey = mapEntry.getKey();
+				Object rangeValue = mapEntry.getValue();
+				rangeQueryBuilder.getClass().getMethod(rangeKey.toString(), Object.class).invoke(rangeQueryBuilder, rangeValue);
+			}
+			queryBuilder.filter(rangeQueryBuilder);
+		}
+	}
+
+	public SearchResponse getSearchResponse(String indexName, String indexType, SearchSourceBuilder searchSourceBuilder) throws IOException {
+		SearchRequest searchRequest = new SearchRequest(indexName);
+		searchRequest.types(indexType)
+				.searchType(SearchType.QUERY_THEN_FETCH)
+				.source(searchSourceBuilder);
+		return ConnectionManager.getClient().search(
+				searchRequest,
+				RequestOptions.DEFAULT);
 	}
 }

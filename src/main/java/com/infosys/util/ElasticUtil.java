@@ -8,6 +8,9 @@ import com.infosys.exception.ElasticSearchException;
 import com.infosys.exception.PropertiesNotFoundException;
 import org.sunbird.common.models.util.JsonKey;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ElasticUtil {
 
 	public static String getEndPointForES(String indexName, String typeName, String propertiesFile) {
@@ -28,4 +31,17 @@ public class ElasticUtil {
 
 	}
 
+	public static Map<String, Map<String, Map<String, Object>>> getSearchFiltersDefaultMap() {
+		return new HashMap<String, Map<String, Map<String, Object>>>() {{
+			put(SearchConstants.MUST, new HashMap<String, Map<String, Object>>() {{
+				put(SearchConstants.TERM, new HashMap<>());
+			}});
+			put(SearchConstants.MUST_NOT, new HashMap<String, Map<String, Object>>() {{
+				put(SearchConstants.TERM, new HashMap<>());
+			}});
+			put(SearchConstants.FILTERS, new HashMap<String, Map<String, Object>>() {{
+				put(SearchConstants.RANGE, new HashMap<>());
+			}});
+		}};
+	}
 }

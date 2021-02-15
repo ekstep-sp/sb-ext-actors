@@ -6,7 +6,7 @@ package com.infosys.util;
 import java.util.*;
 
 public class SearchConstants {
-	
+
 	public static final String SEARCH_TEMPLATE = "searchtemplate";
 	public static final String ML_SEARCH_TEMPLATE = "mlsearchtemplate";
 	public static final String QUERY = "query";
@@ -22,7 +22,7 @@ public class SearchConstants {
 	public static final String ORGS = "orgs";
 	public static final String SORT = "sort";
 	public static final Set<String> SORT_FIELDS = new HashSet<>(Arrays.asList("lastUpdatedOn","duration","me_totalSessionsCount","me_totalDownloads","size","uniqueLearners"));
-	
+
 	public static final String DURATION_SHORT = "-inf-20";
 	public static final String DURATION_MEDIUM = "20-60";
 	public static final String DURATION_LONG = "60-180";
@@ -37,7 +37,7 @@ public class SearchConstants {
 	public static final String DURATION_MEDIUM_DISPLAY_NAME = "20 to 60 mins";
 	public static final String DURATION_LONG_DISPLAY_NAME = "60 to 180 mins";
 	public static final String DURATION_DETAILED_DISPLAY_NAME = "More than 180 mins";
-	
+
 	public static final String FILTER_CONCEPTS_FIELD_KEY = "concepts";
 	public static final String FILTER_CONCEPTS_IDENTIFIER_FIELD_KEY = "concepts.identifier";
 	public static final String FILTER_CONCEPTS_NAME_FIELD_KEY = "concepts.name.raw";
@@ -71,10 +71,10 @@ public class SearchConstants {
 	public static final String FILTER_JOB_PROFILE_FIELD_KEY = "jobProfile";
 	public static final String FILTER_INSTANCE_CATALOG_FIELD_KEY = "instanceCatalog";
 	public static final String FILTER_EXCLUSIVE_CONTENT_FIELD_KEY = "exclusiveContent";
-	
+
 	public static final List<String> LIST_FILTER_FIELD_KEYS = new ArrayList<>(Arrays.asList(FILTER_UNIT_FIELD_KEY,FILTER_STATUS_FIELD_KEY,FILTER_PUBLISHER_DETAILS_FIELD_KEY,FILTER_TRACK_CONTACTS_FIELD_KEY,FILTER_CREATOR_CONTACTS_FIELD_KEY,FILTER_LEARNING_MODE_FIELD_KEY, FILTER_IS_EXTERNAL_FIELD_KEY,FILTER_CONTENT_TYPE_FIELD_KEY,FILTER_RESOURCE_TYPE_FIELD_KEY,FILTER_SOURCE_SHORT_NAME_FIELD_KEY,FILTER_RESOURCE_CATEGORY_FIELD_KEY,FILTER_FILE_TYPE_FIELD_KEY,FILTER_DURATION_FIELD_KEY,FILTER_COMPLEXITY_LEVEL_FIELD_KEY, FILTER_CATALOG_PATHS_FIELD_KEY,FILTER_LAST_UPDATED_ON_FIELD_KEY,FILTER_KEYWORDS_FIELD_KEY));
 	public static final Map<String, List<String>> aggAndFilterNamesMap = new HashMap<>();
-	
+
 	public static final String CATALOG_PATHS_AGGS_KEY = "catalogPaths_aggs";
 	public static final String DURATION_AGGS_KEY = "duration_aggs";
 	public static final String SOURCE_SHORT_NAME_AGGS_KEY = "sourceShortName_aggs";
@@ -96,7 +96,7 @@ public class SearchConstants {
 	public static final String JOB_PROFILE_AGGS_KEY = "jobProfile_aggs";
 	public static final String LABELS_AGGS_KEY = "labels_aggs";
 	public static final String EXCLUSIVE_CONTENT_AGGS_KEY = "exclusiveContent_aggs";
-	
+
 	public static final HashMap<String,List<String>> FIELD_DISPLAYNAME_PAIR = new HashMap<>();
 	public static final String SORT_ASC_ORDER = "asc";
 	public static final String SORT_DESC_ORDER = "desc";
@@ -119,6 +119,13 @@ public class SearchConstants {
 	public static final String AVERAGE_RATING = "averageRating";
 	public static final String UNIQUE_USERS_COUNT = "uniqueUsersCount";
 	public static final String TOTAL_RATING = "totalRating";
+
+	public static final String MUST = "must";
+	public static final String MUST_NOT = "must_not";
+	public static final String TERM = "term";
+	public static final String RANGE = "range";
+	public static final String GTE = "gte";
+	public static final String LTE = "lte";
 
 	static {
 		FIELD_DISPLAYNAME_PAIR.put(CATALOG_PATHS_AGGS_KEY, Arrays.asList("catalogPaths","Catalog"));
@@ -143,7 +150,7 @@ public class SearchConstants {
 		FIELD_DISPLAYNAME_PAIR.put(LABELS_AGGS_KEY, Arrays.asList("labels","Labels"));
 		FIELD_DISPLAYNAME_PAIR.put(EXCLUSIVE_CONTENT_AGGS_KEY, Arrays.asList("exclusiveContent","Costs"));
 
-		
+
 		aggAndFilterNamesMap.put(CONCEPTS_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(CONCEPTS_AGGS_KEY));
 		aggAndFilterNamesMap.put(CONTENT_TYPE_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(CONTENT_TYPE_AGGS_KEY));
 //		aggAndFilterNamesMap.put(FILE_TYPE_AGGS_KEY,FIELD_DISPLAYNAME_PAIR.get(FILE_TYPE_AGGS_KEY));
@@ -164,9 +171,9 @@ public class SearchConstants {
 
 //	End
 	}
-	
+
 	public SearchConstants() {
 	}
-	
-	
+
+
 }
